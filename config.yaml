@@ -1,0 +1,5 @@
+baseURL: "/"
+languageCode: "en-gb"
+title: "iNZight"
+description: "Doing things"
+theme: "docsy"
