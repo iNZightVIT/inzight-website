@@ -1,5 +1,15 @@
 {{ define "main" }}
+
+<div class="hero">
+    <!-- Tag line and a big GIF of iNZight in action -->
+    <h1 class="tagline">{{ .Site.Params.description }}</h1>
+</div>
+
+
 {{ with .Content }}
+<!-- A short blurb about the software -->
 {{ . }}
 {{ end }}
+
+
 {{ end }}
