@@ -1,2 +1,11 @@
 $primary: #094b85;
 $secondary: #18afe3;
+
+$link-color: $secondary;
+
+$enable-rounded: false;
+
+$navbar-dark-color: $secondary; //rgba($white, 0.75) !default;
+$navbar-dark-hover-color: rgba($secondary, 0.9);
+$navbar-dark-active-color: $secondary;
+// $navbar-dark-disabled-color: rgba($white, 0.25);

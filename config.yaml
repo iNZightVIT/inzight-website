@@ -1,5 +1,46 @@
-baseURL: "/"
-languageCode: "en-gb"
-title: "iNZight"
-description: "Explore data without barriers"
-theme: "docsy"
+baseURL: /
+title: iNZight
+enableRobotsTXT: true
+theme:
+  - docsy
+enableGitInfo: true
+contentDir: content
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: true
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+pygmentsCodeFences: true
+pygmentsUseClasses: false
+pygmentsUseClassic: false
+pygmentsStyle: tango
+permalinks:
+  blog: '/:section/:year/:month/:day/:slug/'
+outputs:
+  home:
+    - HTML
+  page:
+    - HTML
+  section:
+    - HTML
+    - RSS
+    - print
+blackfriday:
+  plainIDAnchors: true
+  hrefTargetBlank: true
+  angledQuotes: false
+  latexDashes: true
+imaging:
+  resampleFilter: CatmullRom
+  quality: 75
+  anchor: smart
+services:
+  googleAnalytics:
+    id: UA-00000000-0
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: tango

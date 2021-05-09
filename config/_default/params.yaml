@@ -1,0 +1,82 @@
+copyright: iNZight
+# privacy_policy: 'https://policies.google.com/privacy'
+version_menu: Releases
+archived_version: false
+version: '0.0'
+url_latest_version: 'https://example.com'
+github_repo: 'https://github.com/iNZightVIT/inzight-website'
+github_project_repo: 'https://github.com/iNZightVIT/iNZight'
+github_branch: "main"
+# github_subdir: userguide
+time_format_blog: 'Monday 02 January, 2006'
+time_format_default: '2 January 2006'
+rss_sections:
+  - blog
+gcs_engine_id: '011217106833237091527:la2vtv2emlw'
+algolia_docsearch: false
+offlineSearch: false
+offlineSearchSummaryLength: 70
+offlineSearchMaxResults: 10
+prism_syntax_highlighting: false
+ui:
+  sidebar_menu_compact: false
+  breadcrumb_disable: false
+  sidebar_search_disable: false
+  navbar_logo: true
+  feedback:
+    enable: false
+    'yes': >-
+      Glad to hear it! Please <a
+      href="https://github.com/google/docsy/issues/new">tell us how we can
+      improve</a>.
+    'no': >-
+      Sorry to hear that. Please <a
+      href="https://github.com/google/docsy/issues/new">tell us how we can
+      improve</a>.
+  readingtime:
+    enable: false
+links:
+  user:
+    - name: GitHub Discussions
+      url: 'https://https://github.com/iNZightVIT/iNZight/discussions'
+      icon: fab fa-github
+      desc: Discussion and help from your fellow users
+    # - name: User mailing list
+    #   url: 'https://groups.google.com/forum/#!forum/docsy-users'
+    #   icon: fa fa-envelope
+    #   desc: Sign up for Docsy announcements
+    - name: Twitter
+      url: 'https://twitter.com/iNZightUoA'
+      icon: fab fa-twitter
+      desc: Follow us on Twitter!
+    - name: Facebook
+      url: 'https://facebook.com/iNZightUoA'
+      icon: fab fa-facebook
+      desc: Like us on Facebook!
+    - name: Stack Overflow
+      url: 'https://stackoverflow.com/questions/tagged/inzight'
+      icon: fab fa-stack-overflow
+      desc: Practical questions and curated answers
+    - name: Email
+      url: 'mailto:inzight_support@stat.aucklanda.c.nz'
+      icon: fa fa-envelope
+      desc: Email us for help
+  developer:
+    - name: GitHub
+      url: 'https://github.com/iNZightVIT'
+      icon: fab fa-github
+      desc: Development takes place here!
+mermaid:
+  enable: true
+  theme: default
+plantuml:
+  enable: true
+  theme: default
+  svg_image_url: 'https://www.plantuml.com/plantuml/svg/'
+katex:
+  enable: true
+  html_dom_element: document.body
+  mhchem:
+    enable: true
+print:
+  disable_toc: false

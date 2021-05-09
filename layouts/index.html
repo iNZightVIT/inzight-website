@@ -2,7 +2,41 @@
 
 <div class="hero">
     <!-- Tag line and a big GIF of iNZight in action -->
-    <h1 class="tagline">{{ .Site.Params.description }}</h1>
+    <h1 class="tagline">{{ .Params.tagline }}</h1>
+
+    <div class="buttons">
+        <a href="{{ .Site.BaseURL }}download" class="btn btn-primary">
+            <i class="fa fa-download"></i>
+            Download Now
+        </a>
+        <a href="" class="btn btn-secondary">
+            <i class="fa fa-book"></i>
+            Documentation
+        </a>
+    </div>
+
+    <div class="hero-image">
+        <img src="{{ .Params.hero }}" />
+        <a class="btn btn-link" href="#content">
+            <i class="fa fa-chevron-down fa-lg"></i>
+            <span>Learn More</span>
+        </a>
+    </div>
+</div>
+
+<div id="content" class="home-content">
+    {{ range .Params.sections }}
+    <div class="card-container">
+        <div class="card">
+            <h4>{{ .title }}</h4>
+            {{ if .text }}
+            <p>{{ .text }}</p>
+            {{ else }}
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti in fugit culpa repellat qui commodi vitae impedit hic officia reiciendis.</p>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
 </div>
 
 
