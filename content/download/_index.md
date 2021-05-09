@@ -7,4 +7,4 @@ menu:
     pre: <i class='fas fa-download'></i>
 ---
 
-Hello.
+iNZight is available to download on Windows and Linux. Unfortunately we do not surpport macOS at this time.

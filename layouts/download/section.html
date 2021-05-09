@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<div class="downloads--container">
+    <h1>Download iNZight</h1>
+
+    {{ with .Content }}
+    {{ . }}
+    {{ end }}
+
+
+    {{ range .Pages }}
+    <a href="{{ .Permalink }}" class="btn btn-primary">{{ .Title }}</a>
+    {{ end }}
+</div>
+
+{{ end }}
