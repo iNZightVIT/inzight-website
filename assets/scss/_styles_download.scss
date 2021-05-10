@@ -1,4 +1,22 @@
 .downloads--container {
     margin: 5em auto;
-    max-width: 1200px
+    max-width: 1200px;
+
+    section {
+        margin-bottom: 1em;
+        margin-top: 2em;
+        padding: 1em 0 !important;
+        border-top: solid 1px $gray-200;
+    }
+
+    .version-table {
+        width: 100%;
+        tr {
+            border-bottom: solid 1px lightgray;
+            border-top: solid 1px lightgray;
+        }
+        td {
+            padding: 10px 15px;
+        }
+    }
 }

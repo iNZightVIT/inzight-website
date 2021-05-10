@@ -7,9 +7,29 @@
     {{ . }}
     {{ end }}
 
+    {{ range .Pages }}
+        <p><a href="#{{ .Title | urlize }}">{{ .Title }}</a></p>
+    {{ end }}
+
 
     {{ range .Pages }}
-    <a href="{{ .Permalink }}" class="btn btn-primary">{{ .Title }}</a>
+        <section>
+            <h2 id="{{ .Title | urlize }}">{{ .Title }}</h2>
+            {{ .Content }}
+            {{ with .Params.files }}
+            <table class="version-table">
+                {{ range . }}
+                <tr>
+                    <td>{{ .name }}{{ if .recommended }} <strong>(recommended){{ end }}</strong></td>
+                    <td><a href="{{ .file }}">Download</a></td>
+                    <td>{{ .size }}</td>
+                    <td>{{ .description }}</td>
+                    <td>{{ with .changes }}<a href="{{ . }}">Changes</a>{{ end }}</td>
+                </tr>
+                {{ end }}
+            </table>
+            {{ end }}
+        </section>
     {{ end }}
 </div>
 
