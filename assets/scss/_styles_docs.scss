@@ -3,3 +3,28 @@ figure {
     flex-direction: column;
     align-items: center;
 }
+
+.breadcrumb-nav {
+    display: flex !important;
+    justify-content: space-between;
+
+    .version-toggle {
+        .toggle-desktop {
+            // border-bottom: solid 2px $secondary;
+            font-weight: bold;
+        }
+        .toggle-lite {
+            color: gray;
+            &:hover {
+                color: $secondary;
+            }
+        }
+    }
+}
+
+.version--desktop {
+    display: initial;
+}
+.version--lite {
+    display: none;
+}

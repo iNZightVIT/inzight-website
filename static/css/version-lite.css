@@ -1,0 +1,18 @@
+.version--desktop {
+    display: none;
+}
+.version--lite {
+    display: initial;
+}
+
+.version-toggle .toggle-lite {
+    color: var(--secondary) !important;
+    font-weight: bold;
+}
+.version-toggle .toggle-desktop {
+    font-weight: normal !important;
+    color: gray !important;
+}
+.version-toggle .toggle-desktop:hover {
+    color: var(--secondary) !important;
+}

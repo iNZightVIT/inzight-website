@@ -12,9 +12,9 @@ time_format_blog: 'Monday 02 January, 2006'
 time_format_default: '2 January 2006'
 rss_sections:
   - blog
-gcs_engine_id: '011217106833237091527:la2vtv2emlw'
+#gcs_engine_id: '011217106833237091527:la2vtv2emlw'
 algolia_docsearch: false
-offlineSearch: false
+offlineSearch: true
 offlineSearchSummaryLength: 70
 offlineSearchMaxResults: 10
 prism_syntax_highlighting: false
@@ -34,17 +34,13 @@ ui:
       href="https://github.com/google/docsy/issues/new">tell us how we can
       improve</a>.
   readingtime:
-    enable: false
+    enable: true
 links:
   user:
     - name: GitHub Discussions
       url: 'https://https://github.com/iNZightVIT/iNZight/discussions'
       icon: fab fa-github
       desc: Discussion and help from your fellow users
-    # - name: User mailing list
-    #   url: 'https://groups.google.com/forum/#!forum/docsy-users'
-    #   icon: fa fa-envelope
-    #   desc: Sign up for Docsy announcements
     - name: Twitter
       url: 'https://twitter.com/iNZightUoA'
       icon: fab fa-twitter

@@ -1,7 +1,7 @@
 ---
 title: The File menu
 linkTitle: File menu
-weight: 20
+weight: 1
 description: Getting data into and out of iNZight, as managing your preferences.
 ---
 
