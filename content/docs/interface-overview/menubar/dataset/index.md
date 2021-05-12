@@ -5,6 +5,14 @@ weight: 2
 description: Organise and restructure your data, specify special structures, and filter out unwanted observations.
 ---
 
+{{< inzdesktop >}}
+{{< figure src="3_inzight_menu_dataset.png" alt="Dataset menu" width="200" >}}
+{{< /inzdesktop >}}
+
+{{< inzlite >}}
+{{< figure src="3_inzight_menu_dataset_lite.png" alt="Dataset menu" width="300" >}}
+{{< /inzlite >}}
+
 
 ## Filter dataset
 

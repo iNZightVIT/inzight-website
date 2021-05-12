@@ -1,0 +1,9 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+{{ if eq .Page.File.Ext "md" }}
+    {{ .Get 0 | markdownify }}
+{{ else }}
+    {{ .Get 0 | htmlUnescape | safeHTML }}
+{{ end }}
+</div>

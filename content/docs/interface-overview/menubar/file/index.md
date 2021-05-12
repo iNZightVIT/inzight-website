@@ -17,20 +17,8 @@ The __File menu__ provides 4 ways of getting data into iNZight:
 
 The __File menu__ also allows for ___saving/exporting___ data. E.g., if you have modified it in some way in iNZight  (_Export data …_)
 
-<!-- ## Contents
 
 {{< figure src="1_file_menu.png" alt="The file menu" width=300 >}}
-
-* [Import data ...](#import-data)(_from a file on computer or internet_)  
-    * [File types](#file-types)  
-    * [Metadata in csv files](#metacsv)  
-
-* [Export data ...](#export)(_useful if have modified the dataset_)
-* [Paste from ...](#paste) (_import by pasting copied data_)
-* [Example data ...](#example) (_use an example dataset_)
-
-* [Preferences ...](#preferences)(_change program behaviour_)
-* __Exit ...__ (_quit iNZight_) -->
 
 
 ## Import data
