@@ -2,7 +2,7 @@
 title: The Variables menu
 linkTitle: Variables
 weight: 3
-description: Convert variables to new types, create new variables, and rename existing ones
+description: Convert variables to new types, create new variables, and rename existing ones.
 ---
 
 {{< note "Called **Manipulate Variables** in *iNZight Lite*." >}}
