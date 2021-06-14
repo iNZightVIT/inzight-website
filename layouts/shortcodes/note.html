@@ -2,8 +2,8 @@
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Note</h4>
 {{ if eq .Page.File.Ext "md" }}
-    {{ .Get 0 | markdownify }}
+{{ .Get 0 | markdownify }}
 {{ else }}
-    {{ .Get 0 | htmlUnescape | safeHTML }}
+{{ .Get 0 | htmlUnescape | safeHTML }}
 {{ end }}
 </div>

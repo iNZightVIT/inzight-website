@@ -1,5 +1,5 @@
 ---
-title: "Welcome to iNZight"
+title: "iNZight Documentation"
 linkTitle: "Documentation"
 menu:
   main:
@@ -7,4 +7,6 @@ menu:
     pre: <i class='fas fa-book'></i>
 ---
 
-Lalala
+iNZight is a free data visualisation and analysis tool that allows beginners and experts alike to quickly generate informative statistical graphs and summaries without the hassle of coding or learning complex specialist tools.
+
+{{% note "There are two versions of iNZight: **Desktop** and **Lite**. In the top-right of the screen you can switch between documentation for one or the other." %}}

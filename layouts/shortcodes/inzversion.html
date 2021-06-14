@@ -1,2 +1,1 @@
-{{ with .Get "desktop" }}<span class="version--desktop">{{ . | markdownify }}</span>{{ end }}
-{{ with .Get "lite" }}<span class="version--lite">{{ . | markdownify }}</span>{{ end }}
+{{ with .Get "desktop" }}<span class="version--desktop">{{ . | markdownify }}</span>{{ end }}{{ with .Get "lite" }}<span class="version--lite">{{ . | markdownify }}</span>{{ end }}
