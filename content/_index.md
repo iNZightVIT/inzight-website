@@ -2,7 +2,7 @@
 title: "iNZight"
 linkTitle: "iNZight"
 tagline: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, aspernatur?
-hero: http://placeimg.com/1000/600/tech
+hero: /images/hero.png
 sections:
 - title: Education
   image: http://placeimg.com/300/200/people
@@ -12,4 +12,3 @@ sections:
 - title: Extensions
   image: https://placeimg.com/300/200/tech
 ---
-
