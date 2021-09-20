@@ -1,0 +1,16 @@
+{{ $scratch := newScratch }}
+    {{ range $index, $element := $.Page.CurrentSection.Pages.ByWeight }}
+        {{ if (eq $.Page.Params.weight .Params.weight) }}
+            {{ $scratch.Set "nextIndex" (add 1 $index)}}
+        {{ end }}
+    {{ end }}
+{{ with index $.Page.CurrentSection.Pages.ByWeight ($scratch.Get "nextIndex") }}
+<hr />
+<div class="text-right">
+    <a href="{{ .Permalink }}" class="btn btn-secondary">
+        {{ .Params.title | title }}
+        <span style="display:inline-block;width:0.5em;"></span>
+        <i class="fas fa-arrow-circle-right"></i>
+    </a>
+</div>
+{{ end}}
