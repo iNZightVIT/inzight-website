@@ -98,6 +98,34 @@ As with single variable plots, we can explore different plot types by opening th
 
 ## Scatter plots
 
+The last two-variable combination we can look at is two numeric variables, so we will replace __Variable 2__ (`gender`) with `armspan`. iNZight will produce a **scatter plot** of height versus armspan.
+
+{{% inzdesktop %}}
+{{< figure src="inzight_cas_height_armspan.png" alt="A plot of height by armspan" width="800" >}}
+{{% /inzdesktop %}}
+{{% inzlite %}}
+{{< figure src="inzight_cas_height_armspan_lite.png" alt="A plot of height by armspan" width="800" >}}
+{{% /inzlite %}}
+
+There is a fairly strong correlation between armspan and height, with a mass of observations on the right-hand-side where height is approximately the same as armspan. There are, however, many observations scattered well outside this trend.
+
+{{% tip "Plot the data first!" %}}
+The above scatter plot of height versus armspan is a good example of why it is so important to look at plots of data before looking at numeric summaries (see below). We can see visually that there is a strong, clear correlation between armspan and height, but there is a lot of "noise" in this data: a researcher might want to investigate this further, to determine if there is a reason for the noise, or if it is caused by messy data &mdash; a 180cm person with a 40cm armspan?
+{{% /tip %}}
+
+
+### Numeric summary
+
+As before, we can also look at a numeric summary of a scatter plot, however the default information provided is not often too useful: later on we will learn how to add trend lines, at which point the numeric summary will contain something a little more interesting.
+
+{{< figure src="inzight_cas_summary_height_armspan.png" alt="A summary of height by armspan" width="600" >}}
+
+The numeric summary for a scatter plot shows the __Spearman's Rank Correlation__ between the two variables, which is a measure of direction (if the value is positive, then variable 1 tends to increase with variable 2) and strength (values close to 0 have little or no correlation, while variables closer to 1 and -1 have strong correlations). In this case, the value is about 0.6, which is a moderate correlation between height and armspan: remember, however, that we can see a very strong correlation for many observations, but its the noisy observations that do not follow this trend that are reducing the rank correlation value.
+
+{{% alert title="Types of correlation" color="secondary" %}}
+Rank Correlation only looks at the __order__ of the observations, ignoring their values. This makes no assumption of the type of relationship. Another type of correlation is __Linear correlation__, which assumes that there is a linear (straight light) relationship between the two variables. iNZight does not display this by default as there is no way for the software to know if the variables should be linearly related or not. In order to get the linear correlation, users must ask for it: this is covered in [Trend Lines and Curves]().
+{{% /alert %}}
+
 
 [^1]: Recent versions of the Census at School data have added 'non-binary' as a gender option.
 [^2]: Girls tend to start puberty earlier than boys, and part of this process involves growing taller! In the next section we will learn about subsetting, and we can see this in action.
