@@ -59,4 +59,4 @@ Where this notation becomes important is if the numeric variable can take decima
 
 ## Subsetting by two variables {#subset-two-vars}
 
-Finally, we will quickly look at how iNZight lets us explore an additional relationship by using the last box in the control panel: __Subset Variable 2__.
+Finally, we will quickly look at how iNZight lets us explore an additional relationship by using the last box in the control panel: __Subset Variable 2__. This behaves a little differently that the first subsetting variable, and instead provides a look a __only one__ level of the subset variable, rather than all at once. We will look at the relationship between height and armspan once again,
