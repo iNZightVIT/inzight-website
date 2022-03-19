@@ -76,3 +76,9 @@ katex:
     enable: true
 print:
   disable_toc: false
+# versions:
+#   - version: "Latest"
+#     url: "https://inzight.tomelliott.co.nz"
+#   - version: "4.2"
+#     url: "https://v4-2.inzight.tomelliott.co.nz"
+# version_menu: "iNZight Version"
