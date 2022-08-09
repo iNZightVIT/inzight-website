@@ -28,3 +28,19 @@
   --ifm-color-primary-lightest: #59c7ed;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.versionToggleSwitch {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4em;
+  padding: 0.2em 1em 0.2em 0;
+}
+.versionToggleSwitch label {
+  font-size: 0.8em;
+}
+.versionToggleSwitch select {
+  border: none;
+  border-radius: 1em;
+  background: none;
+  text-align: right;
+}
