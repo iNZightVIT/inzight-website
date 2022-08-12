@@ -12,9 +12,15 @@ function Lite({ children }) {
   return "";
 }
 
+function Version({ desktop, lite }: { desktop: string; lite: string }) {
+  const { version } = useVersion();
+  if (version === "lite") return lite;
+  return desktop;
+}
+
 function setVersion({ type }: { type: "desktop" | "lite" }) {
   const { setVersion } = useVersion();
   setVersion(type);
 }
 
-export { Desktop, Lite, setVersion };
+export { Desktop, Lite, Version, setVersion };

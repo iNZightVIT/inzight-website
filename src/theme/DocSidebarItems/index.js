@@ -16,16 +16,18 @@ export default function DocSidebarItemsWrapper(props) {
 
   return (
     <>
-      <div className="versionToggleSwitch">
-        <label>iNZight</label>
-        <select value={version} onChange={updateVersion}>
-          {versions.map((v) => (
-            <option key={v.name} value={v.name}>
-              {v.title}
-            </option>
-          ))}
-        </select>
-      </div>
+      {props.level === 1 && (
+        <div className="versionToggleSwitch">
+          <label>iNZight</label>
+          <select value={version} onChange={updateVersion}>
+            {versions.map((v) => (
+              <option key={v.name} value={v.name}>
+                {v.title}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
       <DocSidebarItems {...props} />
     </>
   );
