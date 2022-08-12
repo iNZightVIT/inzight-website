@@ -14,7 +14,7 @@ const config = {
   title: "iNZight",
   tagline: "Data exploration through visualisation",
   url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  baseUrl: "/inzight-website/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
