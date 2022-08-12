@@ -22,7 +22,8 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "iNZightVIT", // Usually your GitHub org/user name.
-  projectName: "inzight-docs", // Usually your repo name.
+  projectName: "inzight-website", // Usually your repo name.
+  trailingSlash: false,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -81,7 +82,7 @@ const config = {
         },
         items: [
           {
-            to: "/install",
+            to: "/",
             label: "Install",
             position: "left",
           },
@@ -91,11 +92,11 @@ const config = {
             position: "left",
             label: "User Guide",
           },
-          { to: "/support", label: "Support", position: "left" },
-          { to: "/about", label: "About", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/", label: "Support", position: "left" },
+          { to: "/", label: "About", position: "left" },
+          { to: "/", label: "Blog", position: "left" },
           {
-            to: "/related",
+            to: "/",
             label: "Related Projects",
             position: "right",
           },
@@ -128,7 +129,7 @@ const config = {
             items: [
               {
                 label: "Blog",
-                to: "/blog",
+                to: "/",
               },
               {
                 label: "GitHub",
