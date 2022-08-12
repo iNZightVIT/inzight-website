@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinzight_website=self.webpackChunkinzight_website||[]).push([[28],{2476:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/inzight-website/blog/tags/facebook","allTagsPath":"/inzight-website/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinzight_website=self.webpackChunkinzight_website||[]).push([[574],{5645:e=>{e.exports=JSON.parse('{"permalink":"/inzight-website/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

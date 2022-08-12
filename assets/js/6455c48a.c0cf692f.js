@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinzight_website=self.webpackChunkinzight_website||[]).push([[452],{1934:e=>{e.exports=JSON.parse('{"label":"hello","permalink":"/inzight-website/blog/tags/hello","allTagsPath":"/inzight-website/blog/tags","count":2}')}}]);

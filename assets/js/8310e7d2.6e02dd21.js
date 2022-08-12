@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinzight_website=self.webpackChunkinzight_website||[]).push([[589],{3395:e=>{e.exports=JSON.parse('{"permalink":"/inzight-website/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

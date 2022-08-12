@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinzight_website=self.webpackChunkinzight_website||[]).push([[540],{3762:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/inzight-website/blog/tags/docusaurus","allTagsPath":"/inzight-website/blog/tags","count":4}')}}]);
