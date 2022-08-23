@@ -2,3 +2,66 @@
 title: Adding Colour to Graphs
 description: Learn how to use colour to further explore trends in a graph
 ---
+
+A really important part of data visualisation (and exploration) is the use of colour to identify features. iNZight allows users to quickly and easily add colour to a graph to explore new, more complex relationships within the data.
+
+:::tip Load the _gapminder_ dataset
+
+This example uses the Gapminder example dataset in iNZight. Go to **File** > **Load Example Data** and choose "gapminder" from the **Dataset** dropdown.
+
+:::
+
+## Scatter plots with colour
+
+The easiest way to demonstrate the awesome capability of colour in graphics is with a scatter plot. We're going to replicate part of [the famous example by Hans Rosling](https://www.youtube.com/watch?v=jbkSRLYSojo) using the Gapminder data.
+
+To begin, we'll create a scatter plot of _life expectancy_ by _average income_, and then subset using _year (categorical)_:
+
+// TODO: FIGURE
+
+<details>
+<summary>Not sure which variables to use?</summary>
+
+You should have the following variables in the control panel:
+
+**Variable 1**: `LifeExpectancy`<br />
+**Variable 2**: `IncomePerPerson`<br />
+**Subset Variable 1**: `Year_cat`
+
+</details>
+
+:::tip Account for skewed data using the log transformation
+
+Often when you're looking at data, the values of some variables might be heavily _skewed_. In the example above, _Income per person_ is _right skewed_ because most countries have low incomes, but a handful have _very large ones_. If you come across this in your exploration, there's a handy mathematical "trick" that usually works (if doesn't work if some of the values are negative or zero, however): the **log transformation**.
+
+You can apply a _log transformation_ to a variable in iNZight by opening the **Add to Plot** window (see below), and from the top dropdown choose **Axes and labels**. Then simply tick the box next to the variable you want to apply a log transformation to (here, IncomePerPerson).
+
+// TODO: FIGURE
+
+:::
+
+The last step before adding some colour is to drag the slider for the Year subset across to a single year (in this example we have chosen 1972 for no particular reason). You will see the life expectancy by average income for all countries in 1972. You can see the general trend---higher income is associated with longer lives---but it would be good if we could see some kind of geographical pattern.
+
+// TODO: FIGURE
+
+We are going to use colour to see how things vary between regions of the world (America, Europe, Asia, etc.). To do this, click the **Add to Plot** button in the plot toolbar (in the bottom-left of the iNZight window). In the figure above, the icon is indicated by a red box.
+
+The panel that opens up is called the **Add to Plot** panel, and it provides you with _a lot_ of new functionality. For now, we are only interested in the _Colour_ section, particularly the drop-down box labelled **Colour points by**. This does exactly what you expect---it lets you choose a variable from the drop down and iNZight will automatically colour all of the points using that variable! Go ahead and choose _Region_ from the dropdown. Here's what you should see:
+
+// TODO: FIGURE
+
+Congratulations! You've created a scatter plot coloured by region. Note how the countries within regions tend to be clumped together? We'll learn how to explore this further later, for now we'll check out one last trick.
+
+:::info Try some other variables
+
+While you in the **Add to Plot** panel, feel free to try some other variables in the _Colour by_ drop down. Can you find any interesting relationships?
+
+:::
+
+### Adding motion
+
+Remember the play button from the last section? Close the **Add to Plot** button by clicking the **Home** button at the bottom (if you haven't already). Now, beside the slider for _Year_ you'll see a blue play button (triangle). Click it!
+
+## Other Add to Plot features
+
+You can do a lot of things from the Add to Plot panel, including changing colour, size, and shape of points. There are some details on each of these in dedicated documentation pages, but for now you might like to explore them. Not sure what something does? Click it and find out!

@@ -44,3 +44,7 @@
   background: none;
   text-align: right;
 }
+
+dl > dt {
+  font-weight: bold;
+}
