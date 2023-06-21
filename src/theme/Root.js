@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const VersionContext = React.createContext();
 
 // Default implementation, that you can customize
 export default function Root({ children }) {
-  const [version, setVersion] = React.useState("desktop");
+  let v = localStorage.getItem("version");
+  if (!v && v !== "desktop" && v !== "lite") {
+    localStorage.setItem("version", "desktop");
+    v = "desktop";
+  }
+  const [version, setVersion] = React.useState(v);
+
+  useEffect(() => {
+    localStorage.setItem("version", version);
+  }, [version]);
 
   return (
     <VersionContext.Provider value={{ version, setVersion }}>
