@@ -1,0 +1,27 @@
+---
+title: Unite Columns
+description: Unite individual variables into a single column
+---
+
+This is the reverse of [separate columns](separate) and allows combining multiple variables into one.
+
+To unite columns, go to **Datasets** > **Dataset operation** > **Unite columns**.
+
+import unite from "./unite_columns.png";
+import uniteLite from "./unite_columns_lite.png";
+
+<Figure
+  src={{ desktop: unite, lite: uniteLite }}
+  caption="Unite columns"
+  width={{ desktop: 350, lite: 650 }}
+/>
+
+Allows you to select multiple columns and “unite” them using a defined separator (defaults to “\_”). The united column name will be the combination of the selected columns with a “.” in between.
+
+In this example, column “v1999” and column “v2000” are united by “\_”. The new column name is “v1999.v2000”.
+
+:::info
+
+It is allowable to have **_no separator_**. Just clear the **_Enter the separator_** field (delete the “\_”)
+
+:::

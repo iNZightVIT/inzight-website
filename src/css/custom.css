@@ -29,6 +29,38 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.toggle--container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-inline: 8px;
+}
+.toggle--items {
+  display: flex;
+  background: #ececec;
+  border-radius: 9999px;
+  padding: 3px;
+}
+.toggle--option {
+  display: flex;
+  padding: 4px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.toggle--option:hover {
+  background: #cccccc;
+}
+.toggle--option.active {
+  background: #fff;
+}
+.toggle--icon {
+  height: 20px;
+  width: 20px;
+  padding: 1px;
+}
+
 .versionToggleSwitch {
   display: flex;
   justify-content: flex-end;

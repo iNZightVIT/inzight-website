@@ -1,0 +1,30 @@
+---
+title: Frequency Data
+description: Working with frequency data in iNZight.
+sidebar_position: 20
+---
+
+iNZight allows users to work with frequency data, either in cases where a column contains counts/frequencies, or where the data is stored in a frequency table.
+
+To specify frequency information, use the **Dataset** > **Frequency tables** menu.
+
+import freq from "./freqtables.png";
+import freqLite from "./freqtables_lite.png";
+
+<Figure
+  src={{ desktop: freq, lite: freqLite }}
+  caption="Frequency data in iNZight."
+  width={{ desktop: 400, lite: 700 }}
+/>
+
+## Expand Table
+
+The **expand table** option can be used to work with both numeric and categorical variables. The storage and efficiency savings of working with a unique combinations of variables plus frequencies will typically be very much smaller here.
+
+## Specify Frequency Column
+
+When a **frequency column** is specified, graphics and summaries respond to a combinations-of-variables-plus-their-frequencies data structure. Only categorical variables are retained.
+
+## Remove Frequency Column
+
+This option removes the frequency column and iNZight works with the original data.

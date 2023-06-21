@@ -1,0 +1,18 @@
+---
+title: Sort
+description: Sort rows of a dataset by one or more variables
+---
+
+Sort the rows of the data by one or more variables.
+
+import sortData from "./sortdata.png";
+import sortDataLite from "./sortdata_lite.png";
+
+<Figure
+  src={{ desktop: sortData, lite: sortDataLite }}
+  caption="Sort data"
+  width={350}
+/>
+
+- The ordering will be nested, so that the data is first ordered by "Variable 1", and then "Variable 2", etc.
+- For categorical variables, the ordering will be based on the order of the variable (by default, this will be alphabetical unless manually changed in "Manipulate Variables" > "Categorical Variables" > "Reorder Levels").

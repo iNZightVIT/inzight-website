@@ -15,12 +15,11 @@ and select <desktop>**Import Data**</desktop><lite>**Import Dataset**</lite>. Th
 import loadDataImg from "./load_data.png";
 import loadDataImgL from "./load_data_lite.png";
 
-<desktop>
-  <Figure src={loadDataImg} caption="iNZight import data window" width="600" />
-</desktop>
-<lite>
-  <Figure src={loadDataImgL} caption="iNZight import data window" width="600" />
-</lite>
+<Figure
+  src={{ desktop: loadDataImg, lite: loadDataImgL }}
+  caption="iNZight import data window"
+  width="500"
+/>
 
 Use the **Browse** button to search for a file on your computer, or provide a URL to a file on a remote server. Once you have chosen your file, iNZight will display a preview of your data. If it looks OK, click <desktop>**Import**</desktop> <lite>**Import file from URL**</lite> to load the data into iNZight.
 
@@ -33,11 +32,10 @@ To load an example data set, go to the **File** menu and click <desktop>**Exampl
 import exampleDataImg from "./example_data.png";
 import exampleDataImgL from "./example_data_lite.png";
 
-<desktop>
-  <Figure src={exampleDataImg} caption="Load example data into iNZight" />
-</desktop>
-<lite>
-  <Figure src={exampleDataImgL} caption="Load example data into iNZight" />
-</lite>
+<Figure
+  src={{ desktop: exampleDataImg, lite: exampleDataImgL }}
+  caption="iNZight example data window"
+  width="400"
+/>
 
 In the example above, we've selected the "Census at School 500" dataset from the Default iNZight module. We will be using this dataset a lot for many of our examples. Click <desktop>**Load**</desktop><lite>**Select set**</lite> to load the data into iNZight. <lite>You can now head to **Visualize** to start creating graphs.</lite>

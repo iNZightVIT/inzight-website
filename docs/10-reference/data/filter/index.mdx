@@ -1,0 +1,86 @@
+---
+title: Filtering
+description: Filter by value, condition, row number, or randomly.
+---
+
+This tool provides several methods for filtering the dataset.
+The window that opens has four options for you to choose from:
+
+- [Levels of a categorical variable](#levels-of-a-categorical-variable)
+- [Numeric condition](#numeric-condition)
+- [Row number](#row-number)
+- [Randomly](#randomly)
+
+import filterImg from "./1_filter.png";
+import filterLImg from "./1_filter_lite.png";
+
+<Figure
+  src={{ desktop: filterImg, lite: filterLImg }}
+  caption="Filter dialog window"
+  width={{ desktop: 300, lite: 600 }}
+/>
+
+### Levels of a categorical variable
+
+import filterLevelsImg from "./2_filter_levels.png";
+import filterLevelsLImg from "./2_filter_levels_lite.png";
+
+<Figure
+  src={{ desktop: filterLevelsImg, lite: filterLevelsLImg }}
+  caption="Filter by categorical levels"
+  width={{ desktop: 300, lite: 500 }}
+/>
+
+After selecting a categorical variable from the drop down box, you can select which levels you want **_to keep_** in the data set.
+
+### Numeric condition
+
+import filterNumericImg from "./3_filter_numeric.png";
+import filterNumericLImg from "./3_filter_numeric_lite.png";
+
+<Figure
+  src={{ desktop: filterNumericImg, lite: filterNumericLImg }}
+  caption="Filter by numeric condition"
+  width={350}
+/>
+
+This allows you to define a condition with which to filter your data. For example, you could include only the observations of `height` over 180 cm by
+
+1. selecting `height` from the drop down menu,
+2. clicking on the `>` symbol, and
+3. entering the value `180` in the third box.
+
+### Row number
+
+import filterRowsImg from "./4_filter_rows.png";
+import filterRowsLImg from "./4_filter_rows_lite.png";
+
+<Figure
+  src={{ desktop: filterRowsImg, lite: filterRowsLImg }}
+  caption="Filter by row number"
+  width={{ desktop: 300, lite: 350 }}
+/>
+
+Exclude a range of row numbers as follows:
+
+- Entering 101:1000 (and then **Submit**) will exclude all rows from 101 to 1000
+- Similarly, 1, 5, 99, 101:1000 will exclude rows 1, 5, 99, and everything from 101 to 1000
+
+### Randomly
+
+import filterRandomImg from "./5_filter_random.png";
+import filterRandomLImg from "./5_filter_random_lite.png";
+
+<Figure
+  src={{ desktop: filterRandomImg, lite: filterRandomLImg }}
+  caption="Filter randomly"
+  width={{ desktop: 200, lite: 350 }}
+/>
+
+Essentially, this allows you to perform bootstrap randomisation manually.
+The current behaviour is this:
+
+- "Sample Size", _n_, is the number of observations to draw for each sample,
+- "Number of Samples", _m_, is the number of samples to create in the new data set.
+- The output will be a data set with _n_ x _m_ rows, which _must be smaller than the total number of rows in the data set_.
+- The observations are drawn randomly _without replacement_ from the data set.

@@ -1,0 +1,38 @@
+---
+title: Calibration/Post-stratification
+description: Specifying the calibration/post-stratification weights for a complex survey.
+sidebar_position: 4
+---
+
+This allows for **_poststratifying/raking/calibrating_** a design that has already been defined using either of the methods above above.
+
+This allows a data-analyst to improve estimation by augmenting the information in the survey data by adding information on the whole population where this is available from other sources. Categorical variables in the data set are offered as possible poststratification/raking/calibration candidates. Corresponding population counts can be input by typing or reading from files.
+
+To calibrate a survey, go to **Dataset** > **Survey design** > **Post stratify...**.
+
+import calibrate from "./calibrate.png";
+import calibrateLite from "./calibrate_lite.png";
+
+<Figure
+  src={{ desktop: calibrate, lite: calibrateLite }}
+  caption="Post-stratification dialog"
+  width={{ desktop: 400, lite: 600 }}
+/>
+
+In the example in the screenshot, there are 3 categorical variables in the data set offered as possible candidates and 2 have been selected. The design would then be calibrated using user-supplied information on population counts for the all the categories of both **admin_type** and **ethgp**.
+
+This is fine when you only want to use information about single variables, but what if you have population information on the cross-classification (all possible combinations) of **admin_type** and **ethgp**, say? Then you would have to create a new variable in the dataset, called say **admin_type.ethgp** that has all these combinations. This can be done with **Variables > Categorical Variables > Combine categorical variables**.
+
+:::warning
+
+Currently the new variables have to be set up before specifying a survey design. If you only think about it later you will need to use **Remove design** (next item), set up new variables and then re-specify the design.
+
+:::
+
+:::info
+
+The design is updated using the [calibrate](http://r-survey.r-forge.r-project.org/survey/html/calibrate.html) function in R's survey package.
+
+:::
+
+For more information on quantities referred to in the dialog box [see here](http://r-survey.r-forge.r-project.org/survey/example-poststrat.html).

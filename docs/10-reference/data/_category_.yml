@@ -1,0 +1,7 @@
+position: 2
+label: Data Wrangling
+link:
+  type: generated-index
+  title: Data Wrangling
+  description: iNZight allows users to do a range of common data wrangling tasks
+    such as filtering, sorting, reshaping, merging, and more.

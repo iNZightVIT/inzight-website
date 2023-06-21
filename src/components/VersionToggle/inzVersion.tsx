@@ -1,9 +1,10 @@
 import { useVersion } from "@site/src/theme/Root";
 
-function Desktop({ children }) {
+async function Desktop({ children }) {
   const { version } = useVersion();
-  if (version === "desktop") return children;
-  return "";
+  const content = version === "desktop" ? children : "";
+
+  return content;
 }
 
 function Lite({ children }) {

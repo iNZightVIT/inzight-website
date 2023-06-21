@@ -1,0 +1,61 @@
+---
+title: Joins
+description: Join datasets by matching observations.
+---
+
+This "joins", or brings together, information in two data sets: the current dataset in iNZight and a newly imported dataset (read in using the **Import data** facility) shown at the mid-right.
+
+**Left Join:** The most important joining method is called a **_Left Join_**, the main purpose of which is to add new variables to the original dataset by extracting the information from the new dataset.
+
+**Matching rows**: (**_Not yet fully implemented in Lite_**.) The main problem is to identify what pieces of information belong together. The most straightforward case occurs where there is a variable in the original dataset which is a unique identifier. If that variable is also in the imported dataset (even if under a different name) we can use it to match up the data which belongs to the same unit/entity.
+
+To partially automate the process, iNZight looks for variables with the same name in both datasets (_originally x1, x2, and x3 in the example_) and offers those for determining matches.
+
+import join from "./join.png";
+import joinLite from "./join_lite.png";
+
+<Figure
+  src={{ desktop: join, lite: joinLite }}
+  caption="Join datasets"
+  width={{ desktop: 450, lite: 700 }}
+/>
+
+_In the Example, we have rejected x3 using the delete button beside it and so have effectively told the program that it is units with the same values of both x1 and x2 that belong together._
+
+- The **Preview** panel shows us the effects of our choices
+
+**_Click_** the **Join** button at the bottom once you are happy with the way the data is being joined.
+
+**_The details of how the data is treated depend on the type of Join_** and we will [document that](#types-of-joins) after finishing describing the Example.
+
+_In the Example, x4 is a new variable so that has been added to the preview-dataset. A complication is x3 which is in both datasets but with different values for the "same" units. So the program has decided to make two variables, one for the x3 values from the original dataset and one for the x3 values from the new dataset._
+
+## Types of joins
+
+### Left join
+
+- The joined dataset has rows corresponding to **_all of the rows in the original dataset_** and all of its columns.
+- Rows of the **_new_** dataset **_that do not have a match_** in the original dataset **_are not used_**.
+- The joined dataset **_also has the columns from the new dataset_** that were not used for matching.
+
+* Rows in the original that **_have no match_** in the newly imported dataset get `NA`s for the additional columns
+
+:::warning
+
+Rows from the original dataset that have **_more than one match_** in the new dataset generate multiple rows in the joined dataset (which invalidates many simple analyses). For example, if there are 3 matches then the original (single) row will be replaced by 3 rows. The cell-values for the additional columns will be obtained from the new data set and the values for the original columns from repeating the original cell values.
+
+:::
+
+### How other joins differ from the Left Join
+
+- **Inner Join:** Only use rows corresponding to matches between the two datasets
+
+- **Full Join (Outer Join):** Also use all the non-matching rows from both data sets
+
+- **Right Join:** iNZight does not have this. Just import the datasets in the reverse order and use a left join.
+
+The following are just used to filter data. No columns are added to the join from the new dataset.
+
+- **Semi Join:** Use only rows in the original which have **_a match_** in the new
+
+- **Anti Join:** Use only rows in the original which have **_no match_** in the new

@@ -1,0 +1,43 @@
+---
+title: Stack Variables
+description: Convert from wide to long form data
+---
+
+Convert from _table form_ (rows corresponding to subjects) to _long form_ (rows corresponding to observations).
+
+import stack from "./stack.png";
+import stackLite from "./stack_lite.png";
+
+<Figure
+  src={{ desktop: stack, lite: stackLite }}
+  caption="Stack variables"
+  width={{ desktop: 400, lite: 400 }}
+/>
+
+In many cases, the data may be in tabular form, in which multiple observations are made but placed in different _columns_.
+An example of this may be a study of blood pressure on patients using several medications. The columns of this data set may be:
+`patient.id`, `gender`, `drug`, `Week1`, `Week2`, `Week3`. Here, each patient has their own _row_ in the data set, but each row contains three observations of blood pressure.
+
+| patient.id | gender | drug | Week1 | Week2 | Week 3 |
+| ---------: | ------ | ---- | ----: | ----: | -----: |
+|          1 | male   | A    |   130 |   125 |    120 |
+|          2 | male   | B    |   140 |   130 |    110 |
+|          3 | female | A    |   120 |   119 |    116 |
+
+We may want to convert to _long form_, where we have each observation in a new row, and use a categorical variable to differentiate the weeks.
+In this case, we would select `Week1`, `Week2`, and `Week3` as the variables in the list. The new data set will have the columns
+`patient.id`, `gender`, `drug`, `Stack.variable` ("Week"), and `stack.value` ("blood pressure").
+
+| patient.id | gender | drug | stack.variable | stack.value |
+| ---------: | ------ | ---- | -------------- | ----------: |
+|          1 | male   | A    | Week1          |         130 |
+|          1 | male   | A    | Week2          |         125 |
+|          1 | male   | A    | Week3          |         120 |
+|          2 | male   | B    | Week1          |         140 |
+|          2 | male   | B    | Week2          |         130 |
+|          2 | male   | B    | Week3          |         110 |
+|          3 | female | A    | Week1          |         120 |
+|          3 | female | A    | Week2          |         119 |
+|          3 | female | A    | Week3          |         116 |
+
+Of course, you can rename the variables as appropriate using **Manipulate Variables > Rename Variables**.

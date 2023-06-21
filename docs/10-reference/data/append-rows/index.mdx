@@ -1,0 +1,27 @@
+---
+title: Append rows
+description: Append new rows to a dataset with matching columns.
+---
+
+Adds to the bottom of the original dataset rows from a newly imported dataset (imported using the Import facility provided).
+
+import appendRows from "./append_rows.png";
+import appendRowsLite from "./append_rows_lite.png";
+
+<Figure
+  src={{ desktop: appendRows, lite: appendRowsLite }}
+  caption="Append rows"
+  width={{ desktop: "400", lite: "300" }}
+/>
+
+- The column names from both datasets are matched so the correct data goes into the correct columns
+- Columns that appear in one dataset and not the other _will_ appear in the result
+- An error will be reported and not appending will be possible if two column names match but their types (e.g. numeric or categorical) do not match
+- If the Tick-box option is selected a timestamp variable called **When_Added** will be added to the dataset recording when the new observations were added
+- If there is already a variable called **When_Added** present in the original data (must be of type date-time, `(t)` in View Variables) the new timestamps will be appended to that existing variable
+
+:::tip
+
+Where data is periodically being added to a dataset, this facility can be used to keep track of when each row was added --- thus facilitating analyses of the data as it was up until any particular time point.
+
+:::

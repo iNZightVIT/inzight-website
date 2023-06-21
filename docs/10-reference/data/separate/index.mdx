@@ -1,0 +1,59 @@
+---
+title: Separate Columns
+description: Separate existing columns into columns or rows.
+---
+
+Sometimes a variable contains several distinct pieces of information within, for example a name variable might contain "first-name last-name". iNZight allows you to separate these into separate columns or rows.
+
+To separate columns, to go **Dataset** > **Dataset operation** > **Separate columns** and choose the desired method.
+
+import separate from "./separate.png";
+import separateLite from "./separate_lite.png";
+
+<Figure
+  src={{ desktop: separate, lite: separateLite }}
+  caption="Separate menu"
+  width={{ desktop: "350", lite: "250" }}
+/>
+
+## Separate into columns
+
+import separateColumns from "./separate_to_columns.png";
+import separateColumnsLite from "./separate_to_columns_lite.png";
+
+<Figure
+  src={{ desktop: separateColumns, lite: separateColumnsLite }}
+  caption="Separate into columns"
+  width={{ desktop: "350", lite: "600" }}
+/>
+
+Allows you to separate a column into several columns using a user-defined separator.
+
+- It will separate at every instance of the separator until no further separators are found
+
+If no separator is found, the additional columns formed will contain `NA`s.
+
+**_In the example_**, we have asked to separate column **A** using an underscore (“\_”) as a separator.
+
+Because only column **A** is being separated, column **B** (or any other columns) is left unchanged in the resulting new dataset
+
+The maximum number of fields in column **A** after separation is 3 ("A_0.7K_2K") so column **A** in the original dataset is being replaced by 3 columns with default column names (Col1, etc).
+
+- Expanding **Change column names** (click the "+") allows you to change the default column names to something else.
+
+## Separate into rows
+
+import separateRows from "./separate_to_rows.png";
+import separateRowsLite from "./separate_to_rows_lite.png";
+
+<Figure
+  src={{ desktop: separateRows, lite: separateRowsLite }}
+  caption="Separate into rows"
+  width={{ desktop: "350", lite: "650" }}
+/>
+
+Instead of forming more columns this version of Separate keeps the same number of columns, with the same names, but writes more rows.
+
+**_Using the same data as in the example above_**, the entry "A_0.7K_2K" in column **A** in the original dataset results in 3 rows in column **A** in the new dataset.
+
+- The corresponding entries in any other columns (e.g. column **B** in the example) **_are duplicated_**.

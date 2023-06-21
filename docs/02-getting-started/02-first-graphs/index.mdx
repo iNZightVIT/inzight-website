@@ -69,12 +69,11 @@ You will now see a **dot plot** in which all of the 500 students' heights are "d
 import inzCasHeightImg from "./inzight_cas_height.png";
 import inzCasHeightImgL from "./inzight_cas_height_lite.png";
 
-<desktop>
-  <Figure src={inzCasHeightImg} caption="A dot plot of height" width="800" />
-</desktop>
-<lite>
-  <Figure src={inzCasHeightImgL} alt="A dot plot of height" width="800" />
-</lite>
+<Figure
+  src={{ desktop: inzCasHeightImg, lite: inzCasHeightImgL }}
+  caption="A dot plot of height"
+  width="800"
+/>
 
 :::tip Numeric variables
 

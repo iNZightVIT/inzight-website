@@ -1,0 +1,19 @@
+---
+sidebar_label: Introduction
+title: Introduction to Complex Survey Data
+description: A quick introduction to complex survey data.
+sidebar_position: 1
+---
+
+It is important that specialist methods be applied when analyzing data obtained using complex survey designs. Failure to do so typically leads biased estimates and incorrect standard errors, confidence intervals and p-values.
+
+**_When a survey design has been defined_** almost all relevant parts of iNZight will **_apply analysis and graphics methods appropriate_** for data obtained using **_this survey design_** by applying functions in R's [survey package](http://r-survey.r-forge.r-project.org/survey/).
+
+**Important difference** for **Get Summary**. Whereas, generally, iNZight's **Get Summary** provides summary information about the dataset itself, when a survey design is specified **Get Summary** provides estimates of population quantities -- clearly labeled as such. (Raw summaries of survey data are often meaningless because of unequal probabilities of selection.)
+
+Regular statistical software analyses data as if the data were collected using simple random sampling. Many surveys, however, are conducted using more complicated sampling methods. Not only is it often nearly impossible to implement simple random sampling, more complex methods are more efficient both financially and statistically. These methods use some or all of _stratified sampling_, _cluster sampling_ and _unequal sampling rates_ whereby some parts of a population are sampled more heavily (i.e. with _higher probabilities of selection_) than others parts. These sampling features have to be allowed for in the analysis. While sometimes it may be possible to get reasonably accurate results using non-survey software, there is no practical way to know beforehand how far wrong the results from non-survey software will be.
+
+- [FIX ME] See [Brief introduction to survey analysis ideas](/survey-notes.html)
+- For an in-depth account, see [**"_iNZight and Sample Surveys_"**](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/) by [Richard Arnold](https://www.wgtn.ac.nz/sms/about/staff/richard-arnold).
+
+Survey designs are typically specified to analysis programs either by [specifying a survey design](specify-design) in terms of weighting, strata and clustering variables etc in the data set, or by selecting a set of variables in the dataset containing so-called [replicate weights](#specify-rep-design). [Post-stratification/raking/calibration](#post-stratify) facilitate using additional population information (external to the survey data) to improve survey estimates. This is done after a survey design has been specified (by either method).

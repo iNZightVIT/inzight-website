@@ -1,0 +1,27 @@
+---
+title: Aggregate
+description: Obtain summaries of numeric variables for combinations of categorical variables.
+---
+
+This function essentially allows you to obtain "summaries" of all of the numeric variables in the data set for combinations of categorical variables.
+
+import aggregate from "./aggregate.png";
+import aggregateLite from "./aggregate_lite.png";
+
+<Figure
+  src={{ desktop: aggregate, lite: aggregateLite }}
+  caption="Aggregate data"
+  width={{ desktop: 350, lite: 400 }}
+/>
+
+- _Variables_: if only one variable is specified, the new data set will have one row for each level of the variable.
+  If two (or more) are specified, then there will be one row for each combination.
+  For example, the categorical variables `gender = {male, female}` and `ethnicity = {white, black, asian, other}` will result in a data set with 2x4 rows.
+- _Summaries_: each row will have the chosen summaries given for each numeric variable in the data set.
+  For example, if the data set has the variables `gender (cat)` and `height (num)`, and if the user selects `Mean` and `Sd`,
+  then the new data set will have the columns `gender`, `height.Mean` and `height.Sd`.
+  In the rows, the values will be _for that combination of categorical variables_;
+  the row for `gender = female` will have the mean height _of the females_, and the standard deviation of height _for the females_.
+
+  A visual example of this would be do drag `height` into the Variable 1 slot, and `gender` into the Variable 2 slot.
+  Clicking on "Get Summary" would provide the same information. The advantage of using Aggregate is that the summaries are calculated _for every numeric variable in the data set_, not just one of them.
