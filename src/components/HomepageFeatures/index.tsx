@@ -10,32 +10,38 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
+    title: "Easy to Use. Yes, for you too.",
     Svg: require("@site/static/img/undraw_data_input_fxv2.svg").default,
     description: (
       <>
-        iNZight automatically gives you the right graphs and summaries based on
-        the variables you choose, so you can focus on exploring your data.
+        iNZight is designed for everyone, from students to professionals, and is
+        used in classrooms and workplaces around the world. The software
+        automatically gives you the right graphs and summaries based on the
+        variables you choose, so you can focus on exploring your data.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
+    title: "Explore. Visualise. Analyse.",
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Explore your data using intuitive controls and without getting bogged
+        down by complex terminology. Choose your variables, find interesting
+        features, and extract statistically appropriate summaries with the click
+        of a button.
       </>
     ),
   },
   {
-    title: "Powered by React",
+    title: "Nothing to learn. Never forget.",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        iNZight is designed to be easy to use which makes picking it up a
+        breeze. And unlike other more complex software, you won't need to
+        re-learn everything when you come back to it. Say, after your finish
+        that degree and start a new job.
       </>
     ),
   },

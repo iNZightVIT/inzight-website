@@ -12,7 +12,7 @@ const katex = require("rehype-katex");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "iNZight",
-  tagline: "Data exploration through visualisation",
+  tagline: "A free data exploration and analytics platform.",
   url: "https://inzight.tomelliott.co.nz",
   baseUrl: "/",
   onBrokenLinks: "warn",
@@ -83,7 +83,7 @@ const config = {
         },
         items: [
           {
-            to: "/",
+            to: "/install",
             label: "Install",
             position: "left",
           },
@@ -93,11 +93,11 @@ const config = {
             position: "left",
             label: "User Guide",
           },
-          { to: "/", label: "Support", position: "left" },
-          { to: "/", label: "About", position: "left" },
-          { to: "/", label: "Blog", position: "left" },
+          { to: "/support", label: "Support", position: "left" },
+          { to: "/about", label: "About", position: "left" },
+          { to: "/blog", label: "Blog", position: "left" },
           {
-            to: "/",
+            to: "/related",
             label: "Related Projects",
             position: "right",
           },
@@ -106,19 +106,27 @@ const config = {
       footer: {
         style: "dark",
         links: [
-          // {
-          //   title: "Docs",
-          //   items: [
-          //     {
-          //       label: "Get Started",
-          //       to: "/docs/getting-started",
-          //     },
-          //   ],
-          // },
+          {
+            title: "Docs",
+            items: [
+              {
+                label: "Get Started",
+                to: "/docs/category/getting-started",
+              },
+              {
+                label: "Reference",
+                to: "/docs/category/reference",
+              },
+            ],
+          },
 
           {
             title: "Community",
             items: [
+              {
+                label: "Discord",
+                href: "https://discord.gg/vQN8Mbnv",
+              },
               {
                 label: "Twitter",
                 href: "https://twitter.com/iNZightVIT",
@@ -142,15 +150,19 @@ const config = {
             title: "Sponsors",
             items: [
               {
-                label: "iNZight Analytics Ltd.",
-                href: "https://inzight.co.nz",
-              },
-              {
                 label: "University of Auckland",
                 href: "https://stat.auckland.ac.nz",
               },
               {
-                label: "Statistics New Zealand",
+                label: "Te Rourou Tātaritanga",
+                href: "https://terourou.org",
+              },
+              {
+                label: "iNZight Analytics Ltd.",
+                href: "https://inzight.co.nz",
+              },
+              {
+                label: "Stats New Zealand",
                 href: "https://stats.govt.nz",
               },
             ],

@@ -3,22 +3,93 @@
  * and scoped locally.
  */
 
+.topBanner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1em;
+}
+
+.topBannerTitle {
+  font-size: 1.5rem;
+  padding-inline: 1em;
+}
+
+.topBannerSponsors {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  margin-top: 1em;
+}
+
+.topBannerSponsor {
+  height: 80px;
+}
+
+@media screen and (max-width: 996px) {
+  .topBannerSponsors {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+/* HERO */
+
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 4rem;
+  background: #18afe3;
+}
+
+.heroBannerContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  padding-block: 1em;
+}
+
+.heroBannerContent {
+  flex: 1;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-family: var(--ifm-heading-font-family);
+  font-weight: var(--ifm-heading-font-weight);
+  color: var(--ifm-heading-font-color);
+  margin-bottom: 1em;
+  margin-right: 2em;
+}
+
+.heroTitle b {
+  font-weight: var(--ifm-heading-font-weight);
+  background: var(--ifm-color-primary);
+  padding-inline: 0.1em;
+  /* border-bottom: 2px solid white; */
+  color: #f1f1f1;
+}
+
+.heroCTA {
+  text-align: left;
+}
+
+.heroButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+}
+
+.heroButtons .button {
+  width: 100%;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
 }
