@@ -15,7 +15,7 @@ const config = {
   tagline: "Data exploration through visualisation",
   url: "https://inzight.tomelliott.co.nz",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
