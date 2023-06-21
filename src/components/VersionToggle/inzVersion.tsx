@@ -1,22 +1,18 @@
 import { useVersion } from "@site/src/theme/Root";
 
-async function Desktop({ children }) {
+function Desktop({ children }) {
   const { version } = useVersion();
-  const content = version === "desktop" ? children : "";
-
-  return content;
+  return version === "desktop" ? children : "";
 }
 
 function Lite({ children }) {
   const { version } = useVersion();
-  if (version === "lite") return children;
-  return "";
+  return version === "lite" ? children : "";
 }
 
 function Version({ desktop, lite }: { desktop: string; lite: string }) {
   const { version } = useVersion();
-  if (version === "lite") return lite;
-  return desktop;
+  return version === "lite" ? lite : desktop;
 }
 
 function setVersion({ type }: { type: "desktop" | "lite" }) {
