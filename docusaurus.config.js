@@ -13,8 +13,8 @@ const katex = require("rehype-katex");
 const config = {
   title: "iNZight",
   tagline: "Data exploration through visualisation",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/inzight-website/",
+  url: "https://inzight.tomelliott.co.nz",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
