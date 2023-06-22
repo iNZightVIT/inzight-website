@@ -1,7 +1,6 @@
 ---
-title: The Menu bar
+title: The Menu Bar
 description: The menubar at the top of the window is where you interact with data and variables.
-sidebar_position: 1
 ---
 
 import DocCardList from "@theme/DocCardList";
@@ -81,3 +80,38 @@ import surveyDesignLite from "./dataset_svydesign_menu_lite.png";
   - [Remove design](/docs/reference/survey-data/remove)
 - [**Frequency tables**](/docs/reference/frequency-data)
 - **Data Dictionary**
+
+## (Manipulate) Variables
+
+A collection of variable manipulation methods to allow you to convert variables to new types, create new variables, and rename existing ones.
+
+:::note
+
+Called **Manipulate Variables** in iNZight Lite.
+
+:::
+
+import variablesMenu from "./variables_menu.png";
+
+<Figure src={variablesMenu} caption="The Variables menu" width="600" />
+
+- [**Convert to Categorical**](/docs/category/numeric-variables/convert-to-categorical) to convert a numeric variable to categorical.
+- [**Categorical Variables**](/docs/reference/categorical-variables) to manipulate categorical variables.
+  - [Reorder levels](/docs/reference/categorical-variables/reorder-levels) to change the order of the levels of a categorical variable.
+  - [Collapse levels](/docs/reference/categorical-variables/collapse-levels) to combine levels of a categorical variable.
+  - [Rename levels](/docs/reference/categorical-variables/rename-levels) to rename levels of a categorical variable.
+  - [Combine categorical variables](/docs/categorical-variables/variables/combine-categorical) to combine two categorical variables into one.
+- [**Numeric Variables**](/docs/category/numeric-variables) to manipulate numeric variables.
+  - [Transform](/docs/reference/numeric-variables/transform) to apply a transformation to a numeric variable.
+  - [Standardise](/docs/reference/numeric-variables/standardise) to standardise a numeric variable.
+  - [Form class intervals](/docs/reference/numeric-variables/form-class-intervals) to convert a numeric variable to categorical.
+  - [Rank numeric variables](/docs/reference/numeric-variables/rank) to rank the values of a numeric variable.
+  - [Convert to categorical (multiple)](/docs/reference/numeric-variables/convert-to-categorical) to convert multiple numeric variables to categorical.
+- [**Dates and Times**](/docs/category/dates-and-times)
+  - [Convert to](/docs/reference/dates-and-times/convert-to) to convert a variable to a date or time.
+  - [Extract from](/docs/reference/dates-and-times/extract-from) to extract information from a date or time variable.
+  - [Aggregate to](/docs/reference/dates-and-times/aggregate-to) to aggregate a date or time variable to a higher level.
+- [**Rename variables**](/docs/reference/data/rename-variables) to rename variables.
+- [**Create new variables**](/docs/reference/data/create-new-variables) to create new variables from existing ones.
+- [**Missing to categorical**](/docs/reference/data/missing-to-categorical) to make missing values explicit.
+- [**Delete variables**](/docs/reference/data/delete-variables) to delete variables.

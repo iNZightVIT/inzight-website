@@ -1,0 +1,7 @@
+position: 11
+label: Numeric Variables
+link:
+  type: generated-index
+  title: Numeric Variables
+  description: >
+    Numeric variables are variables that contain numeric values. They can be discrete/counted (whole numbers such as age) or continuous/measured (decimal numbers such as height).

@@ -1,0 +1,19 @@
+---
+title: Extract
+description: Extract time information from a date/time variable.
+---
+
+Creates a new variable by extracting specific component (e.g. data, year, time...) from a dates and times variable in a large variety of levels of detail and of format.
+
+:::tip
+
+The pattern is to **_expand the option_** (click the "+") referring to the **_most detailed level of information_** you want in the result. The preview will show you what the result of your choice will look like.
+
+:::
+
+In the example that follows, `Time.stamp.dt` is a categorical variable that we wish to convert to a
+variable that iNZight recognises as a datetime variable `Timestamp.dt`. What we want to do is extract a new variable containing the Year and the decimal part of the Year ("Decimal Year").
+
+import extractFrom from "./extract-from.png";
+
+<Figure src={extractFrom} caption="Extract from date-time menu" />

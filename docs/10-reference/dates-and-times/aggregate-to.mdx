@@ -1,0 +1,35 @@
+---
+title: Aggregate
+description: Aggregate a date or time variable to a lower level of detail.
+---
+
+This allows you to aggregate a date or time variable to a lower level of detail. For example, you can convert a daily variable to a monthly variable by aggregating the daily values to the monthly level.
+
+To aggregate, go to **<lite>Manipulate </lite>Variables** > **Dates and Times** > \*_Aggregate to..._.
+
+import aggregate from "./aggregate.png";
+
+<Figure src={aggregate} caption="Aggregate over date-time menu" width="400" />
+
+Converts to
+
+- a **_weekly_** (_e.g. 2019 W7_),
+- **_monthly_** (_e.g. 2019 M5_),
+- **_quarterly_** (_e.g. 2019 Q3_), or
+- **_yearly_** (_e.g. 2019_) variable
+
+in the form that the time series module likes and aggregates using **_sum_**, **_mean_**, or **_median_**.
+
+In the Example, `origintime` is a date-time variable (thus, annotated `(t)` in View Variables) and we have chosen to convert it to monthly (`yyyy Myy`) with all of the values in the same month aggregated to their `mean`.
+
+The `count` column shows how many values have been aggregated. If there are missing values present in a variable being aggregated, then another column of the form `variable.missing`. Missing values are ignored when aggregating.
+
+In the Example below a categorical variable in monthly (`yyyy Mzz`) format is aggregated to quarterly (`yyyy Qz`).
+
+import aggregate2 from "./aggregate2.png";
+
+<Figure
+  src={aggregate2}
+  caption="Aggregate over date-time example 2."
+  width="400"
+/>

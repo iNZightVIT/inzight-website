@@ -1,0 +1,6 @@
+position: 12
+label: Dates and Times
+link:
+  type: generated-index
+  title: Dates and Times
+  description: iNZight includes some capabilities for working with dates and times, however these usually need to be specified manually (unless importing from a data format that supports dates/times).

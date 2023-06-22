@@ -37,7 +37,12 @@ const sidebars = {
         type: "doc",
         id: "interface/index",
       },
-      items: ["interface/menubar/index"],
+      items: [
+        "interface/menubar/index",
+        "interface/data-panel/index",
+        "interface/control-panel/index",
+        "interface/plot-toolbar/index",
+      ],
     },
     {
       type: "category",

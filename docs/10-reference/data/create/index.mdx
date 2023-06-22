@@ -1,0 +1,19 @@
+---
+title: Create
+description: Create new variables from existing ones.
+---
+
+A very flexible facility for creating new variables from existing variables, essentially by doing arithmetic on them.
+
+import createNew from "./create_new_var.png";
+
+<Figure src={createNew} caption="Create new variable menu" width="400" />
+
+_Left-hand box_: desired name for new variable
+_Right-hand box_: any valid **R** expression
+
+Examples
+
+- `income = hours * payrate`
+- `weight.diff = end.weight - begin.weight`
+- `average.weight = ( begin.weight + endweight) / 2`

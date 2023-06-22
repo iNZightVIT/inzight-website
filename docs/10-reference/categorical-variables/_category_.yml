@@ -1,0 +1,7 @@
+position: 10
+label: Categorical Variables
+link:
+  type: generated-index
+  title: Categorical Variables
+  description: >
+    Categorical variables are any variables that can take a limited number of values. iNZight converts any variables with any alphabetic characters in them to categorical variables.
