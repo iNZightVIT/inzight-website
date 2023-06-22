@@ -13,7 +13,359 @@ It is important that specialist methods be applied when analyzing data obtained 
 
 Regular statistical software analyses data as if the data were collected using simple random sampling. Many surveys, however, are conducted using more complicated sampling methods. Not only is it often nearly impossible to implement simple random sampling, more complex methods are more efficient both financially and statistically. These methods use some or all of _stratified sampling_, _cluster sampling_ and _unequal sampling rates_ whereby some parts of a population are sampled more heavily (i.e. with _higher probabilities of selection_) than others parts. These sampling features have to be allowed for in the analysis. While sometimes it may be possible to get reasonably accurate results using non-survey software, there is no practical way to know beforehand how far wrong the results from non-survey software will be.
 
-- [FIX ME] See [Brief introduction to survey analysis ideas](/survey-notes.html)
-- For an in-depth account, see [**"_iNZight and Sample Surveys_"**](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/) by [Richard Arnold](https://www.wgtn.ac.nz/sms/about/staff/richard-arnold).
+Survey designs are typically specified to analysis programs either by [specifying a survey design](specify-design) in terms of weighting, strata and clustering variables etc in the data set, or by selecting a set of variables in the dataset containing so-called [replicate weights](replicate-designs). [Post-stratification/raking/calibration](calibration) facilitate using additional population information (external to the survey data) to improve survey estimates. This is done after a survey design has been specified (by either method).
 
-Survey designs are typically specified to analysis programs either by [specifying a survey design](specify-design) in terms of weighting, strata and clustering variables etc in the data set, or by selecting a set of variables in the dataset containing so-called [replicate weights](#specify-rep-design). [Post-stratification/raking/calibration](#post-stratify) facilitate using additional population information (external to the survey data) to improve survey estimates. This is done after a survey design has been specified (by either method).
+:::info This is a short set of bullet-point notes by [Chris Wild](https://www.stat.auckland.ac.nz/~wild/).
+
+For an in-depth account, see **"[_iNZight and Sample Surveys_](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/)"** by **[Richard Arnold](https://www.wgtn.ac.nz/sms/about/staff/richard-arnold)**
+
+:::
+
+## What is special about analysing survey data?
+
+In almost all of the data analysis you have learned to do, the computer programs essentially assume that the observations you have come from a random sample from some process or infinite population Technically, for a **_random sample_** all observations are "independent and identically distributed", or in practice in the survey context:
+
+- all individuals have same probability of selection
+- individuals are selected independently of one another
+
+- Note: Sampling at random from a finite population with replacement meets these conditions but we don't sample that way in practice
+
+### Survey data
+
+- Survey data is typically obtained using _**more complicated random sampling schemes**_
+
+- that do not meet the technical requirements of "a random sample"
+
+- Survey samples typically use [stratified sampling](#stratified), [cluster sampling](#cluster), etc.
+
+- i.e., they use _complex sampling designs_
+
+- Units are sampled _**from finite populations [without replacement](#without-replacement)**_
+- Different individuals may even have [different probabilities of being sampled](#unequal-probs-select)!
+- _**If you use standard programs**_ for survey data all the _**answers**_ you get can be grossly _**wrong**_
+
+- Wrong estimates, wrong standard errors, wrong confidence intervals, wrong _p_\-values, ...
+
+- **Special programs** know how to do these things properly
+
+- But _**you have to tell the program how you obtained your data**_
+
+### Why not just do a simple random sample?
+
+(e.g. get a list of all the people and draw a random sample without replacement)
+
+- After all it's a really simple idea -- so why does no one ever do it with face-to-face interview surveys?
+- _**The main reason is that it costs too much**_
+
+- No one could ever afford all the travel time and travel costs to deliver interviewers to the doors of the randomly selected houses
+
+- If we get someone to a location we want them to do as much of their work in the close vicinity of that location as possible
+
+- Ridiculous extreme: "sample" all new Zealanders by taking everyone from a few streets in one suburb of Auckland
+- Really cheap but completely useless, unrepresentative "sample of all NZers"
+- So we will need to find out about how to make sensible tradeoffs
+
+### What do Agencies (e.g. Stats NZ) want to estimate from their data?
+
+- Mainly means, totals, proportions (percentages) and ratios
+  - For the _whole_ survey _population_ and also _broken out by subgroups_
+
+### What do medical and social science researchers want to estimate from their data?
+
+As for Agencies and also things like ...
+
+- regressions
+- logistic regressions etc.
+
+All that is new here is that we use special programs designed for survey data and the program needs to be told how the sampling was done. Apart from that it is pretty much business as usual
+
+## Simple random sampling (SRS)
+
+### What is it?
+
+- Involves sampling without replacement
+- all possible samples are equally likely to be chosen
+  - Thus, each unit/person in the population is selected with equal probability
+  - To take a simple random sample you need a list of all units in the population (**_sampling frame_**)
+  - Each observation unit is assigned a number and a sample is selected so that each unit has the same chance of occurring in the sample
+    - can be thought of as “drawing numbers from a hat”
+
+### Strengths
+
+- Requires no information other than sampling frame
+  - e.g. no assumptions about the distribution of population values
+- Reasonably efficient when we do not have much prior knowledge
+- Widely accepted as being “fair”, unbiased
+- Simple theory and analysis
+  - Can use standard software if sample size is less than about 10% of population size
+    - Otherwise may need “**_finite population corrections_**” (_fpc_)
+
+### Weaknesses
+
+- Often expensive and time-consuming
+- Makes no use of any additional information we might have about the population
+- Sampling frame may be difficult to obtain
+  - requires an accurate list of the whole population which may be impossible to get
+- Very sensitive to non-response and other non-sampling errors
+
+## Elements of most survey sampling designs used in practice
+
+- Sampling without replacement
+- Complex sampling, some or all of:
+  - Stratified sampling
+  - Cluster sampling
+  - +-Unequal probabilities of selection
+
+## Sampling without replacement from a finite population {#without-replacement}
+
+### Why do it?
+
+- Drawing a unit out of a hat, measuring it, putting it back in the hat, and then measuring it again on some subsequent draw seldom makes any practical sense
+
+### What are the consequences of ignoring sampling without replacement in the analysis?
+
+- The usual standard errors of estimates of characteristics of the finite population are too big if the sample size _n_ makes up a substantial fraction of the population size $N$
+- Roughly, _Actual standard error_ of an estimate is approximately (_Usual std error_ $x$) $\times \sqrt{1-\dfrac{n}{N}}$.
+
+## Stratified sampling {#stratified}
+
+### What is it?
+
+- Divide the population into non-overlapping groups, called: **_strata_** (singular=_stratum_)
+  - so that each unit belongs to one, and only one, of the strata (groups)
+- Take a sample of units from within each/every stratum (group)
+  - (e.g. the strata could correspond to geographical regions, or to age groups)
+  - **Note:** Stratified sampling tends to subdivide the population into a relatively small number of groups (then called strata), whereas cluster sampling tends to involve a larger number of groups (then called clusters). They differ in how we then use these groups when we draw samples.
+- If we are thinking in terms of _strata_, it is because we plan only to collect data from _every one_ of the groups.
+
+### Why do stratified sampling?
+
+- We **_can_** use it to **_increase the precision of estimates_** (i.e. reduce their standard errors)
+  - We may have a way of defining strata so that individuals within the same stratum tend to more similar (homogeneous) and those from different strata are more different (heterogeneous). (e.g. if we are interested in incomes in Auckland, stratifying on suburb would tend to do this) In this case, sensible stratified sampling leads to more precise estimates of quantities relating to the whole population than a simple random sample (i.e. estimates which have smaller standard errors, giving narrower confidence intervals …)
+- It can provide some **_protection against bad_** (unlucky) **_samples_**
+  - We can ensure that the sample proportions in groups we particularly care about are the same as the population proportions (e.g. sample 50 males and 50 females. If we randomly sampled 100 people the sample proportions of males and females we got could be quite far from 50-50)
+- We **_may want to_** **_report at the level of the strata_** (e.g. report the mean income for each region) and want to control how much data is collected in each stratum
+  - e.g. if we want to report incomes for Maori, Pacifica, European, Asian and Other we may want to sample the same numbers of people from each group so that all of these estimates have similar accuracies.
+- It allows us to use different sampling methods in each stratum
+  - (e.g. telephone in rural areas and face-to-face interviews in cities)
+  - Interviewers can be trained to deal well with a particular stratum
+  - It often makes good practical sense to include more of “the big important units”
+    - (e.g. take all of the very large companies, sample 30% of the midsize companies and 5% of small companies)
+
+### What are the consequences of ignoring stratified sampling in the analysis?
+
+- **_Standard errors_** reported from standard (non-survey) programs **_tend to be too big_**
+- **_Estimates_** relating to the whole population from standard programs are **_often wrong_**
+  - They tend to be wrong unless the proportions of the total sample size allotted to each stratum closely approximate the corresponding proportions of the population that belong to that stratum
+    - i.e. unless each $n_j/n$ is approximately equal to $N_j/N_j$, (“_proportional allocation_”)
+      - Here $n_j$ is the number sampled in stratum $j$, $n = \sum{n_j}$, and $N_j$ is the population number in stratum $j$ . (The population size is $N=\sum{N_j}$.)
+
+## Cluster sampling {#cluster}
+
+### What is it?
+
+- Think in terms of all units in the entire population being subdivided into non overlapping groups called _clusters_, usually on the basis of physical proximity (close together)
+  - (e.g. if units are households we could treat all houses in the same street as forming a cluster, or all pupils in the same school could be a cluster)
+- A cluster sample would select a sample of clusters from a list of all of the clusters and then select all of the units from the selected clusters
+  - (e.g. sample streets from a list of streets and then take all houses in the sampled streets)
+- _**Multistage cluster sampling**_ employs the clustering idea at several levels
+  - (e.g. sample schools from a list of schools and, for each selected school, sample classes from the list of classes in that school and then either take all or a sample of students from each of the selected classes. OR select towns, then census blocks within towns, then households within census blocks and then, finally, people within households)
+    - **Note:** Cluster sampling tends to employ a relatively large number of groups (then called clusters) whereas stratified sampling tends to involve a small number of groups (then called strata). They differ in how we then use these groups in our sampling plan. If we are thinking in terms of _strata_, it is because we plan to collect data from _each and every_ group.
+
+If we are thinking in terms of _clusters_, it is because we plan only to collect data just from a sampled _subset_ of the groups.
+
+### Why do cluster sampling?
+
+- It **_can be much cheaper_** than simple random sampling
+  - Units in a cluster are closer together (e.g. reducing travelling time)
+  - We can obtain information from a single source (which also reduces costs)
+  - So we can often get more accuracy for the same cost (or the same accuracy for a reduced cost)
+- We **_don’t need a complete sampling frame_** of all individuals in the population, only lists of clusters and then lists of units (or sub-clusters) for the selected clusters only
+- If we want to do interventions, we can often only apply them at the level of the cluster
+  - E.g. use different teaching methods on different classes
+
+### What are the consequences of ignoring cluster sampling?
+
+- Cluster sampling generally leads to
+  - **_positive correlations_** between units in the same cluster
+  - An **_effective sample size which is smaller_** than the total number of units observed
+    - We have “less information” than we would from a simple random sample with the same number of units in it
+    - The effective sample size can be closer to the number of clusters sampled than to the number of units finally obtained
+    - **_Design effects_** (actually 1/ d.eff) give indications of efficiency loss (described in later Lectures)
+- **_Standard errors_** reported from standard (non-survey) programs **_tend to be too small_**
+  - Coverage of 95% confidence intervals cover
+- **_Estimates_** from standard programs relating to the whole population are **_often wrong_**
+
+### One-stage versus multistage cluster sampling
+
+- **_simple or one-stage_** cluster sample select a sample of clusters from a list of all of the clusters and then _select all of the units_ from the selected clusters
+
+  - e.g. sample streets from a list of streets and then take all houses in the sampled streets
+
+- **_Multistage cluster sampling_**
+
+  - **_simple or one-stage_** cluster sample select a sample of clusters from a list of all of the clusters and then _select all of the units_ from the selected clusters
+
+    - e.g. sample streets from a list of streets and then take all houses in the sampled streets
+
+  - **_Multistage cluster sampling_**
+    - employs the clustering idea at several levels
+      - e.g. sample schools from a list of schools and, for each selected school, sample classes from the list of classes in that school and then either take all or a sample of students from each of the selected classes
+      - The _**1st stage of clustering**_ is the first level at which sampling occurs (schools in the Example)
+      - The _**2nd stage of clustering**_ is the 2nd level at which sampling occurs (classes in the Example)
+      - and so on
+
+### Primary Sampling Units (psu)
+
+- The psu’s are the entities selected at the first level at which sampling is performed
+  - If no cluster sampling involved (srs or stratified sampling alone)
+    - the psu is the unit/person selected into the sample
+- Where _cluster sampling is involved_:
+  - the psu are the entities selected at the 1st stage of sampling
+    - e.g. If we sample schools, then classes within schools and then, finally, students within classes, then the psu’s are the schools
+- _Practical aside_
+  - To make corrections that are adequate for most purposes, _computer programs only need to know_ about the **_first stage_** _of cluster sampling_. (As of SAS 9.1, it only asks for and uses the first stage information)
+
+## Complex sampling
+
+It is very common for a sample survey’s selection protocol to **_include elements of both_** stratified sampling and cluster sampling
+
+- In particularly common for cluster samples to be taken from within every stratum of the population
+  - e.g. we could take a cluster sample of schools from every region of the country (here _regions_ are the strata and _schools_ are the clusters)
+
+#### _What is the most important new skill to be learned for analysing survey data?_
+
+The biggest difference between analysing survey data and the data analysis you have already seen is that for survey data, you have to tell the program how the data was collected
+
+- Was stratified sampling used? If so, what were the strata?
+- Was cluster sampling used? If so, what were the clusters?
+- What were the selection probabilities?
+  - most programs want “_sampling **weights**_” which are the inverse (1 over) probabilities of selection
+
+## Asides about “precision” and “accuracy” of estimates
+
+- The “**_precision_**” of an estimate
+  - relates to how variable estimates of this type would be if we repeatedly kept taking samples
+  - It’s an _idea_ we try to capture using the **_standard error_** as our measure
+    - Smaller std error = more precise estimate.
+    - larger std error = less precise estimate.In most survey applications, a _confidence interval_ is approx.
+    - CI for true value: _estimate_ ± 2×se
+
+so _higher precision_ translates into **_narrower confidence interval_**
+
+- The “**_accuracy_**” of an estimate
+  - incorporates any _bias_ as well as the _sampling variability_
+  - It’s an _idea_ we try to capture using the _Mean Squared Error (MSE)_ as our measure
+    - $MSE = se^2 + bias^2 = variance + bias^2$
+  - _High accuracy_ translates to _low Mean Squared Error_
+
+Provided our data collection is perfect, most of our estimates are **_unbiased_** (i.e. have bias=0) or almost unbiased so the two ideas come together
+
+- Remember back to “normal statistics”
+  - Our measure of precision for a sample **_mean_** was $se(\bar{x}) = s / \sqrt{n}$
+  - Our measure of precision for a sample **_proportion_** was
+    - $se(\hat{p}) = \sqrt{\frac{1}{n}\hat p (1-\hat p)}$
+  - As the sample size increases our estimates tend to get more precise scaling as $1/\sqrt n$
+    - e.g., to double the precision (i.e. halve the std error) we need to take 4 times as large a sample, etc
+- In general, we get _greater precision_ (_smaller std errors_, _narrower CIs_) if we take _larger samples_.
+- Standard errors tend to decrease roughly proportionately to $1 / \sqrt{sample\ size}$
+  - (if we are talking about the standard error of an estimate that relates only to a subgroup, e.g. the mean income for Europeans, then the relevant “sample size” is the sample size for that subgroup)
+
+## Unequal probabilities of selection {#unequal-probs-select}
+
+Example: Tables from the 2006 NZ Census show nearly 5 times as many people of European ethnicity as of Maori ethnicity. Suppose that a survey sampled 500 Europeans and 500 Maori. Any individual Maori would be 5 times as likely to be selected into the sample as any individual European.
+
+- It **_common_** in surveys, **_for units_** in the population **_to be selected for the sample with different probabilities_**
+  - It is particularly common for units in different strata to be sampled at different rates (cf. Maori and European above)
+  - It is critically important, however, that no unit in the population has a zero probability of being selected
+
+### Why use unequal probabilities of selection?
+
+- Often used in the context of stratified sampling
+  - Particularly if reporting is also to be done at the level of the strata themselves, as well as for the whole population, likely to want to ensure large enough sample sizes in each stratum to ensure sufficiently precise stratum-level estimates (e.g. income levels accurately estimated for each of the ethnicity)
+    - Thus units in small strata will have higher probabilities of selection than units in large strata
+      - e.g. take equal numbers of Maori, Pacifica and Other
+  - Often makes good practical sense to include more of “the big important units”
+    - e.g. economic surveys often survey all of the very big companies
+- Can sometimes increases precision of estimates
+
+### What goes wrong if we ignore it?
+
+- If, when doing the analysis, we ignore the fact that the data has been sampled using unequal probabilities of selection **_we can get the wrong answers for almost everything_**
+- **_If the probabilities of selection are not all the same,_** then **_we have to give the program_:**
+  - **_either_** the **_selection probabilities_**
+  - **_or_**, **“the weights”** = 1/selection probabilities -- _this is what we’ll usually be doing_
+    - The basic idea of weighting is that, “the _weight_ to be assigned for a unit in the sample is the number of units in the population that the sampled unit represents”
+      - e.g. if we select $n_j = 100$ people at random from stratum $j$ which has $N_j = 1000$ people in it, then each of the 100 people selected “represents” 10 people
+        - more generally, each of the one of the $n_j$ people selected represents people
+    - **_or_**, we can supply other information from which the program can work these things out
+      - e.g. we might give the program the numbers of people in the population in each stratum
+
+### **Reminder:** What is the most important new skill to be learned for analysing survey data?
+
+The biggest difference between analysing survey data and the data analysis you have already seen is that for survey data, you have to tell the program how the data was collected
+
+- Was stratified sampling used? If so, what were the strata?
+- Was cluster sampling used? If so, what were the clusters?
+- What were the selection probabilities? (many programs want “**_weights_**” which are 1 over the probability of selection)
+- Should we be making _finite population corrections_? (see later)
+
+_Being able to identify these structures from descriptions of surveys is one of the most important skills to acquire and take away from this course._
+
+- It is also very important to be able to describe the sampling structures to software. This second skill is a much easier skill to learn, however.
+
+Recognising these sampling structures is absolutely critical. If you cannot do that, then you cannot even get started on doing valid data analysis.
+
+## Descriptive versus Analytic studies
+
+Government Agencies, pollsters (and some others) are most often interested in **“_What_** _was it like_?**”**
+
+- We call studies addressing this **_“descriptive”_** studies
+- They want to **_summarise the way it was_** in a particular population during a particular time span
+  - And present estimates such quantities as population means, totals, counts, proportions, ratios
+    - often broken out by region, age, sex, calendar year, …
+- These are **_real, finite populations_**
+
+  - **_If_** we **_had data from a complete census_** (rather than sampling) we would just calculate these summaries and **_there would be no uncertainty_**
+    - So no need for standard errors, confidence intervals etc. We’d know exactly what the population summary values were
+  - But **_usually we sample_**. The **_uncertainty is caused_** by the **_randomness in the selection_** of who gets into the sample that we use to calculate our estimates
+    - Our confidence intervals are interval estimates of the quantity that we would have obtained if we’d been able to calculate the summary for the whole finite population
+  - No other area of statistics really cares about these types of inference
+
+- Many researchers are most interested in **“_How_** _does it work?_**”**, or **“_Why_** _is it like that_**”_?_** or **_Predicting_** what will happen if we did it again or in the future
+
+  - We call these studies with these aims, **_“analytic”_**
+    - We are interested in the nature of relationships between variables, in differences, regressions, … – all the standard STATS 20x stuff and beyond
+  - If we had data on a whole finite population we would analyse the data thinking in terms of the population itself having been generated by some random process and we would be interested in patterns in the way this random data was generated
+    - Even with complete data from the whole finite population, there would still be uncertainty
+
+- Analysis needs to allow for _uncertainties in the random process that generated the finite population_ data **_plus_** additional _uncertainties generated by sampling from that finite population_
+
+- **So with analytic studies …**
+  - Even with complete data from the whole finite population, there would still be uncertainty
+  - Analysis needs to allow for uncertainties in the random process that generated the finite population data **_plus_** additional uncertainties generated by sampling from that finite population
+    - We can do all of the STATS 20x analyses, the linear and logistic regressions …
+    - **_All that is new_** here is that we use _**special programs** designed for survey data_ and the **_program needs to be told how the sampling was done_**
+    - Apart from that it is pretty much business as usual
+
+## Sampling without replacement from a finite population
+
+**_Why do it?_**
+
+- Drawing a unit out of a hat, measuring it, putting it back in the hat, and then measuring it again on some subsequent draw seldom makes any practical sense
+
+**_What are the consequences of ignoring_** **sampling without replacement _in the analysis?_**
+
+- The usual **_standard errors_** of estimates of characteristics of the finite population are **_too big_** if the sample size _n_ makes up a substantial fraction of the population size $N$
+- To compensate we use co-called **_finite population corrections_** (fpc)
+- Roughly, _actual std error_ of an estimate = _Usual std error_ $\times \sqrt{1-f}$
+  - where $f$, is the so-called “_sampling fraction_” (= sample size/popn size)
+
+**_When do we use finite population corrections_** **(fpcs)**
+
+- Generally, we use finite population corrections for descriptive studies
+  - (interested in describing the way the population is)
+  - but not analytic studies
+    - (interested in the processes that produced a population like that)
+- We will address the issues around fpc’s in more detail in a later Lecture
+  - including why the standard errors under sampling from a finite population should be smaller than the standard ones,
