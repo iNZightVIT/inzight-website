@@ -58,6 +58,11 @@ function HomepageHeader() {
     <header className={styles.heroBanner}>
       <div className={styles.heroBannerContainer}>
         <div className={styles.heroContent}>
+          <img
+            src="/img/logo.svg"
+            alt="iNZight Logo"
+            style={{ width: "80%" }}
+          />
           <h1 className={styles.heroTitle}>
             A free <b>data exploration</b> and <b>analytics</b> platform.
           </h1>
