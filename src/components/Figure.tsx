@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useVersion } from "../theme/Root";
+
+import styles from "./Figure.module.css";
 
 type Props = {
   src: string | { desktop: string; lite: string };
@@ -15,6 +17,7 @@ type Props = {
 export default function Figure({ src, caption, width = null }: Props) {
   let imgsrc = "";
   const { version } = useVersion();
+  const [zoom, setZoom] = useState(false);
 
   if (typeof src !== "string") {
     if (version === "desktop") imgsrc = src.desktop;
@@ -22,6 +25,7 @@ export default function Figure({ src, caption, width = null }: Props) {
   } else {
     imgsrc = src;
   }
+  const baseUrl = useBaseUrl(imgsrc);
 
   let imgwidth;
   if (width === null) {
@@ -34,13 +38,24 @@ export default function Figure({ src, caption, width = null }: Props) {
   }
 
   return (
-    <figure style={{ border: "", textAlign: "center" }}>
-      <img
-        src={useBaseUrl(imgsrc)}
-        alt={caption}
-        width={imgwidth}
-        style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
-      />
-    </figure>
+    <>
+      {zoom && (
+        <div className={styles.overlay} onClick={() => setZoom(false)}>
+          <div className={styles.overlayImage}>
+            <img src={baseUrl} alt={caption} />
+            <caption className={styles.caption}>{caption}</caption>
+          </div>
+        </div>
+      )}
+      <figure className={styles.figure}>
+        <img
+          src={baseUrl}
+          alt={caption}
+          width={imgwidth}
+          style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
+          onClick={() => setZoom(true)}
+        />
+      </figure>
+    </>
   );
 }

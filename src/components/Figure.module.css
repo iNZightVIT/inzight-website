@@ -1,0 +1,30 @@
+.figure {
+  border: none;
+  text-align: center;
+  shadow: 5px 5px 5px #888888;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.figure:hover {
+  transform: scale(101%);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.caption {
+  color: #222222;
+  background: #fcfcfc;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.2rem;
+}
