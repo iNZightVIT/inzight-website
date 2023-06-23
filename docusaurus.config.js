@@ -97,6 +97,10 @@ const config = {
           { to: "/about", label: "About", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           {
+            type: "search",
+            position: "left",
+          },
+          {
             to: "/related",
             label: "Related Projects",
             position: "right",
@@ -173,6 +177,11 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        appId: "LM0R8NEREJ",
+        apiKey: "fad0b6e47b54ebe6f9dcec2e38dbe902",
+        indexName: "inzight",
       },
     }),
 };

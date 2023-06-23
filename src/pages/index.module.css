@@ -25,7 +25,9 @@
 }
 
 .topBannerSponsor {
-  height: 80px;
+  height: 88px;
+  background: white;
+  padding: 8px;
 }
 
 @media screen and (max-width: 996px) {
@@ -39,8 +41,7 @@
 
 .heroBanner {
   padding: 4rem;
-  /* background: #18afe3; */
-  background: #eff9f0;
+  background: var(--ifm-hero-background-color);
 }
 
 .heroBannerContainer {
@@ -61,14 +62,14 @@
   font-size: 3rem;
   font-family: var(--ifm-heading-font-family);
   font-weight: var(--ifm-heading-font-weight);
-  color: #18afe3;
+  color: var(--ifm-color-primary-contrast-foreground);
   margin-bottom: 1em;
   margin-right: 2em;
 }
 
 .heroTitle b {
-  font-weight: var(--ifm-heading-font-weight);
-  background: #094b85;
+  font-weight: var(--ifm-color-primary-contrast-background);
+  background: var(--blue-700);
   padding-inline: 0.1em;
   /* border-bottom: 2px solid white; */
   color: #fcfcfc;
