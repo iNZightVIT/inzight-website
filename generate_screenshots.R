@@ -1,6 +1,9 @@
 # Run using the R in the iNZight folder, otherwise the graphics don't
 # work correctly.
 
+args <- commandArgs(trailingOnly = TRUE)
+dir <- if (length(args)) args[1] else "docs"
+
 inzight_dir <- file.path("~", "iNZightVIT")
 if (!is.null(inzight_dir) && dir.exists(inzight_dir)) {
     .libPaths(file.path(inzight_dir, "library"), include.site = FALSE)
@@ -23,13 +26,11 @@ ui$preferences$popout <- FALSE
 ui$preferences$dev.features <- FALSE
 ui$preferences$window.size <- c(1040, 640)
 ui$savePreferences()
-ui$reload()
-
 ui$close()
 
 options("screenshot.add.grid" = TRUE) # set to FALSE when finished
 
-crawl("docs")
+crawl(dir)
 
 ui$preferences <- old_prefs
 ui$savePreferences()

@@ -26,17 +26,7 @@ To look at the distribution of students' armspans, choose `armspan` as the first
 import f1 from "./inzight_cas_armspan.png";
 // import f1l from "./inzight_cas_armspan_lite.png";
 
-<desktop>
-
 <Figure src={f1} caption="A dot plot of armspan" width="800" />
-
-</desktop>
-
-<lite>
-
-MISSING FIGURE
-
-</lite>
 
 Immediately we can see that most students have armspans between 130 and 180 cm. However, there are many students who have measured their armspans to be as small as 20cm! Below the dotplot is a **box and whisker plot**, showing the range (the thin horizontal line), as well as the 25%, 50%, and 75% quantiles (the lower, middle, and upper ends of the box, respectively).
 
@@ -44,7 +34,7 @@ You can obtain a numeric summary of a graph by clicking the <desktop>**Get Summa
 
 import f2 from "./inzight_cas_summary_armspan.png";
 
-<Figure src={f2} caption="Numeric summary of armspan" width="600" />;
+<Figure src={f2} caption="Numeric summary of armspan" width="800" />;
 
 This tells us the range of values (minimum and maximum values), the quantiles, as well as the sample mean and standard deviation. In addition to this at the top of the summary output, we see information about the variable: it is telling us that our **Primary variable of interest** (armspan) is a numeric variable, and that of the 500 students in the dataset, 36 are missing observations of armspan. This missing value information is also available at the bottom of the plot.
 
@@ -59,17 +49,7 @@ To do this, click on <desktop>**Add to plot** in the plot toolbar, or find it in
 import f3 from "./inzight_cas_armspan_violin.png";
 // import f3l from "./inzight_cas_armspan_violin_lite.png";
 
-<desktop>
-
 <Figure src={f3} caption="A violin plot of armspan" width="800" />
-
-</desktop>
-
-<lite>
-
-MISSING FIGURE
-
-</lite>
 
 :::tip Feeling adventurous?
 
@@ -85,20 +65,10 @@ Categorical variables are those that have values which fall into **categories** 
 
 Graphs of categorical variables involve displaying how many observations fall into each category, which is by default shown using a **bar chart** in iNZight. Let's look at a graph of `travel`:
 
-import f4 from "../02-first-graphs/inzight_cas_travel.png";
+import f4 from "./inzight_cas_travel.png";
 // import f4l from "../02-first-graphs/inzight_cas_travel_lite.png";
 
-<desktop>
-
 <Figure src={f4} caption="A bar plot of travel" width="800" />
-
-</desktop>
-
-<lite>
-
-MISSING FIGURE
-
-</lite>
 
 Immediately we can see that most students travel via motor (typically a car), and equal numbers either catch a bus or walk. Only a few students catch a train.
 
@@ -106,7 +76,7 @@ As before, we can get a numeric summary of the graph by clicking **<Version desk
 
 import smryTravel from "./inzight_cas_summary_travel.png";
 
-<Figure src={smryTravel} caption="Numeric summary of travel" width="600" />
+<Figure src={smryTravel} caption="Numeric summary of travel" width="800" />
 
 Here we can see both the actual counts in each category, as well as the percentage in each. On the far right we see the total of 500 students. Note that there are no missing observations in this variable!
 

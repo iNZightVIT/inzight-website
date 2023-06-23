@@ -30,19 +30,7 @@ To compare between males and females, select `gender` as **Variable 2** <desktop
 import bp1 from "./inzight_cas_travel_gender.png";
 import bp1l from "./inzight_cas_travel_gender.png";
 
-<desktop>
-
-<Figure src={bp1} caption="A plot of travel by gender" width="800" />
-
-</desktop>
-
-<lite>
-
-NEW FIGURE NEEDED
-
-<Figure src={bp1l} caption="A plot of travel by gender" width="800" />
-
-</lite>
+<Figure src={{ desktop: bp1, lite: bp1l }} caption="A plot of travel by gender" width="800" />
 
 From the graph, it is clear that more male students bike to school than female students, and a few more female students travel by motorcar, but otherwise the distribution of fairly similar.
 
@@ -91,21 +79,9 @@ We've seen how we can look at two categorical variables, now we will see what ha
 Go ahead and set `height` as **Variable 1**, and iNZight will produce a stack of dot plots: one for each gender.
 
 import dp1 from "./inzight_cas_height_gender.png";
-import dp1l from "./inzight_cas_height_gender.png";
-
-<desktop>
+// import dp1l from "./inzight_cas_height_gender.png";
 
 <Figure src={dp1} caption="A plot of height by gender" width="800" />
-
-</desktop>
-
-<lite>
-
-TODO: MISSING FIGURE
-
-<Figure src={dp1l} caption="A plot of height by gender" width="800" />
-
-</lite>
 
 What do these two plots tell you about the distributions of male and female student heights?
 
@@ -146,21 +122,10 @@ The last two-variable combination we can look at is two numeric variables, so we
 iNZight will produce a **scatter plot** of height versus armspan.
 
 import sp1 from "./inzight_cas_height_armspan.png";
-import sp1l from "./inzight_cas_height_armspan.png";
-
-<desktop>
+// import sp1l from "./inzight_cas_height_armspan.png";
 
 <Figure src={sp1} caption="A plot of height by armspan" width="800" />
 
-</desktop>
-
-<lite>
-
-TODO: MISSING PLOT
-
-<Figure src={sp1} caption="A plot of height by armspan" width="800" />
-
-</lite>
 
 There is a fairly strong correlation between armspan and height, with a mass of observations on the right-hand-side where height is approximately the same as armspan. There are, however, many observations scattered well outside this trend.
 

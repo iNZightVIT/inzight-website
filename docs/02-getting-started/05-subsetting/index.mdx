@@ -69,11 +69,23 @@ this time subset by age and gender.
 
 First, set **Variable 1** to `height` and **Variable 2** to `armspan` to create a scatter plot of height against armspan. Now, set **Subset Variable 1** to `age`: you should see the plot of height against armspan by four separate age groups. Finally, set **Subset Variable 2** to `gender`. This time, you should see no change in the graph. Here's what you should see:
 
-// TODO: add figure
+import ss1 from "./inzight_cas_height_armspan_subset_age_gender.png";
+
+<Figure
+  src={ss1}
+  caption="A plot of height versus armspan subset by age, and filtered by gender."
+  width="800"
+/>
 
 In order to make use of the second subset variable, we need to use the slider. Start by dragging the slider one notch to the right ("female"). The graph should now show you the graph of height versus armspan **only of females**:
 
-// TODO: add figure
+import ss2 from "./inzight_cas_height_armspan_subset_age_gender-female.png";
+
+<Figure
+  src={ss2}
+  caption="A plot of height versus armspan subset by age, and filtered by gender = female."
+  width="800"
+/>
 
 Moving the slider one place further will show only males in the plot.
 
