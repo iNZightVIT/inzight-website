@@ -4,14 +4,13 @@ const VersionContext = React.createContext();
 
 // Default implementation, that you can customize
 export default function Root({ children }) {
+  let v = "desktop";
   if (typeof window !== 'undefined') {
-    let v = localStorage.getItem("version");
+    v = localStorage.getItem("version");
     if (!v && v !== "desktop" && v !== "lite") {
       localStorage.setItem("version", "desktop");
       v = "desktop";
     }
-  } else {
-    let v = "desktop";
   }
   const [version, setVersion] = React.useState(v);
 
