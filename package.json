@@ -17,6 +17,7 @@
   "dependencies": {
     "@agentofuser/remark-oembed": "^1.0.4",
     "@docusaurus/core": "^2.0.1",
+    "@docusaurus/plugin-content-docs": "^2.4.1",
     "@docusaurus/preset-classic": "^2.0.1",
     "@heroicons/react": "^2.0.18",
     "@mdx-js/react": "^1.6.22",

@@ -62,6 +62,19 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      "content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: "support",
+        path: "support",
+        routeBasePath: "support",
+        sidebarPath: require.resolve("./sidebars-support.js"),
+      }),
+    ],
+  ],
+
   stylesheets: [
     {
       href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",

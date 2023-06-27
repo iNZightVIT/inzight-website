@@ -47,32 +47,44 @@
 .heroBannerContainer {
   max-width: 1000px;
   margin: 0 auto;
-  padding-right: 200px;
+  /* padding-right: 200px; */
   display: flex;
   flex-direction: column;
   /* align-items: flex-end; */
   padding-block: 1em;
 }
 
-.heroBannerContent {
+.heroContent {
   flex: 1;
+  display: flex;
+  /* align-items: center; */
+  gap: 80px;
+  /* padding-right: 200px; */
+  margin-bottom: 2em;
 }
 
 .heroTitle {
+  flex: 1;
   font-size: 3rem;
   font-family: var(--ifm-heading-font-family);
   font-weight: var(--ifm-heading-font-weight);
   color: var(--ifm-color-primary-contrast-foreground);
-  margin-bottom: 1em;
-  margin-right: 2em;
+  word-break: break-word;
 }
 
 .heroTitle b {
   font-weight: var(--ifm-color-primary-contrast-background);
-  background: var(--blue-700);
+  /* background: var(--blue-700); */
   padding-inline: 0.1em;
-  /* border-bottom: 2px solid white; */
-  color: #fcfcfc;
+  /* color: #fcfcfc; */
+  color: var(--primary-500);
+}
+
+.heroImage {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .heroCTA {
@@ -86,9 +98,14 @@
 
 .heroButtons {
   display: flex;
-  /* flex-direction: column; */
   align-items: flex-start;
   gap: 1em;
+}
+
+.spacer {
+  flex: 1;
+  background: blue;
+  width: 10px;
 }
 
 .heroButtons .button {
