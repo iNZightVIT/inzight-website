@@ -100,3 +100,29 @@
     padding: 2rem;
   }
 }
+
+.users {
+  padding: 4rem;
+  background: var(--ifm-color-gray-100);
+  display: flex;
+  justify-content: center;
+}
+
+.users h2 {
+  text-align: center;
+  color: var(--ifm-color-primary-contrast-foreground);
+}
+
+.userList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3em;
+  margin-block: 4em;
+}
+
+.userList img {
+  max-height: 100px;
+  max-width: 300px;
+}

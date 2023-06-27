@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Explore. Visualise. Analyse.",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    Svg: require("@site/static/img/undraw_data_extraction_re_0rd3.svg").default,
     description: (
       <>
         Explore your data using intuitive controls and without getting bogged
@@ -35,13 +35,24 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Nothing to learn. Never forget.",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    Svg: require("@site/static/img/undraw_work_time_re_hdyv.svg").default,
     description: (
       <>
         iNZight is designed to be easy to use which makes picking it up a
         breeze. And unlike other more complex software, you won't need to
         re-learn everything when you come back to it. Say, after your finish
         that degree and start a new job.
+      </>
+    ),
+  },
+  {
+    title: "Rapid Code Development",
+    Svg: require("@site/static/img/undraw_source_code_re_wd9m.svg").default,
+    description: (
+      <>
+        iNZight is built on top of the R, so for the more advanced users, you
+        can view, export, and edit the R script to customise your analyses
+        &mdash; without needing to start from a blank script.
       </>
     ),
   },
@@ -65,7 +76,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className={clsx("row", styles.row)}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

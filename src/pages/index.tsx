@@ -90,6 +90,59 @@ function HomepageHeader() {
   );
 }
 
+function OurUsers() {
+  const users = [
+    {
+      title: "University of Auckland",
+      href: "https://auckland.ac.nz",
+      logo: "/img/uoa_logo.png",
+    },
+    {
+      title: "Victoria University of Wellington",
+      href: "https://wgtn.ac.nz",
+      logo: "/img/vuw_logo.png",
+    },
+    {
+      title: "Census at School",
+      href: "https://new.censusatschool.org.nz",
+      logo: "/img/cas_logo.png",
+    },
+    {
+      title: "Growing Up in New Zealand",
+      href: "https://growingup.co.nz",
+      logo: "/img/guinz_logo.png",
+    },
+    {
+      title: "Stats NZ",
+      href: "https://stats.govt.nz",
+      logo: "/img/statsnz_logo.png",
+    },
+    {
+      title: "Australian Bureau of Statistics",
+      href: "https://abs.gov.au",
+      logo: "/img/abs_logo.svg",
+    },
+  ];
+  return (
+    <section className={styles.users}>
+      <div className="container">
+        <h2>
+          iNZight is used for teaching and research in the following
+          organisations
+        </h2>
+
+        <div className={styles.userList}>
+          {users.map((user) => (
+            <Link key={user.title} to={user.href}>
+              <img src={user.logo} alt={user.title} title={user.title} />
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
@@ -99,6 +152,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <OurUsers />
       </main>
     </Layout>
   );

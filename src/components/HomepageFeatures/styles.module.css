@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.row {
+  justify-content: space-around;
+}
+
 .featureSvg {
   height: 200px;
   width: 200px;
