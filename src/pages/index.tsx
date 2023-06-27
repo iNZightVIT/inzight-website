@@ -1,12 +1,11 @@
 import React from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 import styles from "./index.module.css";
-import { ComputerDesktopIcon } from "@heroicons/react/20/solid";
+import { ArrowRightCircleIcon } from "@heroicons/react/20/solid";
 
 function TopBanner() {
   const sponsors = [
@@ -69,11 +68,17 @@ function HomepageHeader() {
         </div>
         <div className={styles.heroCTA}>
           <div className={styles.heroButtons}>
-            <Link className="button button--secondary button--lg" to="/">
+            <Link className="button button--success button--lg" to="/docs">
+              Get Started with the Tutorial
+              <ArrowRightCircleIcon className="button-icon" />
+            </Link>
+          </div>
+          <div className={styles.heroButtons}>
+            <Link className="button button--primary button--lg" to="/install">
               Download Now for Windows
             </Link>
             <Link
-              className="button button--primary button--lg"
+              className="button button--info button--lg"
               to="https://lite.docker.stat.auckland.ac.nz"
             >
               Launch iNZight Lite

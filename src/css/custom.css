@@ -96,15 +96,15 @@
   --ifm-color-secondary-lighter: var(--grey-300);
   --ifm-color-secondary-lightest: var(--grey-100); */
 
-  --ifm-color-primary: var(--primary-700);
+  --ifm-color-primary: var(--blue-700);
   --ifm-color-primary-dark: var(--primary-800);
-  --ifm-color-primary-darker: var(--primary-900);
-  --ifm-color-primary-darkest: var(--primary-950);
-  --ifm-color-primary-light: var(--primary-400);
-  --ifm-color-primary-lighter: var(--primary-300);
-  --ifm-color-primary-lightest: var(--primary-200);
-  --ifm-color-primary-contrast-background: var(--primary-50);
-  --ifm-color-primary-contrast-foreground: var(--primary-950);
+  --ifm-color-primary-darker: var(--blue-900);
+  --ifm-color-primary-darkest: var(--blue-950);
+  --ifm-color-primary-light: var(--blue-400);
+  --ifm-color-primary-lighter: var(--blue-300);
+  --ifm-color-primary-lightest: var(--blue-200);
+  --ifm-color-primary-contrast-background: var(--blue-50);
+  --ifm-color-primary-contrast-foreground: var(--blue-950);
 
   --ifm-color-success: var(--green-500);
   --ifm-color-success-dark: var(--green-600);
@@ -116,15 +116,15 @@
   --ifm-color-success-contrast-background: var(--green-50);
   --ifm-color-success-contrast-foreground: var(--green-950);
 
-  --ifm-color-info: var(--blue-500);
-  --ifm-color-info-dark: var(--blue-600);
-  --ifm-color-info-darker: var(--blue-700);
-  --ifm-color-info-darkest: var(--blue-800);
-  --ifm-color-info-light: var(--blue-400);
-  --ifm-color-info-lighter: var(--blue-300);
-  --ifm-color-info-lightest: var(--blue-200);
-  --ifm-color-info-contrast-background: var(--blue-50);
-  --ifm-color-info-contrast-foreground: var(--blue-950);
+  --ifm-color-info: var(--primary-500);
+  --ifm-color-info-dark: var(--primary-600);
+  --ifm-color-info-darker: var(--primary-700);
+  --ifm-color-info-darkest: var(--primary-800);
+  --ifm-color-info-light: var(--primary-400);
+  --ifm-color-info-lighter: var(--primary-300);
+  --ifm-color-info-lightest: var(--primary-200);
+  --ifm-color-info-contrast-background: var(--primary-50);
+  --ifm-color-info-contrast-foreground: var(--primary-950);
 
   --ifm-color-warning: var(--orange-500);
   --ifm-color-warning-dark: var(--orange-600);
@@ -217,4 +217,16 @@
 
 dl > dt {
   font-weight: bold;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.button-icon {
+  height: 1.2em;
+  width: 1.2em;
+  margin: 0;
+  padding: 0;
 }
