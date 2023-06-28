@@ -73,6 +73,7 @@ const config = {
         sidebarPath: require.resolve("./sidebars-support.js"),
       }),
     ],
+    "docusaurus-plugin-matomo",
   ],
 
   stylesheets: [
@@ -195,6 +196,12 @@ const config = {
         appId: "LM0R8NEREJ",
         apiKey: "fad0b6e47b54ebe6f9dcec2e38dbe902",
         indexName: "inzight",
+      },
+      matomo: {
+        matomoUrl: "https://analytics-production.up.railway.app/",
+        siteId: "inzight",
+        phpLoader: "matomo.php",
+        jsLoader: "matomo.js",
       },
     }),
 };
