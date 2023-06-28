@@ -199,7 +199,7 @@ const config = {
       },
       matomo: {
         matomoUrl: "https://analytics-production.up.railway.app/",
-        siteId: "inzight",
+        siteId: "1",
         phpLoader: "matomo.php",
         jsLoader: "matomo.js",
       },
