@@ -28,3 +28,11 @@
   padding: 8px;
   font-size: 1.2rem;
 }
+
+.inlineImage {
+  height: 1.5em;
+}
+
+.inlineImage img {
+  height: 2em;
+}

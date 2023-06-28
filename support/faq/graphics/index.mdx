@@ -1,0 +1,147 @@
+---
+title: Graphics and Plotting
+description: Common issues with graphics and plotting in iNZight.
+sidebar_position: 4
+hide_table_of_contents: true
+---
+
+import TOCInline from "@theme/TOCInline";
+
+<TOCInline toc={toc} />
+
+## When I resized the window my plot disappeared
+
+import redrawIcon from "./redraw-icon.png";
+
+This is mainly an issue with dotplots. Click the **Redraw Plot** icon <Figure src={redrawIcon} caption="Redraw Icon" inline={true} />.
+
+See [Plot Toolbar](/docs/interface/plot-toolbar) for details.
+
+## Saving graphs: How do I save my graph from iNZight for use in another document?
+
+import saveIcon from "./save-icon.png";
+
+Click on the **Save Plot** icon <Figure src={saveIcon} caption="Save Plot Icon" inline={true} /> (or go **Plot** > **Save Plot**). There many formats available, e.g. pdf, png, etc.
+
+See also [saving as interactive HTML files](#interactive)
+
+In Windows if you are using dual-window mode, or start up a new graphics window (see below), the graphics window itself offers additional saving and copy/paste options.
+
+## Copy/paste: How do I copy and paste my graph from iNZight into another document?
+
+:::info
+
+Copy and paste only works in Windows (otherwise you have either to use screen shots or save a graphics file as above).
+
+:::
+
+If you are operating in dual-window mode, the separate R plotting window itself enables you to copy as a Bitmap or as a Metafile by right-clicking or using the **File** menu on the plotting window (**Copy as Metafile** does not work for dot plots).
+
+import newGraphics from "./new-graphics-window-icon.png";
+
+But if you are in the default single window mode,
+
+- you will have to open a new graphics window by clicking on the **New Graphics Window** icon <Figure src={newGraphics} caption="New graphics window icon" inline={true} />, or go **Plot** > **New Graphics Window**
+- then click the Redraw icon <Figure src={redrawIcon} caption="Redraw Icon" inline={true} /> to get your plot into the new plotting window.
+
+## I want a different type of plot
+
+Once you have selected your variables, iNZight instantly delivers a graph with the default plot-type for the combination of variable-types you have specified. In most cases there are many other appropriate choices for plot type. To see (and get) them ...
+timer icon    use Add to Plot and under Customise Plot Apearance (the default initial screen) use the Plot type selection box. To look quickly at all possibile plots you can click into the box and roll the mouse wheel to scroll through the available plots.
+
+## Titles and axis labels: How do I change them?
+
+timer icon    In Add to Plot select Axes and labels.
+
+## Barplots/charts: Unwanted colour segmentation in a bar chart
+
+You have a colour-by setting that is still active. Go to Remove Additions icon (see below) then check Remove colour-by and then click OK.
+Remove additions icon
+
+(you can also get to it by going Plot > Remove additions ...)
+
+## Barplots/charts: Plot didn’t change when I reordered categories and clicked "Reorder"
+
+Reordering categories using Variables > Categorical Variables > Reorder levels ... does not create a new graph, it creates a new variable (e.g. myvarname.reord). To get the new (reordered) graph you have to drag/select the new variable.
+
+## Dotplots: When I resized the window my plot disappeared
+
+See general item on this above.
+
+## Dotplots: I see columns of dots that look like they are suspended in mid-air
+
+iNZight stacks points that are close together but not identical. This problem occurs when the points are discretely spaced but too big to drop down onto the axis. Either reduce the Point Size until they drop down, or widen the plotting window and click the Redraw icon
+Redraw plot
+
+## Dotplots: How can I add labels to points in the plot?
+
+timer icon    Under Add to Plot select Identify points. Ensure the Text Labels box is checked and select a variable to provide the labels. There are several ways of choosing which points are to have labels attached.
+
+## Playing over a set of plots is jerky or too fast/slow
+
+Windows users can expect jerky transitions between plots in single-window mode. Change to dual-window mode (see Preferences).
+
+timer icon    Play speed is controlled by the Set-timing-options button (tiny clock face) immediately to the left of the Play button.
+
+## Interactive: How can I get an interactive version of a plot? {#interactive}
+
+Most iNZight plots involving a single graph on a page, have an interactive version available.
+
+look for this little icon ...
+Interactive plot available icon    (blue) there is an interactive version available\_.
+No interactive plot available icon
+
+(grey) there is no interactive version available.
+
+Clicking on the (blue) icon results in an interactive plot popping up in your default browser. If that is a modern browser like Chrome, Firefox or Safari (but not Internet Explorer) this will then give you an interactive version of the graph that lets you query it in various ways like hovering over bars or clicking them. Explore!
+
+The interactive plots can be saved using the browsers' capability for saving a page, but there is a better way (as follows)
+
+## Interactive: Saving your graph as Interactive HTML files
+
+timer icon    Click on the Save Plot icon (or go Plot > Save Plot).
+   You will have to supply a name for the file and select File type Interactive HTML.
+   Once saved, the file will also automatically open up in your default browser as above.
+
+You can give such files to others. They can be included in other webpages. They do not need to be connected to iNZight to work.
+
+Notes
+
+    By default variables used in making the plot are exported with the plot so they show up with hover-over etc.
+    The Save Plot dialog for Interactive HTML allows other variables to also be exported with the plot so that they too are available for interactivity
+    The Save under the File menu is for saving data files, not for saving plots
+
+## Interactive on macOS (through R)
+
+If you are using iNZightPlots through R on macOS and try exporting an interactive plot, you may get some strange error messages (along the lines of "We shouldn't be here!"). If that's the case, run the following commands to get permission from macOS to write files:
+
+setwd(".")
+getwd()
+
+You should get a pop-up asking for access to the desktop. Now try running exportHTML() once more.
+
+## RStudio: plots are not displaying correctly
+
+Unfortunately there are some differences with RStudio's built-in graphics device, which means some of iNZight's graphs to not display correctly. If you are using R to access iNZight's functions (i.e., by calling iNZightPlot()) please use the default R application instead of RStudio, if possible, until we can resolve these issues.
+
+Known issues include:
+
+    dot plots do not display correctly
+    interactive plots do not render correctly
+
+## The text and/or points in the VIT modules are too large/unreadable
+
+This problem has mostly been encountered on Retina MacBook Pros, and is caused by the high resolution of the screen. This appears to have been a bug in a previous version of XQuartz, and updating this seems to fix the problem. Download the latest version here.
+
+If the above doesn't work, you can use the Preferences to adjust the scaling:
+
+    Click FILE > Preferences ...
+
+    Adjust the sliders to modify the values (we suggest ps = 7 and dpi = 220 for retina Macbook Pros)
+
+    Click OK. A new graphics windows will open up (you can close the old one if it doesn't automatically).
+    Repeat the process if you want to try out different values.
+
+These values will be saved for future sessions. If you have trouble saving (a message will inform you) please contact inzight_support@stat.auckland.ac.nz for assistance.
+
+UPDATE: this seems to have been fixed in a new release of XQuartz.

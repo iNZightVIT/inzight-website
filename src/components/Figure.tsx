@@ -12,9 +12,15 @@ type Props = {
     | number
     | { desktop: string | number; lite: string | number }
     | null;
+  inline?: boolean;
 };
 
-export default function Figure({ src, caption, width = null }: Props) {
+export default function Figure({
+  src,
+  caption,
+  width = null,
+  inline = false,
+}: Props) {
   let imgsrc = "";
   const { version } = useVersion();
   const [zoom, setZoom] = useState(false);
@@ -27,7 +33,15 @@ export default function Figure({ src, caption, width = null }: Props) {
   }
   const baseUrl = useBaseUrl(imgsrc);
 
-  let imgwidth;
+  if (inline) {
+    return (
+      <span className={styles.inlineImage}>
+        <img src={baseUrl} alt={caption} />
+      </span>
+    );
+  }
+
+  let imgwidth: string;
   if (width === null) {
     imgwidth = "100%";
   } else if (typeof width !== "string" && typeof width !== "number") {
