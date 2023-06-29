@@ -198,10 +198,10 @@ const config = {
         indexName: "inzight",
       },
       matomo: {
-        matomoUrl: "https://analytics-production.up.railway.app/",
+        matomoUrl: "/user-info/",
         siteId: "1",
-        phpLoader: "matomo.php",
-        jsLoader: "matomo.js",
+        phpLoader: "info.php",
+        jsLoader: "info.js",
       },
     }),
 };
