@@ -15,8 +15,8 @@ if (!is.null(inzight_dir) && dir.exists(inzight_dir)) {
         include.site = FALSE)
 }
 
-if (!requireNamespace("screenshot", quietly = TRUE))
-    remotes::install_github("iNZightVIT/screenshot")
+# if (!requireNamespace("screenshot", quietly = TRUE))
+remotes::install_github("iNZightVIT/screenshot")
 library(screenshot)
 library(iNZight)
 ui <- iNZight()
