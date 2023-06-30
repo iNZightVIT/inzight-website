@@ -5,6 +5,10 @@ description: The main iNZight control panel for selecting variables.
 
 The control panel is the main interface for selecting variables to explore. There are four drop-down boxes: two for main plotting variables and two for subsetting.
 
+import ctrlPanel from "./control-panel.png"
+
+<Figure src={ctrlPanel} caption="iNZight Control Panel" width={400} />
+
 ## Variable 1: the primary variable of interest
 
 The first drop-down box allows you to specify the _Primary Variable of Interest_. This is required for all plots.
@@ -36,15 +40,13 @@ The third drop-down allows you to subset, or facet, the plot. This will not affe
 
 The final drop-down box allows you to filter the data. By default, no change will occur until you move the slider.
 
-## Variable controls
+:::info Other variable controls
 
-### Switch
+**Switch**: The down arrow allows you to quickly swith the variable on that row with the one below it.
 
-The down arrow allows you to quickly swith the variable on that row with the one below it.
+**Clear**: The cross to the right of each drop-down clears that variable.
 
-### Clear
-
-The cross to the right of each drop-down clears that variable.
+:::
 
 ## Get Summary
 

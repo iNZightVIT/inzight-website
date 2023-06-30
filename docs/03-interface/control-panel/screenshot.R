@@ -1,8 +1,10 @@
 ui <- iNZight()
 Sys.sleep(3)
 
-Syy.sleep(3)
-capture("control-panel", grid = TRUE)
-# crop()
+capture("control-panel")
+crop(
+    x1 = 340,
+    y0 = 500
+)
 
 ui$close()

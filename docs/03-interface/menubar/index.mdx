@@ -16,14 +16,24 @@ The **File** menu is where you interact with files on your computer (either by i
 
 import fileMenu from "./file_menu.png";
 
-<Figure src={fileMenu} caption="The File menu" width="300" />
+<Figure src={fileMenu} caption="The File menu" width="auto" />
 
-- [Import data](/docs/reference/import-export/import-data) from a file on your computer, or a remote URL.
-- [Export data](/docs/reference/import-export/export-data) to a file on your computer.
-- [Paste from](/docs/reference/import-export/clipboard) the clipboard, after copying from a spreadsheet or other source.
-- [Example data](/docs/reference/import-export/example-data) lets your choose from a list of example data sets.
-- [Preferences](/docs/reference/preferences) lets you change some of the settings in iNZight.
-- Exit closes iNZight.
+- [**Import data**](/docs/reference/import-export/import-data) from a file on your computer, or a remote URL.
+- [**Export data**](/docs/reference/import-export/export-data) to a file on your computer.
+
+
+- **Clipboard**
+  - [Paste from](/docs/reference/import-export/clipboard) the clipboard (e.g., copy from Excel / Google Sheets)
+  - [Copy to](/docs/reference/import-export/clipboard#copy-to) the clipboard and paste into e.g., Excel or Google Sheets
+
+
+- [**Example data**](/docs/reference/import-export/example-data) lets your choose from a list of example data sets.
+
+
+
+- [**Preferences**](/docs/reference/preferences) lets you change some of the settings in iNZight.
+- **Reload iNZight** can be useful if you run into random errors.
+- **Exit** closes iNZight.
 
 Click the links above to go to the relevant reference page.
 
@@ -37,18 +47,13 @@ import datasetMenuLite from "./dataset_menu_lite.png";
 <Figure
   src={{ desktop: datasetMenu, lite: datasetMenuLite }}
   caption="The Dataset menu"
-  width={{ desktop: "200", lite: "300" }}
+  width={{ desktop: "auto", lite: "300" }}
 />
 
 - [**Filter**](/docs/reference/data/filter) data by numeric condition, levels of a categorical variable, by row number, or randomly.
 - [**Sort by variable(s)**](/docs/reference/data/sort) to reorder rows according the values of one or more variables.
 - [**Aggregate**](/docs/reference/data/aggregate) to summarise data by groups.
 - [**Stack**](/docs/reference/data/stack) to convert wide data (multiple observations per row) to long data (one observation per row).
-
-import datasetOps from "./dataset_operations_menu.png";
-
-<Figure src={datasetOps} caption="The Dataset operations menu" width="400" />
-
 - **Dataset operation**
   - [Reshape dataset](/docs/reference/data/reshape) to convert between wide and long data.
   - [Separate column](/docs/reference/data/separate) to split a column into multiple columns or rows.
@@ -56,6 +61,9 @@ import datasetOps from "./dataset_operations_menu.png";
 - **Generate data report**
 - [**Validate**](/docs/reference/data/validate) to check for errors in your data.
 - **Reorder and select variables**
+
+
+
 - **View full dataset** shows the entire dataset in a pop-up window.
 - **Rename** allows you to rename the dataset.
 - **Restore original dataset**: restores the data set to the way it was when it was initially imported.
@@ -64,14 +72,7 @@ import datasetOps from "./dataset_operations_menu.png";
   - [Join by column values](/docs/reference/data/merge) to combine two datasets by matching observations.
   - [Append new rows](/docs/reference/data/append) to add rows from one dataset to another with the same variables.
 
-import surveyDesign from "./dataset_svydesign_menu.png";
-import surveyDesignLite from "./dataset_svydesign_menu_lite.png";
 
-<Figure
-  src={{ desktop: surveyDesign, lite: surveyDesignLite }}
-  caption="The Survey design menu"
-  width={{ desktop: "400", lite: "800" }}
-/>
 
 - [**Survey design**](/docs/category/survey-data) to specify the design of a survey dataset.
   - [Specify design](/docs/reference/survey-data/specify-design) to specify the design of a survey dataset.
@@ -79,6 +80,9 @@ import surveyDesignLite from "./dataset_svydesign_menu_lite.png";
   - [Post stratify](/docs/reference/survey-data/calibration) or rake/calibrate
   - [Remove design](/docs/reference/survey-data/remove)
 - [**Frequency tables**](/docs/reference/frequency-data)
+
+
+
 - **Data Dictionary**
 
 ## (Manipulate) Variables
@@ -93,7 +97,7 @@ Called **Manipulate Variables** in iNZight Lite.
 
 import variablesMenu from "./variables_menu.png";
 
-<Figure src={variablesMenu} caption="The Variables menu" width="600" />
+<Figure src={variablesMenu} caption="The Variables menu" width={"auto"} />
 
 - [**Convert to Categorical**](/docs/category/numeric-variables/convert-to-categorical) to convert a numeric variable to categorical.
 - [**Categorical Variables**](/docs/reference/categorical-variables) to manipulate categorical variables.
@@ -115,3 +119,40 @@ import variablesMenu from "./variables_menu.png";
 - [**Create new variables**](/docs/reference/data/create) to create new variables from existing ones.
 - [**Missing to categorical**](/docs/reference/data/missing-to-categorical) to make missing values explicit.
 - [**Delete variables**](/docs/reference/data/delete) to delete variables.
+
+## Plot
+
+The plot menu is an alternative to the [Plot Toolbar](/docs/interface/plot-toolbar), so please check that page for functionality.
+
+import plotMenu from "./plot_menu.png";
+
+<Figure src={plotMenu} caption="The Plot menu" width="auto" />
+
+## Modules (Desktop Only)
+
+The modules menu allows installation of and access to add-on modules. Please see [add-on modules](/docs/add-ons) for documentation.
+
+## Advanced
+
+:::caution End of Life
+
+The advanced modules menu is being replaced by add-on modules. This will allow us to expand iNZight without increasing the size of the installer, as well as support multiple versions of modules.
+
+:::
+
+The Advanced menu provides a suite of extra features, including some advanced modules such as Time Series and Model Fitting. The included modules are documented in [addon-modules](/docs/add-ons).
+
+## Help
+
+The Help menu gives users quick access to information about iNZight and links to the documentation.
+
+import helpMenu from "./help_menu.png";
+
+<Figure src={helpMenu} caption="The Help menu" width="auto" />
+
+- **About** provides information about iNZight.
+- **User Guides** provides links to main user guide pages.
+- **Transition Guide** will link to the latest transition guide to help migrating from a previous version.
+- **Change history** jumps to the changelog.
+- **FAQ** jumps to the FAQ site.
+- **Contact us or Report a Bug** takes you to the contact page.
