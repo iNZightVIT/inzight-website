@@ -1,0 +1,120 @@
+---
+title: Data Import & Export
+description: Having trouble importing your data into iNZight? Check here for common issues and solutions.
+sidebar_position: 3
+hide_table_of_contents: true
+---
+
+import TOCInline from "@theme/TOCInline";
+
+<TOCInline toc={toc} />
+
+:::note
+
+iNZight expects spreadsheet-like data in which the first row of cells contain the _names of variables_ and everything in the column beneach a variable name is data recorded on that variable.
+
+Attempting to import invalid data will result in an error.
+
+:::
+
+## iNZight won't read my data at all
+
+Open your data file in Excel (or similar) and save it in CSV (comma separated values) format. Make sure the saved file has a `.csv` extension at the end of its name.
+
+## iNZight isn't reading my data properly
+
+##### When you look at the spreadsheet inside iNZight, it has too many rows or columns
+
+The cause is something strange in your data file (e.g., a cell with a space character in it).
+
+Open your file in Excel (or similar), copy and paste just the relevant block of rows and columns into a new spreadsheet and save that as a new `.csv` file.
+
+##### When you drop the variable name in Slot 1 you expect a dot plot and get something else
+
+It is trying to draw a bar chart because it thinks the variable is categorical. The cause will be a non-numeric character somewhere in the column. This sometimes happens, for example when the data originates from an Excel file, is typed "General" rather than "Number" and has a comma as in 12,346. It will be saved into csv or read into iNZight as the character string "12,346" rather than the number 12346. Dates can also become character strings.
+
+You will need to open the file in Excel (or similar) and change the type of the column to "Number".
+
+:::tip hashtags (#)
+
+iNZight treats hashtags as a comment character, by default. This means that any text on a line after a hashtag will be ignored.
+
+<details>
+    <summary>Example: comments in a CSV file</summary>
+    <div>
+You can add additional information to a dataset at the top (or anywhere you like) by prefixing the line with a hashtag:
+
+```
+# this is an example data set with comments. You may wish to describe your variables.
+# Variable1 is a letter; variable2 is a number; variable3 is either 'yes' or 'no'
+# you can have as many comments as you like
+variable1,variable2,variable3
+A,3,yes
+B,2,no
+```
+
+</div>
+</details>
+<details>
+    <summary><strong>Important</strong>: hashtags in value columns will cause problems</summary>
+    <div>
+For example,
+
+```
+name,favourite_movie,year,genre
+jack,the public enemy,1931,crime/drama
+david,public enemy #2,1993,comedy
+```
+
+The second row of data will ignore everything after the #, so the year and genre will show up as missing values.
+
+</div>
+</details>
+
+See [Import Data](/docs/reference/import-export/import-data) for details on overriding comment characters.
+
+:::
+
+## When I load a `.csv`, it just get strings of text `gender;age;region` rather than columns
+
+This is likely an issue with locale settings, for example European countries use a semicolon (;) as a separator rather than a comma (,).
+
+When importing the data, open **Advanced Options** and change the default separator to a semicolon (if it is not detected automatically).
+
+See See [Import Data](/docs/reference/import-export/import-data) for details.
+
+Assuming you saved the file yourself using Excel, there are two situations where this is an issue:
+
+## "View Data Set" is greyed out/disabled
+
+:::info This issue is resolved in the latest version of iNZight
+
+Please update to the latest version. If you're still having the problem, let us know.
+
+:::
+
+View Data Set is not just a display. It has editing capabilities as well. When the data set gets too large it slows the program down unacceptably. So we disable it when the dataset has more than about 200,000 cells. You can still view the data set using Dataset > View full dataset.
+
+---
+
+## I have lost the changes I made to the data
+
+When you leave iNZight, all changes you have made to the data will be lost unless you export your data set before quitting.
+
+When you refresh the webpage in iNZight Lite, the same thing happens.
+
+The solution is to Export your data using the RData format (as below) before exiting/refreshing.
+
+## Exporting data to save changes
+
+To save your data without losing any the changes you have made, go **File** > **Export** and export using the RData format.
+
+When you Import this exported data set (which will have a `.RData` filename extension) the data imported into iNZight will be just as you left it.
+
+See [Export data](/docs/reference/import-export/export-data) for details.
+
+## Saving a survey-design specification as well as the data
+
+Currently this can only be done using the [Save/Load feature](/docs/reference/import-export/save) for iNZight sessions which is still in developmental mode.
+
+To enable this go **File** > **Preferences** and click the checkbox for _Enable developmental features_. The next time you start iNZight the **File** menu will give you the ability to Save a session. The saved file will have the filename extension `.inzsave`. Saved sessions are read into iNZight using **File** > **Load**.

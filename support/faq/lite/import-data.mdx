@@ -1,0 +1,33 @@
+---
+title: Importing Data
+description: Having trouble importing your data into iNZight? We might have a solution for you.
+sidebar_position: 1
+hide_table_of_contents: true
+---
+
+import TOCInline from "@theme/TOCInline";
+
+<TOCInline toc={toc} />
+
+:::note
+
+iNZight expects spreadsheet-like data in which the first row of cells contain the _names of variables_ and everything in the column beneach a variable name is data recorded on that variable.
+
+Attempting to import invalid data will result in an error.
+
+:::
+
+## Lite disconnects when I load data on a Mac
+
+If you try to import a dataset that iNZight Lite cannot read, it may disconnect. A common issue among macOS users is trying to import a `.numbers` file instead of a `.csv`. iNZight cannot read `.numbers` files, so you must import the `.csv`.
+
+Within macOS Numbers, you can save/export the file as a CSV file by
+
+- opening the **File menu** > **Export to** > **CSV**
+- open **Advanced Options** and be sure to _check UTF-8 as the Text Encoding_
+- click **Next**, and _choose a location to save the file_
+- finally, click **Export**
+
+# Other data import issues
+
+If you're having other issues, check the Import Data section of the main iNZight FAQ.

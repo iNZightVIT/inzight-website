@@ -3,6 +3,7 @@ import React from "react";
 import MDXComponents from "@theme-original/MDXComponents";
 import { Desktop, Lite, Version } from "../components/VersionToggle/inzVersion";
 import Figure from "../components/Figure";
+import ContactForm from "../components/ContactForm/ContactForm";
 
 export default {
   ...MDXComponents,
@@ -10,4 +11,5 @@ export default {
   lite: Lite,
   Version: Version,
   Figure: Figure,
+  ContactForm: ContactForm,
 };

@@ -62,6 +62,20 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      "content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: "support",
+        path: "support",
+        routeBasePath: "support",
+        sidebarPath: require.resolve("./sidebars-support.js"),
+      }),
+    ],
+    "docusaurus-plugin-matomo",
+  ],
+
   stylesheets: [
     {
       href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
@@ -106,6 +120,11 @@ const config = {
             position: "right",
           },
         ],
+      },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
       },
       footer: {
         style: "dark",
@@ -182,6 +201,12 @@ const config = {
         appId: "LM0R8NEREJ",
         apiKey: "fad0b6e47b54ebe6f9dcec2e38dbe902",
         indexName: "inzight",
+      },
+      matomo: {
+        matomoUrl: "/user-info/",
+        siteId: "1",
+        phpLoader: "info.php",
+        jsLoader: "info.js",
       },
     }),
 };

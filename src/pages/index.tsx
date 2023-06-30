@@ -57,31 +57,34 @@ function HomepageHeader() {
     <header className={styles.heroBanner}>
       <div className={styles.heroBannerContainer}>
         <div className={styles.heroContent}>
-          <img
+          {/* <img
             src="/img/logo.svg"
             alt="iNZight Logo"
             style={{ width: "80%" }}
-          />
+          /> */}
           <h1 className={styles.heroTitle}>
-            A free <b>data exploration</b> and <b>analytics</b> platform.
+            A free <b>data&nbsp;exploration</b> and <b>analytics</b> platform
           </h1>
+          <div className={styles.heroImage}>
+            <img src="/img/hero.gif" alt="iNZight in action" />
+          </div>
         </div>
         <div className={styles.heroCTA}>
-          <div className={styles.heroButtons}>
-            <Link className="button button--success button--lg" to="/docs">
-              Get Started with the Tutorial
-              <ArrowRightCircleIcon className="button-icon" />
-            </Link>
-          </div>
+          {/* <div className={styles.heroButtons}></div> */}
           <div className={styles.heroButtons}>
             <Link className="button button--primary button--lg" to="/install">
-              Download Now for Windows
+              Download for Windows
             </Link>
             <Link
               className="button button--info button--lg"
               to="https://lite.docker.stat.auckland.ac.nz"
             >
-              Launch iNZight Lite
+              Start iNZight Lite
+            </Link>
+            <div className={styles.spacer}></div>
+            <Link className="button button--success button--lg" to="/docs">
+              Tutorial
+              <ArrowRightCircleIcon className="button-icon" />
             </Link>
           </div>
         </div>
