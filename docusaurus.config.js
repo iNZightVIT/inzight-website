@@ -107,13 +107,19 @@ const config = {
             position: "left",
             label: "User Guide",
           },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "ref",
+            label: "Reference",
+          },
           { to: "/support", label: "Support", position: "left" },
-          { to: "/about", label: "About", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
           {
             type: "search",
             position: "left",
           },
+          { to: "/about", label: "About", position: "right" },
+          { to: "/blog", label: "Blog", position: "right" },
           {
             to: "/related",
             label: "Related Projects",
