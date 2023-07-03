@@ -11,10 +11,10 @@ const types = [
         v1: "categorical",
         v2: ["none", "categorical"],
       },
-      {
-        v1: "numeric",
-        v2: ["categorical"],
-      },
+      // {
+      //   v1: "numeric",
+      //   v2: ["categorical"],
+      // },
     ],
   },
   {
