@@ -3,4 +3,42 @@ title: Bar Chart
 description: One and two-way bar charts
 ---
 
-Bar charts represent counts and/or proportions.
+Bar charts represent counts and/or proportions and are produced when you choose one or two _categorical variables_.
+
+## One-way bar chart
+
+Each bar represents a category of the variable. The height of the bar represents the number of observations in that category.
+
+:::tip Counts or proportions
+
+You can switch between counts and proportions from the [**Add to Plot**](/) panel.
+
+:::
+
+import bar from "./bar.png";
+
+<Figure src={bar} caption="A bar chart" width={400} />
+
+The above bar chart shows the number of students in the sample using each form of travel to get to school.
+
+### Segmentation
+
+It is possible to segment the bars _of a one-way bar chart_ using a second categorical variable.
+
+## Two-way bar chart
+
+When you choose a categorical variable for both Variables 1 and 2, you will get a two-way bar chart displaying _the distribution of variable 1 for each level of variable 2_.
+
+The first _primary variable_ is represented by groups along the x-axis. The second variable is represented by bars within each group, with colours distinguishing the categories and labeled in the legend. The total height of the bars in each level of variable 2 (same colour) is 100%.
+
+Further, iNZight adjusts the **width** of each bar according to the size of that group (variable 2). Therefore, the area of each bar is proportional to the total number of observations in that cell.
+
+import bar2 from "./bar2.png";
+
+<Figure src={bar2} caption="A two-way bar chart" width={400} />
+
+:::tip Switch it up
+
+You can easily convert the order of the variables by clicking the **Switch** button next to Variable 1 in the control panel.
+
+:::
