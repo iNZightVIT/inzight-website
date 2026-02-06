@@ -77,7 +77,7 @@ function HomepageHeader() {
             </Link>
             <Link
               className="button button--info button--lg"
-              to="https://lite.docker.stat.auckland.ac.nz"
+              to="https://lite.inzight.nz"
             >
               Start iNZight Lite
             </Link>
