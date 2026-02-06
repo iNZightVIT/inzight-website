@@ -10,8 +10,8 @@ Items that need user review before the website can be deployed.
 - [x] ~~Maps module removed~~ - Not currently functional on Desktop or Lite. Documentation removed.
 
 ### URLs and External Links
-- [ ] **R package repository URL** - Is `https://r.docker.stat.auckland.ac.nz` still the correct URL?
-- [ ] **Confirm sponsor logo URLs** work (some reference inzight.nz which may not exist yet)
+- [x] **R package repository URL** - Confirmed correct: `https://r.docker.stat.auckland.ac.nz`
+- [x] **Sponsor logos** - Updated to use local images in `/static/img/`
 
 ---
 
