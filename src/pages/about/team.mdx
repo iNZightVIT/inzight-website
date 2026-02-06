@@ -1,138 +1,157 @@
 ---
 title: The iNZight Team
-description: Meet the current and past developers of iNZight
+description: Meet the people behind iNZight
 ---
+
+export const TeamMember = ({name, role, link, children}) => (
+  <div style={{
+    marginBottom: '2rem',
+  }}>
+    <div style={{fontWeight: 600, fontSize: '1.15rem', marginBottom: '0.2rem'}}>
+      {link ? <a href={link} target="_blank" rel="noopener noreferrer">{name}</a> : name}
+    </div>
+    {role && <div style={{color: 'var(--ifm-color-emphasis-600)', fontSize: '0.9rem', marginBottom: '0.5rem', fontStyle: 'italic'}}>{role}</div>}
+    <div style={{fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--ifm-color-emphasis-800)'}}>{children}</div>
+  </div>
+);
+
+export const TeamGrid = ({children}) => (
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+    gap: '1rem',
+    marginTop: '1.5rem',
+  }}>
+    {children}
+  </div>
+);
+
+export const MiniCard = ({name, years, children}) => (
+  <div style={{
+    padding: '1rem',
+    background: 'var(--ifm-card-background-color)',
+    borderLeft: '3px solid var(--ifm-color-primary)',
+  }}>
+    <div style={{fontWeight: 600}}>{name}</div>
+    <div style={{fontSize: '0.8rem', color: 'var(--ifm-color-emphasis-500)', marginBottom: '0.5rem'}}>{years}</div>
+    <div style={{fontSize: '0.9rem', color: 'var(--ifm-color-emphasis-700)'}}>{children}</div>
+  </div>
+);
+
+<div style={{maxWidth: '900px', margin: '0 auto'}}>
 
 # The iNZight Team
 
-The iNZightVIT project was founded by [Professor Chris Wild](https://www.stat.auckland.ac.nz/~wild/) from the [Department of Statistics](https://www.stat.auckland.ac.nz) at the University of Auckland, who came up with the big (and small) ideas that make iNZight intuitive and easy to learn. The project is now led by [Dr Tom Elliott](https://tomelliott.co.nz). Since 2018, [Andrew Sporle](https://unidirectory.auckland.ac.nz/profile/a-sporle) from iNZight Analytics Ltd has contributed ideas and funding support for extending iNZight's capabilities for use in research and official statistics.
-
-The development of iNZight itself comes from the work of many **statistics students** from the university, most working part-time or as part of a research project.
-
----
+<p style={{fontSize: '1.15rem', color: 'var(--ifm-color-emphasis-700)', marginBottom: '2rem'}}>
+iNZight is built by statisticians, for statisticians—and everyone else who wants to explore data without writing code. Our team spans decades of development, from founding vision to ongoing maintenance.
+</p>
 
 ## Current Team
 
-<div className="row">
-  <div className="col col--6">
+<TeamMember
+  name="Chris Wild"
+  role="Founder"
+  link="https://www.stat.auckland.ac.nz/~wild/"
+>
+  Professor Chris Wild from the University of Auckland's Department of Statistics founded iNZight and shaped its intuitive, education-focused design philosophy. His deep ties to statistical education have guided every aspect of iNZight's development. Now enjoying retirement, Chris continues to provide strategic direction.
+</TeamMember>
 
-### [Tom Elliott](https://tomelliott.co.nz)
+<TeamMember
+  name="Tom Elliott"
+  role="Project Lead & Lead Developer"
+  link="https://tomelliott.co.nz"
+>
+  Tom joined iNZight in 2013 and now leads the project. He maintains the R packages, Windows installer, GitHub repositories, and this website. Tom holds a PhD in Statistics from the University of Auckland and is a senior researcher at iNZight Analytics, completing a Ngā Puanga Pūtaiao Fellowship.
+</TeamMember>
 
-Tom started working on iNZight in 2013 and is now the project lead, as well as lead developer and maintainer. He has worked on all of the iNZight packages to varying degrees. Tom has a PhD in Statistics from the University of Auckland (2015–2020), and is a senior researcher at [iNZight Analytics Ltd](https://inzight.co.nz) where he is completing a 4-year Ngā Puanga Pūtaiao Fellowship.
+<TeamMember
+  name="Andrew Sporle"
+  role="Strategic Partner"
+  link="https://inzight.co.nz/"
+>
+  Since 2018, Andrew has contributed ideas and funding through iNZight Analytics Ltd, advocating for iNZight in government and research settings. His support has extended iNZight's capabilities for use in research and official statistics.
+</TeamMember>
 
-**Core responsibilities:**
-- Maintenance of the [iNZight R repository](http://r.docker.stat.auckland.ac.nz/R) and [GitHub repositories](https://github.com/iNZightVIT)
-- Windows installer
-- Technical support for users
-- Development and maintenance of the website
-- Oversees summer students and helps implement their work
-- Maintenance and urgent bug fixes in iNZight Lite
-
-### [Charco Hui](https://charcohui.com)
-
-Charco is a PhD student at the University of Auckland and recently joined the iNZight team as our Lite developer. He is responsible for maintenance and development of iNZight Lite, and providing email support to users.
-
-  </div>
-  <div className="col col--6">
-
-### [Chris Wild](https://www.stat.auckland.ac.nz/~wild/)
-
-Chris is the founder of iNZight and has been at its helm ever since. His strong ties with statistical education have helped guide the direction of development, and he has provided mentorship to all of iNZight's student (and other) developers.
-
-These days, Chris is usually off enjoying his well-earned retirement, but continues to provide direction and oversight of iNZight.
-
-### [Andrew Sporle](https://inzight.co.nz/)
-
-Andrew has provided ideas and funding to develop iNZight, and has advocated for the software in government and research groups. Through his company iNZight Analytics, Andrew supports iNZight's developers through personnel and development contracts.
-
-  </div>
-</div>
+<TeamMember
+  name="Charco Hui"
+  role="Lite Developer"
+  link="https://charcohui.com"
+>
+  A PhD student at the University of Auckland, Charco is responsible for maintaining and developing iNZight Lite, as well as providing user support.
+</TeamMember>
 
 ---
 
 ## Previous Team
 
-<div className="row">
-  <div className="col col--4">
+The development of iNZight has been shaped by many talented students from the University of Auckland, working part-time or on research projects.
 
-### Dineika Chandrananda (2010–2011)
-One of the original developers of iNZight, responsible for the original ideas behind iNZight's interface and workflow.
+<TeamGrid>
+<MiniCard name="Dineika Chandrananda" years="2010–2011">
+Original developer; designed iNZight's foundational interface and workflow.
+</MiniCard>
 
-### [Simon Potter](http://sjp.co.nz) (2011–2013)
-While studying at the University of Auckland, Simon was the main developer of iNZight, responsible for the website, installers, and much of the package development.
+<MiniCard name="Simon Potter" years="2011–2013">
+Main developer responsible for the website, installers, and core packages.
+</MiniCard>
 
-### David Banks (2011–2013)
-David worked on various parts of iNZight, including graphics, regression, time series, etc.
+<MiniCard name="David Banks" years="2011–2013">
+Contributed to graphics, regression, time series, and other modules.
+</MiniCard>
 
-  </div>
-  <div className="col col--4">
+<MiniCard name="Junjie Zheng" years="2012–2014">
+MSc project became the Multiple Response module; wrote the first iNZight Lite.
+</MiniCard>
 
-### Junjie Zheng (2012–2014)
-Junjie started working on iNZight as part of his MSc project, most of which is incorporated into the [Multiple Response](https://github.com/iNZightVIT/iNZightMR) module. He also contributed to the GUI development of the Time Series and Model Fitting modules, and wrote the first iteration of iNZight Lite.
+<MiniCard name="Marco Kuper" years="2013–2014">
+Redesigned the iNZight GUI from scratch, improving usability for both users and developers.
+</MiniCard>
 
-### Marco Kuper (2013–2014)
-From Germany, Marco came to New Zealand to complete his Honours and Masters degrees. Marco's work involved redesigning the iNZight GUI from scratch, making it far more user- and developer-friendly.
+<MiniCard name="Christoph Knapp" years="2014–2015">
+Designed and developed the current Lite architecture.
+</MiniCard>
 
-### Christoph Knapp (2014–2015)
-Another German visitor, Christoph completed his Masters here and was responsible for designing and developing the current Lite app.
+<MiniCard name="Chris Park" years="2014–2016">
+Worked on Shiny apps including iNZight Lite and Census at School.
+</MiniCard>
 
-  </div>
-  <div className="col col--4">
+<MiniCard name="Wilson Hu" years="2014–2020">
+Maintained and extended iNZight Lite during his PhD, including public shiny containers.
+</MiniCard>
 
-### Chris Park (2014–2016)
-While completing his postgraduate studies, Chris worked on many of the Shiny apps, including iNZight Lite and Census at School.
+<MiniCard name="Daniel Barnett" years="2017–2021">
+Extended graphics with FT Chart Library, rebuilt maps module, added epidemiological features.
+</MiniCard>
 
-### Shengwei (Wilson) Hu (2014–2020)
-Wilson worked on iNZight Lite while completing his PhD. He was responsible for implementing new features and fixing bugs, as well as maintaining the public shiny containers.
+<MiniCard name="Tong Chen" years="2019–2021">
+Maintained Lite during his PhD and added the Experimental Design module.
+</MiniCard>
 
-### Daniel Barnett (2017–2021)
-Daniel worked on iNZight as part of a summer project in 2017/18, extended the graphics to include the Financial Times Chart Library, rebuilt the maps module, and added epidemiological features.
-
-### Tong Chen (2019–2021)
-Tong maintained and extended iNZight Lite while completing his PhD. He also added the Experimental Design module.
-
-### [Jason Cairns](https://jason.cair.nz/) (2021–2022)
-Jason maintained iNZight Lite and refactored the build process to significantly improve stability.
-
-  </div>
-</div>
+<MiniCard name="Jason Cairns" years="2021–2022">
+Maintained iNZight Lite and refactored the build process for improved stability.
+</MiniCard>
+</TeamGrid>
 
 ---
 
 ## Research Students
 
-These students worked on iNZight as part of their Honours/Masters research projects:
-
-- **Sophie Jones** (MSc, 2020): visualisation of longitudinal data. Sophie developed a shiny app and an iNZight Addon linking to her 'longZight' package.
-
----
-
-## Summer Students
-
-These students worked on iNZight for their Summer Scholarship:
-
-**Summer 2021/22**
-- **Stephen Su**: refactored the **iNZightTS** package to use packages from the **tidyverts** ecosystem.
-
-**Summer 2018/19**
-- **Lushi Cai**: worked on a code-tidying algorithm for tidyverse-style code
-- **Monica Merchant**: began work on predictive model building module
-- **Yiwen He**: implemented datetime facilities and data joining
-
-**Summer 2017/18**
-- **Daniel Barnett**: developed the regional maps module
-
-**Summer 2016/17**
-- **Akshay Gupta**: implemented improved Import functionality
-- **Dongning Zhang**: expanded Time Series format recognition
-- **Yu Han Soh**: started work on exporting plots as interactive HTML
-
-**Summer 2015/16**
-- **Jason Wen**: developed the iNZightMaps package
-
-**Summer 2014/15**
-- **Eric Lim**: modularised iNZight's Advanced Modules
+- **Stephen Su** (Summer 2021/22) — Refactored iNZightTS to use tidyverts ecosystem
+- **Sophie Jones** (MSc, 2020) — Developed longitudinal data visualisation tools and the 'longZight' package
+- **Lushi Cai** (Summer 2018/19) — Code-tidying algorithm for tidyverse-style code
+- **Monica Merchant** (Summer 2018/19) — Predictive model building module
+- **Yiwen He** (Summer 2018/19) — Datetime facilities and data joining
+- **Daniel Barnett** (Summer 2017/18) — Regional maps module
+- **Akshay Gupta** (Summer 2016/17) — Improved import functionality
+- **Dongning Zhang** (Summer 2016/17) — Time series format recognition
+- **Yu Han Soh** (Summer 2016/17) — Interactive HTML plot export
+- **Jason Wen** (Summer 2015/16) — iNZightMaps package
+- **Eric Lim** (Summer 2014/15) — Modularised Advanced Modules
 
 ---
 
-If you've been left off this list, or want anything changed, please [send us a message](mailto:inzight_support@stat.auckland.ac.nz?subject=Change%20my%20iNZight%20Team%20information).
+<p style={{fontSize: '0.9rem', color: 'var(--ifm-color-emphasis-600)', textAlign: 'center', marginTop: '2rem'}}>
+Missing from this list? <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=Update%20iNZight%20Team%20page">Let us know</a>.
+</p>
+
+</div>
