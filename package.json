@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.2",
-    "@ngsctt/remark-smartypants": "^0.2.0",
     "@tsconfig/docusaurus": "^1.0.5",
     "typescript": "^4.7.4"
   },
