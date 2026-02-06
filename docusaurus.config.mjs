@@ -1,12 +1,12 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import { themes } from "prism-react-renderer";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
-const smartypants = require("@ngsctt/remark-smartypants");
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -38,13 +38,13 @@ const config = {
       // /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: "./sidebars.cjs",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/iNZightVIT/inzight-website/edit/main/",
           // "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          remarkPlugins: [[smartypants, { dashes: "oldschool" }], math],
-          rehypePlugins: [katex],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           showLastUpdateTime: true,
         },
         blog: {
@@ -52,7 +52,7 @@ const config = {
           editUrl: "https://github.com/iNZightVIT/inzight-website/edit/main/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: "./src/css/custom.css",
         },
       },
     ],
@@ -66,7 +66,7 @@ const config = {
         id: "support",
         path: "support",
         routeBasePath: "support",
-        sidebarPath: require.resolve("./sidebars-support.js"),
+        sidebarPath: "./sidebars-support.cjs",
       }),
     ],
   ],
@@ -206,4 +206,4 @@ const config = {
     }),
 };
 
-module.exports = config;
+export default config;
