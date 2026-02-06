@@ -1,5 +1,5 @@
 position: 21
 label: Survey Data
 link:
-  type: generated-index
-  title: Survey Data in iNZight
+  type: doc
+  id: reference/survey-data/index
