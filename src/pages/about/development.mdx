@@ -1,0 +1,58 @@
+---
+title: Development
+description: How to contribute to iNZight development
+---
+
+# Development of iNZight
+
+iNZight is a student-driven project, so most of the big-scale changes occur over the (New Zealand) summer period. At other times, we mostly work on small changes and bug fixes.
+
+## Source Code
+
+All of our work is kept on [GitHub](https://github.com/iNZightVIT). If you are interested in following iNZight's development or contributing, that's the place to start.
+
+## Installing Development Versions
+
+Using the `devtools` package in R, you can download the latest developmental version of iNZight and try it out without waiting for a packaged release version.
+
+```r
+# Install devtools if you haven't already
+install.packages("devtools")
+
+# Install a development package
+devtools::install_github("iNZightVIT/iNZight")
+```
+
+Replace `iNZight` with any of the iNZight packages:
+- `iNZight` - Main GUI application
+- `iNZightPlots` - Plotting functionality
+- `iNZightTools` - Data manipulation tools
+- `iNZightTS` - Time series module
+- `iNZightMR` - Multiple response module
+- `iNZightRegression` - Regression module
+- `iNZightMaps` - Maps module
+
+## Contributing
+
+We welcome contributions! If you'd like to help:
+
+1. **Report bugs** - Open an issue on the relevant [GitHub repository](https://github.com/iNZightVIT)
+2. **Suggest features** - Let us know what you'd like to see via [Discord](https://discord.gg/vQN8Mbnv) or email
+3. **Submit code** - Fork the repository, make your changes, and submit a pull request
+
+## R Users
+
+If you're an R user who wants to use iNZight's functionality programmatically, you can install the packages directly from our R repository:
+
+```r
+# Add the iNZight repository
+options(repos = c(
+  iNZight = "https://r.docker.stat.auckland.ac.nz/R",
+  CRAN = "https://cloud.r-project.org"
+))
+
+# Install iNZight packages
+install.packages("iNZight")
+```
+
+See the [Reference documentation](/docs/reference) for details on using the packages programmatically.
