@@ -15,7 +15,7 @@ const config = {
   url: "https://inzight.nz",
   baseUrl: "/",
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenAnchors: "warn",
   favicon: "img/favicon.ico",
 
   // GitHub pages deployment config.
