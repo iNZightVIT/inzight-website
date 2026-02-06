@@ -1,17 +1,19 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
+tom:
+  name: Tom Elliott
+  title: Lead Developer
+  url: https://tomelliott.co.nz
+  image_url: https://github.com/tmelliott.png
 
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+chris:
+  name: Chris Wild
+  title: Founder
+  url: https://www.stat.auckland.ac.nz/~wild/
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+charco:
+  name: Charco Hui
+  title: Lite Developer
+  url: https://charcohui.com
+
+inzight:
+  name: iNZight Team
+  url: https://inzight.nz/about/team
