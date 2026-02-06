@@ -27,6 +27,12 @@ Review these newly created module docs for accuracy:
 - [ ] `/docs/reference/modules/quick-explore` - Quick Explore module
 - [ ] `/docs/reference/modules/time-series` - Time Series module (new/tidyverts)
 - [ ] `/docs/reference/modules/time-series-legacy` - Time Series Legacy module
+- [ ] `/docs/reference/modules/3d-plot` - 3D Plot module (Desktop only)
+- [ ] `/docs/reference/modules/design-of-experiment` - Design of Experiment (Lite only)
+- [ ] `/docs/reference/modules/multivariate` - Multivariate (Lite only)
+
+### Support/FAQ
+- [ ] `/support/faq/lite/code-panel` - Code Panel documentation for Lite
 
 ### About Pages
 Already implemented - quick review recommended:
@@ -64,13 +70,14 @@ These are expected - documentation needs to be created for these sections.
 ## 📋 Future Tasks (Not Blocking Deployment)
 
 ### Documentation to Add
-- [ ] 3D Plot module documentation
-- [ ] Design of Experiment module (Lite-only)
-- [ ] Multivariate module (Lite-only)
+- [x] ~~3D Plot module documentation~~ - Completed
+- [x] ~~Design of Experiment module (Lite-only)~~ - Completed
+- [x] ~~Multivariate module (Lite-only)~~ - Completed
+- [x] ~~Code panel documentation (Lite)~~ - Completed
 - [ ] Data Dictionary features
 - [ ] Generate Data Report feature
 - [ ] Interactive plot export
-- [ ] Code panel documentation (Lite)
+- [ ] FT Graphics features
 - [ ] Complete menubar reference documentation
 
 ### Infrastructure

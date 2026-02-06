@@ -23,21 +23,13 @@ The following modules now have documentation in `/docs/reference/modules/`:
 5. **Maps Module** - `/docs/reference/modules/maps`
    - ⚠️ Note: Maps may require API key configuration - needs verification
 6. **Quick Explore** - `/docs/reference/modules/quick-explore`
+7. **3D Plot** (Desktop only) - `/docs/reference/modules/3d-plot`
+8. **Design of Experiment** (Lite only) - `/docs/reference/modules/design-of-experiment`
+9. **Multivariate** (Lite only) - `/docs/reference/modules/multivariate`
 
-### ❌ Still Missing Module Documentation
+### ❌ All modules now documented!
 
-1. **3D Plot** (`plot3D`)
-   - Interactive 3D scatter plots
-   - Requires rgl package
-
-### Lite-Only Modules (Not Yet Documented)
-
-1. **Design of Experiment** (`F5_DesignofExperiment`)
-   - Experimental design tools
-
-2. **Multivariate** (`F7_Multivariate`)
-   - Principal component analysis
-   - Clustering
+All major analysis modules have documentation.
 
 ---
 
@@ -81,7 +73,7 @@ The following modules now have documentation in `/docs/reference/modules/`:
 
 ## Lite-Specific Features
 
-### Code Panel (`G1_Code`)
+### ✅ Code Panel (`G1_Code`) - Documented in `/support/faq/lite/code-panel`
 - View generated R code
 - Copy/export code
 
@@ -124,16 +116,17 @@ The following modules now have documentation in `/docs/reference/modules/`:
 ### P2 - Important (frequently used features)
 - [x] ~~Quick Explore features~~ - Completed
 - [x] ~~Multiple Response module~~ - Completed
-- [ ] Code panel (Desktop only)
-- [ ] Data Dictionary feature (Desktop only)
+- [x] ~~Code panel (Lite)~~ - Completed in FAQ
+- [ ] Data Dictionary feature
 - [ ] Menubar reference documentation (Plot, Dataset, Variables, etc.)
 
 ### P3 - Nice to have
-- [ ] 3D Plot module
-- [ ] Design of Experiment (Lite)
-- [ ] Multivariate (Lite)
+- [x] ~~3D Plot module~~ - Completed
+- [x] ~~Design of Experiment (Lite)~~ - Completed
+- [x] ~~Multivariate (Lite)~~ - Completed
 - [ ] Generate Data Report
 - [ ] Interactive plot export
+- [ ] FT Graphics
 
 ---
 
