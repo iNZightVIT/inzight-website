@@ -57,10 +57,6 @@ The site is ready to deploy. The only outstanding item is reviewing the new Time
 ## 📋 Future Enhancements (Post-Launch)
 
 ### Documentation Expansion
-The old site has more detailed documentation with screenshots that could be migrated:
-- File menu (import options, metadata in CSV, preferences)
-- Dataset menu (filter, aggregate, stack, reshape, validate, etc.)
-- Variables menu (transform, standardise, class intervals, dates/times)
 - Advanced features (display modes, colour specification, interactive HTML export)
 
 ### Infrastructure
