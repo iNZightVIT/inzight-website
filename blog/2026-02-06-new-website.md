@@ -33,7 +33,6 @@ If you need assistance with iNZight:
 
 - Browse our [documentation](/docs) for tutorials and reference material
 - Check the [FAQ](/support/faq) for common questions
-- Join our [Discord community](https://discord.gg/vQN8Mbnv) for live help
 - [Contact us](/support/contact) directly if you can't find what you need
 
 ## Stay Updated

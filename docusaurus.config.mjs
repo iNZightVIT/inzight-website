@@ -148,10 +148,6 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Discord",
-                href: "https://discord.gg/vQN8Mbnv",
-              },
-              {
                 label: "Twitter",
                 href: "https://twitter.com/iNZightVIT",
               },

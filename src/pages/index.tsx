@@ -10,19 +10,14 @@ import { ArrowRightCircleIcon } from "@heroicons/react/20/solid";
 function TopBanner() {
   const sponsors = [
     {
-      label: "University of Auckland",
-      href: "https://stat.auckland.ac.nz",
-      logo: "https://inzight.nz/img/uoa_logo.png",
-    },
-    {
-      label: "Te Rourou Tātaritanga",
-      href: "https://terourou.org",
-      logo: "https://terourou.org/img/logo.png",
-    },
-    {
       label: "iNZight Analytics Ltd.",
       href: "https://inzight.co.nz",
       logo: "https://inzight.co.nz/inzight-light.png",
+    },
+    {
+      label: "University of Auckland",
+      href: "https://stat.auckland.ac.nz",
+      logo: "/img/uoa_logo.png",
     },
   ];
 
