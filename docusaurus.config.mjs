@@ -139,7 +139,7 @@ const config = {
               },
               {
                 label: "Reference",
-                to: "/docs/category/reference",
+                to: "/docs/reference",
               },
             ],
           },

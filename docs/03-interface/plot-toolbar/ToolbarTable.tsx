@@ -81,10 +81,12 @@ const items = [
           Add and modify features of the plot, including colour, size, plot
           type, axes and labels, and more.
         </p>
+{/* TODO: Add link when page is created
         <p>
           See{" "}
-          <Link to="/03-interface/plot-toolbar/add-to-plot">Add to Plot</Link>.
+          <Link to="/docs/interface/plot-toolbar/add-to-plot">Add to Plot</Link>.
         </p>
+        */}
       </>
     ),
   },
@@ -99,13 +101,15 @@ const items = [
     Description: (
       <>
         <p>Add inferential mark-up to plots.</p>
+{/* TODO: Add link when page is created
         <p>
           See{" "}
-          <Link to="/03-interface/plot-toolbar/inference-information">
+          <Link to="/docs/interface/plot-toolbar/inference-information">
             Inference Information
           </Link>
           .
         </p>
+        */}
       </>
     ),
   },

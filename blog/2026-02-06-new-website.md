@@ -38,7 +38,6 @@ If you need assistance with iNZight:
 
 ## Stay Updated
 
-- Subscribe to our [mailing lists](/support/mailing-lists) for announcements
 - Follow us on [Twitter](https://twitter.com/iNZightVIT)
 - Watch the [GitHub repositories](https://github.com/iNZightVIT) for development updates
 
