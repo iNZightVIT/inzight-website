@@ -11,23 +11,13 @@
 /user_guides/addons/                          /docs/reference/modules                     301
 /user_guides/add_ons/                         /docs/reference/modules                     301
 /user_guides/basics/                          /docs/category/getting-started              301
-/user_guides/data_options/                    /docs/category/data-wrangling               301
-/user_guides/file_options/                    /docs/category/importexport-data            301
+/user_guides/data_options/                    /docs/reference                             301
+/user_guides/file_options/                    /docs/reference/import-export               301
 /user_guides/plot_options/                    /docs/interface/plot-toolbar                301
 /user_guides/variables/                       /docs/reference                             301
 /user_guides/advanced/                        /docs/reference/advanced-features           301
 /user_guides/interface/                       /docs/interface                             301
 /user_guides/                                 /docs                                       301
-
-# Old support pages
-/support/faq/                                 /support/faq                                301
-/support/changelog/                           /support/changelog                          301
-/support/contact/                             /support/contact                            301
-
-# Old about pages
-/about/                                       /about                                      301
-/about/team/                                  /about/team                                 301
-/about/sponsors/                              /about/sponsors                             301
 
 # Old download page
 /download/                                    /install                                    301
