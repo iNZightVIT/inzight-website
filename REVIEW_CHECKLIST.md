@@ -7,9 +7,7 @@ Items that need user review before the website can be deployed.
 ## ⚠️ High Priority - Needs Verification
 
 ### Maps Module Status
-- [ ] **Verify Desktop Maps module works** - The iNZightMaps package now requires a Stadia Maps API key. Check if it works out-of-the-box or needs configuration.
-- [ ] **Verify Lite Maps module status** - User indicated Maps may not work on Lite. Confirm current status.
-- [ ] **Update Maps documentation** if changes are needed based on testing.
+- [x] ~~Maps module removed~~ - Not currently functional on Desktop or Lite. Documentation removed.
 
 ### URLs and External Links
 - [ ] **R package repository URL** - Is `https://r.docker.stat.auckland.ac.nz` still the correct URL?
@@ -22,7 +20,6 @@ Items that need user review before the website can be deployed.
 ### New Module Documentation
 Review these newly created module docs for accuracy:
 - [ ] `/docs/reference/modules/model-fitting` - Model Fitting module
-- [ ] `/docs/reference/modules/maps` - Maps module (includes warning about API key)
 - [ ] `/docs/reference/modules/multiple-response` - Multiple Response module
 - [ ] `/docs/reference/modules/quick-explore` - Quick Explore module
 - [ ] `/docs/reference/modules/time-series` - Time Series module (new/tidyverts)

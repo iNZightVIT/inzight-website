@@ -20,12 +20,10 @@ The following modules now have documentation in `/docs/reference/modules/`:
 2. **Time Series Module (Legacy)** - `/docs/reference/modules/time-series-legacy`
 3. **Model Fitting Module** - `/docs/reference/modules/model-fitting`
 4. **Multiple Response Module** - `/docs/reference/modules/multiple-response`
-5. **Maps Module** - `/docs/reference/modules/maps`
-   - ⚠️ Note: Maps may require API key configuration - needs verification
-6. **Quick Explore** - `/docs/reference/modules/quick-explore`
-7. **3D Plot** (Desktop only) - `/docs/reference/modules/3d-plot`
-8. **Design of Experiment** (Lite only) - `/docs/reference/modules/design-of-experiment`
-9. **Multivariate** (Lite only) - `/docs/reference/modules/multivariate`
+5. **Quick Explore** - `/docs/reference/modules/quick-explore`
+6. **3D Plot** (Desktop only) - `/docs/reference/modules/3d-plot`
+7. **Design of Experiment** (Lite only) - `/docs/reference/modules/design-of-experiment`
+8. **Multivariate** (Lite only) - `/docs/reference/modules/multivariate`
 
 ### ❌ All modules now documented!
 
@@ -111,7 +109,7 @@ All major analysis modules have documentation.
 - [x] ~~Advanced modules documentation section~~ - Completed
 - [x] ~~Time Series module documentation~~ - Completed (new + legacy)
 - [x] ~~Model Fitting module documentation~~ - Completed
-- [x] ~~Maps module documentation~~ - Completed (needs API verification)
+- [ ] ~~Maps module~~ - Removed (not currently functional)
 
 ### P2 - Important (frequently used features)
 - [x] ~~Quick Explore features~~ - Completed
