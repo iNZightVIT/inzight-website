@@ -1,0 +1,207 @@
+---
+title: Model Fitting
+description: Fit regression models including linear regression, generalized linear models, and survey-weighted models.
+sidebar_label: Model Fitting
+---
+
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
+The Model Fitting module allows you to fit and explore regression models from your data. It supports linear regression, generalized linear models (GLMs), and survey-weighted models.
+
+## Features
+
+- **Multiple model types**: Linear regression, logistic regression, Poisson regression, and more
+- **Response transformations**: Log, square root, or power transformations
+- **Survey support**: Fit models with complex survey designs
+- **Model management**: Save, rename, and compare multiple models
+- **Diagnostic plots**: Residual plots, QQ-plots, Cook's distance, and more
+- **Code export**: View and download the R code used to fit your models
+
+## Getting Started
+
+### Accessing the Module
+
+<Desktop>
+
+Go to **Advanced** → **Model Fitting** from the menu bar.
+
+</Desktop>
+
+<Lite>
+
+Select **Model Fitting** from the module dropdown menu.
+
+</Lite>
+
+### Basic Workflow
+
+1. **Select a response variable** from the Variable dropdown under Response Options
+2. **Choose your model framework** (Normal, Binomial, Poisson, etc.)
+3. **Add explanatory variables** to the model
+4. **Explore the results** using summaries and diagnostic plots
+5. **Save your model** for later comparison
+
+## Response Options
+
+### Response Variable
+
+Select the variable you want to predict (the dependent variable). This goes in the **Y Variable** or **Response** field.
+
+### Response Transformations
+
+You can transform the response variable before fitting:
+
+- **Log**: Natural logarithm transformation (`log(y)`)
+- **Square root**: Square root transformation (`sqrt(y)`)
+- **Power**: Raise to a specified power (`y^n`)
+
+### Model Framework
+
+Choose the appropriate framework based on your response variable type:
+
+| Framework | Use When | Link Function |
+|:----------|:---------|:--------------|
+| Normal (Gaussian) | Continuous numeric response | Identity |
+| Binomial | Binary (0/1) or proportion response | Logit |
+| Poisson | Count data | Log |
+| Negative Binomial | Overdispersed count data | Log |
+
+### Survey Design
+
+If your data comes from a complex survey, you can specify the survey design to get correct standard errors and confidence intervals. Enable **Survey Design** and ensure your dataset has a survey specification loaded.
+
+## Explanatory Variables
+
+### Adding Variables
+
+<Desktop>
+
+- **Double-click** a variable in the Available Variables list to add it to the model
+- **Drag-and-drop** variables to either:
+  - **Variables of Interest**: Main predictors whose coefficients you want to interpret
+  - **Confounding Variables**: Control variables included in the model but not the focus
+
+Use the up/down arrows to change the order of variables in the model.
+
+</Desktop>
+
+<Lite>
+
+Select predictor variables from the dropdown lists. You can choose both numeric and categorical variables as predictors.
+
+</Lite>
+
+### Variable Transformations
+
+Apply transformations to explanatory variables:
+
+- **Log**: `log(x)`
+- **Square root**: `sqrt(x)`
+- **Polynomial**: `x^2`, `x^3`, etc.
+- **Centring**: Subtract the mean
+
+<Desktop>
+
+Right-click a variable in the Available Variables list and select a transformation to add it to the model.
+
+</Desktop>
+
+### Interaction Terms
+
+Include interactions between variables to model how one variable's effect depends on another:
+
+- **All**: Include all possible two-way interactions
+- **By degree**: Specify the degree of interaction (2-way, 3-way, etc.)
+- **By variable**: Select specific variable pairs to interact
+
+## Model Output
+
+### Summary Tab
+
+The model summary displays:
+
+- **Coefficients**: Estimated effects for each predictor
+- **Standard errors**: Uncertainty in the coefficient estimates
+- **p-values**: Statistical significance of each term
+- **R-squared**: Proportion of variance explained (for linear models)
+- **AIC/BIC**: Model comparison criteria
+
+### Formula Display
+
+View the R formula that defines your model, for example:
+
+```r
+y ~ x1 + x2 + x1:x2
+```
+
+## Diagnostic Plots
+
+### Residual Plots
+
+Examine model assumptions and identify potential problems:
+
+| Plot | Purpose |
+|:-----|:--------|
+| Residuals vs Fitted | Check for non-linearity and heteroscedasticity |
+| Scale-Location | Check for constant variance |
+| Residuals vs Leverage | Identify influential observations |
+| Cook's Distance | Find observations with high influence |
+
+### Normality Checks
+
+- **Normal Q-Q Plot**: Compare residual distribution to normal
+- **Histogram of Residuals**: Visual check for normality
+- **Inference Q-Q Plot**: Q-Q plot with confidence bands
+
+### Factor Level Comparison
+
+For models with categorical predictors, this plot shows how each level of a factor affects the response compared to the reference level.
+
+## Managing Models
+
+### Saving Models
+
+After fitting a model you want to keep:
+
+1. Enter a name in the model name field
+2. Click **Save** or **Add Model**
+
+Saved models appear in the model dropdown for easy comparison.
+
+### Comparing Models
+
+With multiple saved models, you can:
+
+- Switch between models using the dropdown
+- Compare AIC/BIC values to assess relative fit
+- View different diagnostic plots for each model
+
+### Code History
+
+<Lite>
+
+The **Code History** tab shows the R code used to fit your models. You can:
+
+- View the complete code for reproducibility
+- Download the code as an R script
+- Copy code to run in your own R session
+
+</Lite>
+
+<Desktop>
+
+The R code for fitted models is saved and can be exported for use outside iNZight.
+
+</Desktop>
+
+## Tips
+
+- **Start simple**: Begin with a model containing only the most important predictors, then add complexity
+- **Check assumptions**: Always examine diagnostic plots before interpreting results
+- **Consider transformations**: If residual plots show problems, try transforming the response or predictors
+- **Watch for multicollinearity**: Highly correlated predictors can cause unstable estimates
+- **Use confounders wisely**: Include variables that might confound your main effects, but don't over-control
+
+## Additional Resources
+
+- [Introduction to Linear Regression](https://www.stat.auckland.ac.nz/~wild/MOOC/) - Free online course covering regression concepts

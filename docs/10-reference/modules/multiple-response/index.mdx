@@ -1,0 +1,125 @@
+---
+title: Multiple Response
+description: Analyse survey questions where respondents can select multiple answers.
+sidebar_label: Multiple Response
+---
+
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
+The Multiple Response module allows you to explore data from survey questions where respondents can select multiple answers to a single question. For example: "Which of the following colours do you like?" where respondents can check multiple options.
+
+## When to Use This Module
+
+Use this module when:
+- You have survey data with "select all that apply" questions
+- Each possible response is stored as a separate column
+- Values are binary (yes/no, 0/1, true/false)
+
+## Data Format
+
+Multiple response data typically comes in a "wide" format with one column per option:
+
+| respondent | likes_red | likes_blue | likes_green | gender |
+|:-----------|:----------|:-----------|:------------|:-------|
+| 1 | yes | no | yes | M |
+| 2 | yes | yes | no | F |
+| 3 | no | no | yes | M |
+
+Each response column contains binary values indicating whether that option was selected.
+
+### Supported Binary Formats
+
+iNZight recognises several formats for binary data:
+- Yes/No (or Y/N)
+- 1/0
+- True/False (or T/F)
+
+## Getting Started
+
+### Accessing the Module
+
+<Desktop>
+
+Go to **Advanced** → **Multiple Response** from the menu bar.
+
+</Desktop>
+
+<Lite>
+
+Select **Multiple Response** from the module dropdown menu.
+
+</Lite>
+
+### Selecting Response Variables
+
+1. **Identify your binary variables**: iNZight automatically detects columns with binary (yes/no) values
+2. **Select related variables**: Choose all columns that belong to the same question (e.g., all "likes_colour" columns)
+3. **Name your response set**: Give the group of variables a meaningful name
+
+:::tip
+Variables from the same question often share a common prefix (e.g., `colour_red`, `colour_blue`, `colour_green`). Look for this pattern when selecting your variables.
+:::
+
+## Visualising Multiple Response Data
+
+### Basic Response Plot
+
+The default plot shows the proportion of "yes" responses for each option:
+
+- Each bar represents one response option
+- Bar height shows the percentage who selected that option
+- Error bars (if enabled) show confidence intervals
+
+### Adding Grouping Variables
+
+Compare response patterns across groups:
+
+1. Select a **grouping variable** (e.g., gender, age group)
+2. The plot will show separate bars for each group
+3. This reveals how response patterns differ between groups
+
+### Subset Variables
+
+You can also subset the data to focus on specific groups:
+
+1. Add a **subset variable** to filter the data
+2. Use the slider to navigate between subset levels
+3. Observe how patterns change across subsets
+
+## Interpreting Results
+
+### Response Proportions
+
+- Proportions show what fraction of respondents selected each option
+- Because respondents can select multiple options, proportions across all options may sum to more than 100%
+- Compare relative heights to see which options are most/least popular
+
+### Group Comparisons
+
+When comparing groups:
+- Look for options where groups differ substantially
+- Consider whether differences are practically meaningful, not just statistically significant
+- Be aware that sample sizes may differ between groups
+
+## Tips
+
+- **Check your data**: Ensure all response variables are properly coded as binary
+- **Meaningful names**: Rename variables to be interpretable in plots (e.g., "Red" instead of "colour_red")
+- **Consider order**: Arrange response options in a logical order (alphabetical, by frequency, or conceptual grouping)
+- **Missing data**: Respondents with missing values on all options will be excluded
+
+## Troubleshooting
+
+### "No binary variables found"
+
+This error appears when iNZight cannot find variables with exactly two values matching recognised patterns (yes/no, 0/1, true/false). Check that:
+- Your data contains the expected binary columns
+- Values are spelled correctly (e.g., "yes" not "Yes " with trailing space)
+- There are no additional values beyond the two expected
+
+### Variables not appearing
+
+If expected variables don't appear in the selection list:
+- Verify they have exactly two distinct values (plus possibly missing values)
+- Check that values match recognised binary patterns
+- Try recoding variables to use standard formats (0/1 or yes/no)
