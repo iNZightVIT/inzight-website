@@ -10,7 +10,7 @@ iNZight lets users specify complex survey designs in several ways. Under the hoo
 
 The first is to manually specify information about the design, such as the strata, clusters, and weights, or by specifying replicate weights. While this is the simplest method, it does come with the risk of misspecification.
 
-An alternative method is to use a _survey specification_ file. This allows users to set up a survey with one-click (either by importing the file directly, or loading the survey design information from it). If you are distributing a survey to use with iNZight, unless you are teaching a course about survey design and the design specification is an integral part, we recommend you distribute the data with a survey specification file. See [design specification files](surveyspec) for more information.
+An alternative method is to use a _survey specification_ file. This allows users to set up a survey with one-click (either by importing the file directly, or loading the survey design information from it). If you are distributing a survey to use with iNZight, unless you are teaching a course about survey design and the design specification is an integral part, we recommend you distribute the data with a survey specification file.
 
 ## Specify Design Information
 
@@ -29,11 +29,11 @@ To specify the design, go to **Dataset** > **Survey design** > \*_Specify design
   width={{ desktop: 400, lite: 300 }}
 />
 
-- **Strata variable:** If [stratified sampling](survey-notes.html#stratified) has been performed, use to select the variable that specifies which stratum each observation comes from. (This variable can be either numeric or categorical.)
+- **Strata variable:** If [stratified sampling](/docs/reference/survey-data/introduction#stratified) has been performed, use to select the variable that specifies which stratum each observation comes from. (This variable can be either numeric or categorical.)
 
-- **1st stage clustering variable:** If [cluster sampling](survey-notes.html#cluster) has been performed, use to select the 1st-stage clustering variable; this specifies which [1st-stage cluster](survey-notes.html#multistage) each observation comes from. (Clustering variables can also be either numeric or categorical.)
+- **1st stage clustering variable:** If [cluster sampling](/docs/reference/survey-data/introduction#cluster) has been performed, use to select the 1st-stage clustering variable; this specifies which 1st-stage cluster each observation comes from. (Clustering variables can also be either numeric or categorical.)
 
-- **2nd stage clustering variable:** If two or more stages of cluster sampling have been performed, use to select the 2nd-stage clustering variable (specifies which [2nd-stage cluster](survey-notes.html#multistage) each observation comes from). Any further levels of cluster sampling (3rd stage, etc., are not used)
+- **2nd stage clustering variable:** If two or more stages of cluster sampling have been performed, use to select the 2nd-stage clustering variable (specifies which 2nd-stage cluster each observation comes from). Any further levels of cluster sampling (3rd stage, etc., are not used)
 
 - **Use nested sampling:** Quite often, compilers of survey data "reuse" cluster names from stratum to stratum. Let us take, as an example, a survey in which American states for the starts and counties form the clusters. Sampled counties from Washington State may be given a County value of 1, 2, ... and counties from Arizona may also be given a County value of 1, 2, ... Clearly County 1 from Washington refers to an entirely different county from County 1 from Arizona even though they have the same value of the County variable.
 
