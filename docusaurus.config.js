@@ -4,7 +4,6 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-const oembed = require("@agentofuser/remark-oembed");
 const smartypants = require("@ngsctt/remark-smartypants");
 const math = require("remark-math");
 const katex = require("rehype-katex");
@@ -44,7 +43,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/iNZightVIT/inzight-website/edit/main/",
           // "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          remarkPlugins: [oembed, [smartypants, { dashes: "oldschool" }], math],
+          remarkPlugins: [[smartypants, { dashes: "oldschool" }], math],
           rehypePlugins: [katex],
           showLastUpdateTime: true,
         },
@@ -70,7 +69,6 @@ const config = {
         sidebarPath: require.resolve("./sidebars-support.js"),
       }),
     ],
-    "docusaurus-plugin-matomo",
   ],
 
   stylesheets: [
@@ -204,12 +202,6 @@ const config = {
         appId: "LM0R8NEREJ",
         apiKey: "fad0b6e47b54ebe6f9dcec2e38dbe902",
         indexName: "inzight",
-      },
-      matomo: {
-        matomoUrl: "/user-info/",
-        siteId: "1",
-        phpLoader: "info.php",
-        jsLoader: "info.js",
       },
     }),
 };

@@ -89,7 +89,7 @@ bun add @mdx-js/react@3
 bun add remark-math@6 rehype-katex@7
 ```
 
-**Note:** `@agentofuser/remark-oembed` and `@ngsctt/remark-smartypants` may need checking for v3 compatibility.
+**Note:** `@ngsctt/remark-smartypants` may need checking for v3 compatibility. (oembed and matomo plugins have been removed as unused.)
 
 ### Step 2.5: Update prism-react-renderer
 
@@ -130,7 +130,8 @@ bun add -D @docusaurus/module-type-aliases@3
 
 ### Step 2.9: Check third-party plugins
 
-- `docusaurus-plugin-matomo` - check v3 compatibility
+- ~~`docusaurus-plugin-matomo`~~ - REMOVED (unused)
+- ~~`@agentofuser/remark-oembed`~~ - REMOVED (unused)
 
 ---
 
@@ -189,7 +190,7 @@ After successful v3.0 migration, upgrade incrementally:
 
 1. **MDX syntax changes** - May need to update MDX files for v3 compatibility
 2. **Custom components** - Check `src/components/` for React 18 compatibility
-3. **Third-party plugins** - `docusaurus-plugin-matomo`, `@agentofuser/remark-oembed`
+3. **Third-party plugins** - `@ngsctt/remark-smartypants` (check v3 compatibility)
 4. **Algolia search** - v3.9 supports Algolia DocSearch v4
 
 ---
