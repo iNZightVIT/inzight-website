@@ -3,13 +3,15 @@ title: "First graphs"
 description: Make your first graphs with iNZight!
 ---
 
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
 ## Creating your first graph
 
 import inzCasImg from "./inzight_cas.png";
 import inzCasTravelImg from "./inzight_cas_travel.png";
 import inzCasCellsourceLImg from "./inzight_cas_lite_cellsource.png";
 
-<desktop>
+<Desktop>
 
 Once the data is loaded, iNZight will display the spreadsheet in the left-hand panel of the main window, like this:
 
@@ -29,9 +31,9 @@ Now you're ready to create your first graph! The variable names at the top of th
 
 <Figure src={inzCasTravelImg} caption="A bar chart of travel" width="800" />
 
-</desktop>
+</Desktop>
 
-<lite>
+<Lite>
 
 When you first open the **Visualize** screen, iNZight will automatically graph the first variable in the dataset for you. In this case, we are looking at a **bar chart** of `cellsource`.
 
@@ -41,7 +43,7 @@ When you first open the **Visualize** screen, iNZight will automatically graph t
   width="800"
 />
 
-</lite>
+</Lite>
 
 :::tip Categorical variables
 
@@ -49,20 +51,20 @@ These are variables that have distinct _categories_, _levels_, or _groups_. In t
 
 :::
 
-<desktop>
+<Desktop>
 
 Another way of choosing variables is to select them directly from the **Select
 variable** dropdown. For example, click the first variable box (currently
 labeled `travel`) and choose `height` from the dropdown.
 
-</desktop>
+</Desktop>
 
-<lite>
+<Lite>
 
 To graph another variable, simply click the dropdown box under **Select first
 variable:** and choose another variable, for example `height`.
 
-</lite>
+</Lite>
 
 You will now see a **dot plot** in which all of the 500 students' heights are "dropped" onto the graph and allowed to stack if they land on top of an existing point. This is a great way of looking at **numeric variables** to see how the values are distributed.
 

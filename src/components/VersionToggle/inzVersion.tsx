@@ -1,13 +1,14 @@
+import React from "react";
 import { useVersion } from "@site/src/theme/Root";
 
-function Desktop({ children }) {
+function Desktop({ children }: { children: React.ReactNode }) {
   const { version } = useVersion();
-  return version === "desktop" ? children : "";
+  return version === "desktop" ? <>{children}</> : null;
 }
 
-function Lite({ children }) {
+function Lite({ children }: { children: React.ReactNode }) {
   const { version } = useVersion();
-  return version === "lite" ? children : "";
+  return version === "lite" ? <>{children}</> : null;
 }
 
 function Version({ desktop, lite }: { desktop: string; lite: string }) {

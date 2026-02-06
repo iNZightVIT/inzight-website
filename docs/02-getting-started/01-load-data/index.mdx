@@ -3,6 +3,8 @@ title: "Importing data"
 description: Learn how to quickly and easily import data into iNZight
 ---
 
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
 The first thing you need to do after starting iNZight is to load a data set to work with. We've made this as easy as possible, and iNZight recognizes several file types, including CSV and Excel (on Windows). For an extensive list, [check out the File menu documentation](http://localhost:1313/docs/interface/menubar/file/#file-types).
 
 iNZight lets you import your own data, either stored locally on your machine or accessed via a URL. The type of file doesn't matter---so long as iNZight knows how to read it, just specify the file name and iNZight will do the rest. However, we have also provided a set of example data sets to make exploring the program easier for those here to learn.
@@ -10,7 +12,7 @@ iNZight lets you import your own data, either stored locally on your machine or 
 ## Loading your own data
 
 If you have a data set you would like to load into iNZight, go to the **File** menu
-and select <desktop>**Import Data**</desktop><lite>**Import Dataset**</lite>. This will open the following <desktop>window</desktop><lite>screen</lite>.
+and select <Desktop>**Import Data**</Desktop><Lite>**Import Dataset**</Lite>. This will open the following <Desktop>window</Desktop><Lite>screen</Lite>.
 
 import loadDataImg from "./load_data.png";
 import loadDataImgL from "./load_data_lite.png";
@@ -21,13 +23,13 @@ import loadDataImgL from "./load_data_lite.png";
   width="500"
 />
 
-Use the **Browse** button to search for a file on your computer, or provide a URL to a file on a remote server. Once you have chosen your file, iNZight will display a preview of your data. If it looks OK, click <desktop>**Import**</desktop> <lite>**Import file from URL**</lite> to load the data into iNZight.
+Use the **Browse** button to search for a file on your computer, or provide a URL to a file on a remote server. Once you have chosen your file, iNZight will display a preview of your data. If it looks OK, click <Desktop>**Import**</Desktop> <Lite>**Import file from URL**</Lite> to load the data into iNZight.
 
 ## Using an example dataset {#example-datasets}
 
 To make it even easier to get started with iNZight and learn data techniques, we have provided some example datasets for you to load quickly. These are used in the examples throughout the website so you can easily follow along.
 
-To load an example data set, go to the **File** menu and click <desktop>**Example data ...**</desktop><lite>**Dataset Examples**</lite>. You'll be presented with this window:
+To load an example data set, go to the **File** menu and click <Desktop>**Example data ...**</Desktop><Lite>**Dataset Examples**</Lite>. You'll be presented with this window:
 
 import exampleDataImg from "./example_data.png";
 import exampleDataImgL from "./example_data_lite.png";
@@ -38,4 +40,4 @@ import exampleDataImgL from "./example_data_lite.png";
   width="400"
 />
 
-In the example above, we've selected the "Census at School 500" dataset from the Default iNZight module. We will be using this dataset a lot for many of our examples. Click <desktop>**Load**</desktop><lite>**Select set**</lite> to load the data into iNZight. <lite>You can now head to **Visualize** to start creating graphs.</lite>
+In the example above, we've selected the "Census at School 500" dataset from the Default iNZight module. We will be using this dataset a lot for many of our examples. Click <Desktop>**Load**</Desktop><Lite>**Select set**</Lite> to load the data into iNZight. <Lite>You can now head to **Visualize** to start creating graphs.</Lite>

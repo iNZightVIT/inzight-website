@@ -7,7 +7,7 @@ export default function Root({ children }) {
   let v = "desktop";
   if (typeof window !== 'undefined') {
     v = localStorage.getItem("version");
-    if (!v && v !== "desktop" && v !== "lite") {
+    if (!v || (v !== "desktop" && v !== "lite")) {
       localStorage.setItem("version", "desktop");
       v = "desktop";
     }

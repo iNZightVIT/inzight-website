@@ -4,6 +4,8 @@ desciption: Specify a complex survey design in iNZight
 sidebar_position: 2
 ---
 
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
 iNZight lets users specify complex survey designs in several ways. Under the hood, iNZight uses the [**survey**](http://r-survey.r-forge.r-project.org/survey/) R package.
 
 The first is to manually specify information about the design, such as the strata, clusters, and weights, or by specifying replicate weights. While this is the simplest method, it does come with the risk of misspecification.
@@ -120,7 +122,7 @@ For more information on quantities referred to in the dialog box [see here](http
 
 Discard design information and **_revert to using standard methods of analysis_** by going to **Dataset** > **Survey design** > **Remove design**.
 
-<lite>
+<Lite>
   Use the __blue REMOVE DESIGN button__ at the bottom of the Select Survey
   design control panel.
-</lite>
+</Lite>

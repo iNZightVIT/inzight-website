@@ -3,7 +3,9 @@ title: Working with two variables
 description: Plots and summaries for pairs of variables - the "Variable 2" box
 ---
 
-Plotting two variables is just as easy as plotting one when you use iNZight. Simply <desktop>drag a second variable into the **Variable 2** slot or</desktop> choose a variable from the **Variable 2** drop-down, and again iNZight will automatically create the appropriate plot. Depending on the type of variables, you will get
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
+Plotting two variables is just as easy as plotting one when you use iNZight. Simply <Desktop>drag a second variable into the **Variable 2** slot or</Desktop> choose a variable from the **Variable 2** drop-down, and again iNZight will automatically create the appropriate plot. Depending on the type of variables, you will get
 
 - a two-way **bar plot** if both variables are categorical,
 
@@ -11,7 +13,7 @@ Plotting two variables is just as easy as plotting one when you use iNZight. Sim
 
 - a **scatter plot** if both variables are numeric.
 
-You can also obtain numerical summaries for the variables by clicking on <desktop>the **Get Summary** button at the bottom of the window</desktop><lite>the **Summary** tab above the plot</lite>.
+You can also obtain numerical summaries for the variables by clicking on <Desktop>the **Get Summary** button at the bottom of the window</Desktop><Lite>the **Summary** tab above the plot</Lite>.
 
 :::info Load the example data
 
@@ -25,7 +27,7 @@ In the previous section, we looked at the distribution of student travel modes (
 
 ### Two-way Bar Plots
 
-To compare between males and females, select `gender` as **Variable 2** <desktop>either by dragging it to the box or</desktop> by selecting it from the drop-down. iNZight will automatically show you a **side-by-side** or **two-way bar plot** in which the categories of `travel` are still along the x-axis, but this time there are two bars for each category, one for each gender. The colours are labeled in the legend on the right-hand-side of the plot.
+To compare between males and females, select `gender` as **Variable 2** <Desktop>either by dragging it to the box or</Desktop> by selecting it from the drop-down. iNZight will automatically show you a **side-by-side** or **two-way bar plot** in which the categories of `travel` are still along the x-axis, but this time there are two bars for each category, one for each gender. The colours are labeled in the legend on the right-hand-side of the plot.
 
 import bp1 from "./inzight_cas_travel_gender.png";
 import bp1l from "./inzight_cas_travel_gender.png";

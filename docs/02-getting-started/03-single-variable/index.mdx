@@ -3,7 +3,9 @@ title: Working with one variable
 description: Graphs and summaries for single variables - the "Variable 1" box
 ---
 
-As we saw in the previous section, it is easy to create a graph with iNZight. Simply <desktop>**drag and drop** variables from the spreadsheet view to the variable boxes, or choose them directly</desktop><lite>choose a variable</lite> from the variable box drop-downs---iNZight will automatically create a graph for you!
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
+As we saw in the previous section, it is easy to create a graph with iNZight. Simply <Desktop>**drag and drop** variables from the spreadsheet view to the variable boxes, or choose them directly</Desktop><Lite>choose a variable</Lite> from the variable box drop-downs---iNZight will automatically create a graph for you!
 
 - **Numeric variables** produce a **dot plot** (by default)
 
@@ -13,7 +15,7 @@ In this section, we will learn how to obtain textual summaries of the informatio
 
 :::info Be sure to load the data first
 
-If you skipped the previous section, you can catch up by loading the **Census at School 500** dataset from <desktop>**File** > **Example datasets**</desktop><lite>**File** > **Dataset examples**</lite>.
+If you skipped the previous section, you can catch up by loading the **Census at School 500** dataset from <Desktop>**File** > **Example datasets**</Desktop><Lite>**File** > **Dataset examples**</Lite>.
 
 :::
 
@@ -30,7 +32,7 @@ import f1 from "./inzight_cas_armspan.png";
 
 Immediately we can see that most students have armspans between 130 and 180 cm. However, there are many students who have measured their armspans to be as small as 20cm! Below the dotplot is a **box and whisker plot**, showing the range (the thin horizontal line), as well as the 25%, 50%, and 75% quantiles (the lower, middle, and upper ends of the box, respectively).
 
-You can obtain a numeric summary of a graph by clicking the <desktop>**Get Summary** button at the bottom of the iNZight window</desktop><lite>**Summary** button above the plot</lite>.
+You can obtain a numeric summary of a graph by clicking the <Desktop>**Get Summary** button at the bottom of the iNZight window</Desktop><Lite>**Summary** button above the plot</Lite>.
 
 import f2 from "./inzight_cas_summary_armspan.png";
 
@@ -44,7 +46,7 @@ Have a look at some other numeric variables in the dataset (height, rightfoot, a
 
 Dot plots are OK, but you may have noticed that some variables provide odd-looking plots due to the way the points fall. iNZight provides a selection of alternative plot types for you to look at numeric variables!
 
-To do this, click on <desktop>**Add to plot** in the plot toolbar, or find it in the **Plot** menu</desktop><lite>**Add to Plot** in the top-left of the screen</lite>. You'll see a panel appear with a lot of new controls in it. Don't worry about most of these for now---we will cover them later! For now, just focus on the **Plot type** control at the top. Choose different plot types in this drop down and look at the resulting plot. In this example below, I've chosen the "Violin" plot.
+To do this, click on <Desktop>**Add to plot** in the plot toolbar, or find it in the **Plot** menu</Desktop><Lite>**Add to Plot** in the top-left of the screen</Lite>. You'll see a panel appear with a lot of new controls in it. Don't worry about most of these for now---we will cover them later! For now, just focus on the **Plot type** control at the top. Choose different plot types in this drop down and look at the resulting plot. In this example below, I've chosen the "Violin" plot.
 
 import f3 from "./inzight_cas_armspan_violin.png";
 // import f3l from "./inzight_cas_armspan_violin_lite.png";
@@ -55,7 +57,7 @@ import f3 from "./inzight_cas_armspan_violin.png";
 
 Feel free to play with the other controls in this window and see what happens!
 
-If you get lost or confused, you can reset the plot by clicking <desktop>**Remove additions** in the plot toolbar, or find it in the **Plot** menu and clicking **Remove all** at the bottom of the panel</desktop><lite>**Restore defaults** at the bottom of the **Select Variables** panel</lite>.
+If you get lost or confused, you can reset the plot by clicking <Desktop>**Remove additions** in the plot toolbar, or find it in the **Plot** menu and clicking **Remove all** at the bottom of the panel</Desktop><Lite>**Restore defaults** at the bottom of the **Select Variables** panel</Lite>.
 
 :::
 
