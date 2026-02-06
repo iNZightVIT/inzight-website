@@ -39,7 +39,7 @@ Review these newly created module docs for accuracy:
 - [x] `/about/brand` - Brand assets
 
 ### Related Projects
-- [ ] `/related` - Check all external links are working
+- [x] `/related` - External links verified
 
 ---
 
@@ -59,7 +59,7 @@ These are expected - documentation needs to be created for these sections.
 
 ### Version Toggle Component
 - [x] `<Desktop>` and `<Lite>` components working correctly
-- [ ] Test version toggle across all pages with version-specific content
+- [x] Version toggle tested across pages
 
 ---
 
