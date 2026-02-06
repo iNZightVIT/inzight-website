@@ -10,45 +10,27 @@ This document lists features in iNZight Desktop and Lite that are not yet docume
 
 ---
 
-## Critical Missing Section: Advanced Modules Documentation
+## Advanced Modules Documentation
 
-The Advanced menu modules need comprehensive documentation. This should cover:
+### ✅ Completed Module Documentation
 
-### Advanced Modules (iNZightModules package)
+The following modules now have documentation in `/docs/reference/modules/`:
 
-1. **Quick Explore**
-   - Missing values explorer
-   - All 1-variable plots
-   - All 1-variable summaries
-   - Explore 2-variable plots
-   - Pairs (scatter matrix)
+1. **Time Series Module** (new tidyverts version) - `/docs/reference/modules/time-series`
+2. **Time Series Module (Legacy)** - `/docs/reference/modules/time-series-legacy`
+3. **Model Fitting Module** - `/docs/reference/modules/model-fitting`
+4. **Multiple Response Module** - `/docs/reference/modules/multiple-response`
+5. **Maps Module** - `/docs/reference/modules/maps`
+   - ⚠️ Note: Maps may require API key configuration - needs verification
+6. **Quick Explore** - `/docs/reference/modules/quick-explore`
 
-2. **3D Plot** (`plot3D`)
+### ❌ Still Missing Module Documentation
+
+1. **3D Plot** (`plot3D`)
    - Interactive 3D scatter plots
    - Requires rgl package
 
-3. **Time Series Module** (legacy version)
-   - Time series decomposition
-   - Seasonal plots
-   - Forecasting
-
-4. **Model Fitting Module**
-   - Linear regression
-   - Generalized linear models
-   - Model diagnostics
-   - Residual plots
-
-5. **Multiple Response Module**
-   - Multiple response data analysis
-   - Binary multiple response
-   - Comparison plots
-
-6. **Maps Module**
-   - Coordinate maps (point data)
-   - Regional/choropleth maps
-   - Shape file import
-
-### Lite-Only Modules
+### Lite-Only Modules (Not Yet Documented)
 
 1. **Design of Experiment** (`F5_DesignofExperiment`)
    - Experimental design tools
@@ -134,16 +116,17 @@ The Advanced menu modules need comprehensive documentation. This should cover:
 ## Priority Order for Documentation
 
 ### P1 - Critical (blocks deployment, referenced but missing)
-- [ ] Advanced modules documentation section
-- [ ] Time Series module documentation
-- [ ] Model Fitting module documentation
-- [ ] Maps module documentation
+- [x] ~~Advanced modules documentation section~~ - Completed
+- [x] ~~Time Series module documentation~~ - Completed (new + legacy)
+- [x] ~~Model Fitting module documentation~~ - Completed
+- [x] ~~Maps module documentation~~ - Completed (needs API verification)
 
 ### P2 - Important (frequently used features)
-- [ ] Quick Explore features
-- [ ] Multiple Response module
+- [x] ~~Quick Explore features~~ - Completed
+- [x] ~~Multiple Response module~~ - Completed
 - [ ] Code panel (Lite)
 - [ ] Data Dictionary feature
+- [ ] Menubar reference documentation (Plot, Dataset, Variables, etc.)
 
 ### P3 - Nice to have
 - [ ] 3D Plot module
