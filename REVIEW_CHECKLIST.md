@@ -32,12 +32,11 @@ Review these newly created module docs for accuracy:
 - [x] ~~Code Panel~~ - Removed (not needed in FAQ)
 
 ### About Pages
-Already implemented - quick review recommended:
-- [ ] `/about` - Main about page
-- [ ] `/about/team` - Team members (any updates needed?)
-- [ ] `/about/sponsors` - Sponsor logos display correctly
-- [ ] `/about/development` - Development info
-- [ ] `/about/brand` - Brand assets (are logos available?)
+- [x] `/about` - Main about page
+- [x] `/about/team` - Redesigned with simplified structure
+- [x] `/about/sponsors` - Sponsor logos display correctly
+- [x] `/about/development` - Development info
+- [x] `/about/brand` - Brand assets
 
 ### Related Projects
 - [ ] `/related` - Check all external links are working
