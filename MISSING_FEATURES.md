@@ -124,8 +124,8 @@ The following modules now have documentation in `/docs/reference/modules/`:
 ### P2 - Important (frequently used features)
 - [x] ~~Quick Explore features~~ - Completed
 - [x] ~~Multiple Response module~~ - Completed
-- [ ] Code panel (Lite)
-- [ ] Data Dictionary feature
+- [ ] Code panel (Desktop only)
+- [ ] Data Dictionary feature (Desktop only)
 - [ ] Menubar reference documentation (Plot, Dataset, Variables, etc.)
 
 ### P3 - Nice to have

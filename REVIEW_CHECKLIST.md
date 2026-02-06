@@ -76,7 +76,7 @@ These are expected - documentation needs to be created for these sections.
 ### Infrastructure
 - [ ] Set up new mailing list/newsletter system
 - [ ] Configure analytics (if desired)
-- [ ] Set up 301 redirects from old URLs if needed
+- [ ] Set up 301 redirects from old URLs if needed - yes, from "/user_guides/addons/?topic=mod_X" to "/docs/reference/modules/mod-X"
 
 ---
 
