@@ -71,9 +71,10 @@ All major analysis modules have documentation.
 
 ## Lite-Specific Features
 
-### ✅ Code Panel (`G1_Code`) - Documented in `/support/faq/lite/code-panel`
+### Code Panel (`G1_Code`)
 - View generated R code
 - Copy/export code
+- (Not currently documented - low priority)
 
 ### Paste Dataset (`B6_PasteDataset`)
 - Paste data directly from clipboard
@@ -114,7 +115,7 @@ All major analysis modules have documentation.
 ### P2 - Important (frequently used features)
 - [x] ~~Quick Explore features~~ - Completed
 - [x] ~~Multiple Response module~~ - Completed
-- [x] ~~Code panel (Lite)~~ - Completed in FAQ
+- [ ] Code panel (Lite) - Low priority
 - [ ] Data Dictionary feature
 - [ ] Menubar reference documentation (Plot, Dataset, Variables, etc.)
 

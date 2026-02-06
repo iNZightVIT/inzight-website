@@ -29,7 +29,7 @@ Review these newly created module docs for accuracy:
 - [ ] `/docs/reference/modules/multivariate` - Multivariate (Lite only)
 
 ### Support/FAQ
-- [ ] `/support/faq/lite/code-panel` - Code Panel documentation for Lite
+- [x] ~~Code Panel~~ - Removed (not needed in FAQ)
 
 ### About Pages
 Already implemented - quick review recommended:
