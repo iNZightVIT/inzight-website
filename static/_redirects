@@ -1,0 +1,37 @@
+# Old site module redirects (query parameter based)
+/user_guides/addons/*  topic=time_series      /docs/reference/modules/time-series-legacy  301
+/user_guides/addons/*  topic=multiple_response /docs/reference/modules/multiple-response  301
+/user_guides/addons/*  topic=model_fitting    /docs/reference/modules/model-fitting       301
+/user_guides/addons/*  topic=quick_explore    /docs/reference/modules/quick-explore       301
+/user_guides/addons/*  topic=3d_plot          /docs/reference/modules/3d-plot             301
+/user_guides/addons/*  topic=maps             /docs/reference/modules                     301
+/user_guides/addons/*  topic=aboutmaps        /docs/reference/modules                     301
+
+# Old site path redirects
+/user_guides/addons/                          /docs/reference/modules                     301
+/user_guides/add_ons/                         /docs/reference/modules                     301
+/user_guides/basics/                          /docs/category/getting-started              301
+/user_guides/data_options/                    /docs/category/data-wrangling               301
+/user_guides/file_options/                    /docs/category/importexport-data            301
+/user_guides/plot_options/                    /docs/interface/plot-toolbar                301
+/user_guides/variables/                       /docs/reference                             301
+/user_guides/advanced/                        /docs/reference/advanced-features           301
+/user_guides/interface/                       /docs/interface                             301
+/user_guides/                                 /docs                                       301
+
+# Old support pages
+/support/faq/                                 /support/faq                                301
+/support/changelog/                           /support/changelog                          301
+/support/contact/                             /support/contact                            301
+
+# Old about pages
+/about/                                       /about                                      301
+/about/team/                                  /about/team                                 301
+/about/sponsors/                              /about/sponsors                             301
+
+# Old download page
+/download/                                    /install                                    301
+/getstarted/                                  /docs                                       301
+
+# iNZight Lite redirect
+/lite/                                        https://lite.inzight.nz                     301

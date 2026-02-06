@@ -69,6 +69,27 @@ const config = {
         sidebarPath: "./sidebars-support.cjs",
       }),
     ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          // Old user guide paths
+          { from: "/user_guides/addons", to: "/docs/reference/modules" },
+          { from: "/user_guides/add_ons", to: "/docs/reference/modules" },
+          { from: "/user_guides/basics", to: "/docs/category/getting-started" },
+          { from: "/user_guides/data_options", to: "/docs/category/data-wrangling" },
+          { from: "/user_guides/file_options", to: "/docs/category/importexport-data" },
+          { from: "/user_guides/plot_options", to: "/docs/interface/plot-toolbar" },
+          { from: "/user_guides/variables", to: "/docs/reference" },
+          { from: "/user_guides/advanced", to: "/docs/reference/advanced-features" },
+          { from: "/user_guides/interface", to: "/docs/interface" },
+          { from: "/user_guides", to: "/docs" },
+          // Old pages
+          { from: "/download", to: "/install" },
+          { from: "/getstarted", to: "/docs" },
+        ],
+      },
+    ],
   ],
 
   stylesheets: [
