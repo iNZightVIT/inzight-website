@@ -105,6 +105,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        { name: "description", content: "iNZight is a free data exploration and analytics platform designed for everyone — from students to researchers. Built on R." },
+        { property: "og:title", content: "iNZight — Free Data Exploration & Analytics" },
+        { property: "og:description", content: "Pick your variables and iNZight handles the rest — the right graph, the right summary, the right test. No coding required." },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://inzight.nz" },
+        { property: "og:image", content: "https://inzight.nz/img/og-image.png" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@iNZightVIT" },
+      ],
       navbar: {
         // title: "iNZight",
         logo: {
@@ -191,20 +201,14 @@ const config = {
             title: "Sponsors",
             items: [
               {
-                label: "University of Auckland",
-                href: "https://stat.auckland.ac.nz",
+                html: `<a href="https://inzight.co.nz" target="_blank" rel="noreferrer noopener" class="footer-sponsor-logo" title="iNZight Analytics Ltd."><img src="/img/ial-dark.png" alt="iNZight Analytics Ltd." /></a>`,
               },
               {
-                label: "Te Rourou Tātaritanga",
-                href: "https://terourou.org",
+                html: `<a href="https://stat.auckland.ac.nz" target="_blank" rel="noreferrer noopener" class="footer-sponsor-logo" title="University of Auckland"><img src="/img/uoa_logo.png" alt="University of Auckland" /></a>`,
               },
               {
-                label: "iNZight Analytics Ltd.",
-                href: "https://inzight.co.nz",
-              },
-              {
-                label: "Stats New Zealand",
-                href: "https://stats.govt.nz",
+                label: "View all sponsors",
+                to: "/about/sponsors",
               },
             ],
           },

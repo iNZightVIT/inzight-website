@@ -5,54 +5,43 @@ import styles from "./styles.module.css";
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<"svg">>;
-  description: JSX.Element;
+  description: React.ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use. Yes, for you too.",
+    title: "Designed for Everyone",
     Svg: require("@site/static/img/undraw_data_input_fxv2.svg").default,
     description: (
       <>
-        iNZight is designed for everyone, from students to professionals, and is
-        used in classrooms and workplaces around the world. The software
-        automatically gives you the right graphs and summaries based on the
-        variables you choose, so you can focus on exploring your data.
+        Whether you're just starting out in statistics or returning after a
+        break, iNZight makes it easy. Pick your variables and the software
+        handles the rest &mdash; choosing the right graph, the right summary,
+        and the right test automatically. No steep learning curve, and nothing
+        to re-learn.
       </>
     ),
   },
   {
-    title: "Explore. Visualise. Analyse.",
+    title: "Drag, Drop, Explore",
     Svg: require("@site/static/img/undraw_data_extraction_re_0rd3.svg").default,
     description: (
       <>
-        Explore your data using intuitive controls and without getting bogged
-        down by complex terminology. Choose your variables, find interesting
-        features, and extract statistically appropriate summaries with the click
-        of a button.
+        Interactive controls let you slice data, spot patterns, and generate
+        publication-ready visualisations &mdash; all without writing a single
+        line of code.
       </>
     ),
   },
   {
-    title: "Nothing to learn. Never forget.",
-    Svg: require("@site/static/img/undraw_work_time_re_hdyv.svg").default,
-    description: (
-      <>
-        iNZight is designed to be easy to use which makes picking it up a
-        breeze. And unlike other more complex software, you won't need to
-        re-learn everything when you come back to it. Say, after your finish
-        that degree and start a new job.
-      </>
-    ),
-  },
-  {
-    title: "Rapid Code Development",
+    title: "Powered by R",
     Svg: require("@site/static/img/undraw_source_code_re_wd9m.svg").default,
     description: (
       <>
-        iNZight is built on top of the R, so for the more advanced users, you
-        can view, export, and edit the R script to customise your analyses
-        &mdash; without needing to start from a blank script.
+        Built on R, one of the world's leading languages for data analysis and
+        visualisation. Every analysis produces a reproducible R script you can
+        view, edit, and share &mdash; start in the GUI and transition to code
+        whenever you need full control.
       </>
     ),
   },
@@ -72,7 +61,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
   );
 }
 
-export default function HomepageFeatures(): JSX.Element {
+export default function HomepageFeatures(): React.ReactElement {
   return (
     <section className={styles.features}>
       <div className="container">

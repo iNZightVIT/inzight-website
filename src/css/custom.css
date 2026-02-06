@@ -161,8 +161,8 @@
   --ifm-color-primary-light: var(--primary-400);
   --ifm-color-primary-lighter: var(--primary-300);
   --ifm-color-primary-lightest: var(--primary-200);
-  --ifm-color-primary-contrast-background: var(--primary-50);
-  --ifm-color-primary-contrast-foreground: var(--primary-950);
+  --ifm-color-primary-contrast-background: var(--blue-900);
+  --ifm-color-primary-contrast-foreground: var(--grey-100);
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
@@ -229,4 +229,26 @@ dl > dt {
   width: 1.2em;
   margin: 0;
   padding: 0;
+}
+
+/* Footer sponsor logos */
+.footer-sponsor-logo {
+  display: inline-block;
+  transition: opacity 0.15s ease;
+}
+
+.footer-sponsor-logo:hover {
+  opacity: 0.75;
+}
+
+.footer-sponsor-logo img {
+  height: 36px;
+  max-width: 150px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+
+.footer-sponsor-logo:hover img {
+  opacity: 1;
 }

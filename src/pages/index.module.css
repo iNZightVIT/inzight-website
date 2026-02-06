@@ -3,143 +3,393 @@
  * and scoped locally.
  */
 
-.topBanner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-block: 1em;
-}
-
-.topBannerTitle {
-  font-size: 1.5rem;
-  padding-inline: 1em;
-}
-
-.topBannerSponsors {
-  display: flex;
-  align-items: center;
-  gap: 3em;
-  margin-top: 1em;
-}
-
-.topBannerSponsor {
-  height: 88px;
-  background: white;
-  padding: 8px;
-}
-
-@media screen and (max-width: 996px) {
-  .topBannerSponsors {
-    flex-direction: column;
-    gap: 1em;
-  }
-}
+/* ===========================================
+   SHARED SPACING TOKENS
+   Desktop: 4rem vertical section padding
+   Mobile:  2.5rem vertical section padding
+   Horizontal: handled by .container or inline
+   =========================================== */
 
 /* HERO */
 
 .heroBanner {
-  padding: 4rem;
-  background: var(--ifm-hero-background-color);
+  padding: 3rem 2rem 2.5rem;
+  background: white;
+  position: relative;
+}
+
+:global([data-theme="dark"]) .heroBanner {
+  background: var(--ifm-background-surface-color, #1b1b1d);
 }
 
 .heroBannerContainer {
   max-width: 1000px;
   margin: 0 auto;
-  /* padding-right: 200px; */
-  display: flex;
-  flex-direction: column;
-  /* align-items: flex-end; */
-  padding-block: 1em;
 }
 
 .heroContent {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.heroText {
   flex: 1;
   display: flex;
-  /* align-items: center; */
-  gap: 80px;
-  /* padding-right: 200px; */
-  margin-bottom: 2em;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .heroTitle {
-  flex: 1;
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-family: var(--ifm-heading-font-family);
   font-weight: var(--ifm-heading-font-weight);
   color: var(--ifm-color-primary-contrast-foreground);
-  word-break: break-word;
+  line-height: 1.2;
+  margin: 0 0 1rem;
 }
 
 .heroTitle b {
-  font-weight: var(--ifm-color-primary-contrast-background);
-  /* background: var(--blue-700); */
-  padding-inline: 0.1em;
-  /* color: #fcfcfc; */
+  font-weight: 800;
   color: var(--primary-500);
 }
 
+.heroTutorialLink {
+  font-size: 1rem;
+  color: var(--grey-500);
+  margin: 0;
+}
+
+:global([data-theme="dark"]) .heroTutorialLink {
+  color: var(--grey-300);
+}
+
+.heroTutorialLink a {
+  color: var(--ifm-color-success);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.heroTutorialLink a:hover {
+  text-decoration: underline;
+}
+
 .heroImage {
-  width: 50%;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
 }
 
-.heroCTA {
-  text-align: left;
-  flex: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+.heroImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+:global([data-theme="dark"]) .heroImage img {
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .heroButtons {
   display: flex;
-  align-items: flex-start;
-  gap: 1em;
-}
-
-.spacer {
-  flex: 1;
-  background: blue;
-  width: 10px;
-}
-
-.heroButtons .button {
-  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .heroText {
+    align-items: center;
+  }
+
+  .heroImage {
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroButtons {
+    justify-content: center;
   }
 }
 
-.users {
-  padding: 4rem;
-  background: var(--ifm-color-gray-100);
-  display: flex;
-  justify-content: center;
+@media screen and (max-width: 480px) {
+  .heroButtons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
 }
 
-.users h2 {
+/* SPONSOR STRIP */
+
+.sponsorStrip {
+  border-top: 1px solid var(--grey-200);
+  background: white;
+}
+
+:global([data-theme="dark"]) .sponsorStrip {
+  background: var(--ifm-background-surface-color, #1b1b1d);
+  border-top-color: var(--grey-700);
+}
+
+.sponsorRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.sponsorText {
+  font-size: 0.85rem;
+  color: var(--grey-500);
+  white-space: nowrap;
+}
+
+:global([data-theme="dark"]) .sponsorText {
+  color: var(--grey-300);
+}
+
+.sponsorLogos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sponsorLogo {
+  height: 48px;
+  background: white;
+  padding: 4px;
+}
+
+:global([data-theme="dark"]) .sponsorLogo {
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 480px) {
+  .sponsorRow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sponsorLogos {
+    gap: 1rem;
+  }
+
+  .sponsorLogo {
+    height: 32px;
+  }
+}
+
+/* USERS / ORGANISATIONS — Infinite Marquee */
+
+.users {
+  padding: 2.5rem 0;
+  background: var(--ifm-color-gray-100);
+  overflow: hidden;
+}
+
+:global([data-theme="dark"]) .users {
+  background: var(--ifm-background-color);
+}
+
+.usersHeading {
   text-align: center;
+  color: var(--grey-500);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+:global([data-theme="dark"]) .usersHeading {
+  color: var(--grey-300);
+}
+
+.marqueeWrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.marqueeItem:hover {
+  opacity: 0.7;
+}
+
+.marqueeItem img {
+  height: 56px;
+  max-width: 200px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter 0.2s ease;
+}
+
+.marqueeItem:hover img {
+  filter: grayscale(0%);
+}
+
+:global([data-theme="dark"]) .marqueeItem img {
+  filter: grayscale(30%) brightness(0.9);
+  background: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+:global([data-theme="dark"]) .marqueeItem:hover img {
+  filter: grayscale(0%) brightness(1);
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .marqueeItem img {
+    height: 40px;
+    max-width: 150px;
+  }
+
+  .marqueeTrack {
+    gap: 2.5rem;
+  }
+
+  .users {
+    padding: 2rem 0;
+  }
+}
+
+/* FINAL CTA — Centered Stack */
+
+.finalCta {
+  padding: 4rem 1.5rem;
+  background: white;
+}
+
+:global([data-theme="dark"]) .finalCta {
+  background: var(--ifm-background-surface-color, #1b1b1d);
+}
+
+.ctaCenteredWrap {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaCenteredTitle {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
   color: var(--ifm-color-primary-contrast-foreground);
 }
 
-.userList {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 3em;
-  margin-block: 4em;
+.ctaCenteredDesc {
+  color: var(--grey-500);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.userList img {
-  max-height: 100px;
-  max-width: 300px;
+:global([data-theme="dark"]) .ctaCenteredDesc {
+  color: var(--grey-300);
+}
+
+.ctaCenteredButtons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.ctaCenteredSecondary {
+  color: var(--grey-500);
+  font-size: 0.95rem;
+}
+
+:global([data-theme="dark"]) .ctaCenteredSecondary {
+  color: var(--grey-300);
+}
+
+.ctaCenteredSecondary a {
+  color: var(--ifm-color-success);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ctaCenteredSecondary a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .finalCta {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .ctaCenteredTitle {
+    font-size: 1.5rem;
+  }
+
+  .ctaCenteredButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
