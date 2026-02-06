@@ -13,7 +13,7 @@ const katex = require("rehype-katex");
 const config = {
   title: "iNZight",
   tagline: "A free data exploration and analytics platform.",
-  url: "https://inzight.tomelliott.co.nz",
+  url: "https://inzight.nz",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -50,10 +50,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/iNZightVIT/inzight-website/edit/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -167,7 +164,7 @@ const config = {
             items: [
               {
                 label: "Blog",
-                to: "/",
+                to: "/blog",
               },
               {
                 label: "GitHub",
