@@ -88,18 +88,7 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "category",
-      label: "Modules",
-      link: {
-        type: "doc",
-        id: "modules/index",
-      },
-      items: [
-        "modules/time-series/index",
-      ],
-    },
-  ],
+    ],
   ref: [
     {
       // type: "category",
