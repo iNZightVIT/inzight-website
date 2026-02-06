@@ -26,11 +26,13 @@ Items that need user review before the website can be deployed.
 - [x] Removed unused/duplicate pages (markdown-page, merge, surveyspec)
 - [x] Module docs updated to use original content from old site
 - [x] Install page updated with latest version (4.4.0)
+- [x] All menubar reference pages exist (no broken links)
 
 ---
 
-## 📝 Content Review - Module Documentation
+## 📝 Content Review
 
+### Module Documentation
 All module docs now use original content from old site:
 
 - [x] **Model Fitting** - Original content (brief)
@@ -44,23 +46,22 @@ All module docs now use original content from old site:
 
 ---
 
-## 🔧 Known Broken Links
+## 🚀 Ready for Deployment
 
-These links in the menubar index point to docs that don't exist yet:
-- Various reference menu sub-pages (Plot, Dataset, Variables, Help menus)
+**Build Status**: ✅ Success (no errors, no broken links)
 
-These are expected - full menubar reference documentation is a future task.
+The site is ready to deploy. The only outstanding item is reviewing the new Time Series module documentation against the actual software UI.
 
 ---
 
-## 📋 Future Tasks (Not Blocking Deployment)
+## 📋 Future Enhancements (Post-Launch)
 
-### Documentation to Add
-- [ ] Complete menubar reference documentation (Plot, Dataset, Variables, Help)
-- [ ] Data Dictionary feature
-- [ ] Generate Data Report feature
-- [ ] Interactive plot export
-- [ ] FT Graphics features
+### Documentation Expansion
+The old site has more detailed documentation with screenshots that could be migrated:
+- File menu (import options, metadata in CSV, preferences)
+- Dataset menu (filter, aggregate, stack, reshape, validate, etc.)
+- Variables menu (transform, standardise, class intervals, dates/times)
+- Advanced features (display modes, colour specification, interactive HTML export)
 
 ### Infrastructure
 - [ ] Set up new mailing list/newsletter system
