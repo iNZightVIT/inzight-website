@@ -1,165 +1,29 @@
 ---
 title: Quick Explore
-description: Rapidly explore your data with automated plots and summaries.
+description: Exploratory analysis tools for quick familiarisation with a new dataset.
 sidebar_label: Quick Explore
 ---
 
-import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+This menu provides several exploratory analysis tools for quick familiarisation to a new data set.
 
-The Quick Explore module provides tools to rapidly explore your dataset with minimal effort. It automatically generates plots and summaries for all variables, making it easy to get an overview of your data and identify patterns or issues.
+Access via **Advanced** > **Quick Explore**.
 
-:::caution Draft Documentation
-This documentation was based on help files but UI details may differ. Verify navigation controls and exact feature names in Desktop vs Lite.
-:::
+## Missing Values
 
-## Features
+Plots and summary tables of the extent to which variables and combinations of variables have missing values.
 
-- **Missing Values**: Visualise the pattern of missing data
-- **Data Summary**: Get summary statistics for all variables at once
-- **All 1-Variable Plots**: Scroll through plots of every single variable
-- **All 2-Variable Plots**: Explore relationships between pairs of variables
-- **Compare Pairs**: View a scatter plot matrix of multiple variables
+## All 1-variable Plots
 
-## Getting Started
+Steps through and plots every (single) variable in the data set.
 
-### Accessing the Module
+## All 1-variable Summaries
 
-<Desktop>
+Summaries for every (single) variable in the data set.
 
-Go to **Advanced** → **Quick Explore** from the menu bar.
+## Explore 2-variable Plots
 
-</Desktop>
+Takes a user-selected variable and then steps through plotting every other variable in the data set against it.
 
-<Lite>
+## Pairs
 
-Select **Quick Explore** from the module dropdown menu.
-
-</Lite>
-
-## Exploration Types
-
-### Missing Values
-
-Quickly identify patterns of missing data in your dataset.
-
-The missing values plot shows:
-- A bar for each variable
-- Bar height indicates the percentage of missing values
-- Helps identify variables or observations with data quality issues
-
-**Use this when:**
-- Starting with a new dataset
-- Checking data quality before analysis
-- Identifying variables that need cleaning
-
-### Data Summary
-
-Get summary statistics for all variables in one view.
-
-For **numeric variables**:
-- Mean, median, standard deviation
-- Minimum, maximum, quartiles
-- Number of missing values
-
-For **categorical variables**:
-- Frequency counts for each level
-- Number of missing values
-
-<Desktop>
-
-Click on any variable name to see its detailed summary.
-
-</Desktop>
-
-<Lite>
-
-Select a column from the dropdown to view its summary.
-
-</Lite>
-
-### All 1-Variable Plots (Univariate)
-
-Automatically generate appropriate plots for every variable:
-
-- **Numeric variables**: Dot plots or histograms
-- **Categorical variables**: Bar charts
-
-**Navigation:**
-
-<Desktop>
-
-Click the plot area to advance to the next variable, or use the navigation controls.
-
-</Desktop>
-
-<Lite>
-
-Use the variable dropdown to select which variable to display, or use the navigation arrows to step through all variables.
-
-</Lite>
-
-This is useful for:
-- Getting familiar with a new dataset
-- Checking distributions of all variables
-- Spotting unusual patterns or outliers
-
-### All 2-Variable Plots (Bivariate)
-
-Explore relationships between pairs of variables:
-
-- **Two numeric**: Scatter plots
-- **Numeric + categorical**: Side-by-side dot plots or box plots
-- **Two categorical**: Two-way bar charts
-
-<Desktop>
-
-Click to cycle through all possible variable pairs, or select specific variables.
-
-</Desktop>
-
-<Lite>
-
-Select the two variables you want to compare from the dropdowns.
-
-</Lite>
-
-### Compare Pairs (Scatter Plot Matrix)
-
-View relationships between multiple variables simultaneously in a matrix format.
-
-The pairs plot shows:
-- Scatter plots for each pair of numeric variables
-- Distributions on the diagonal
-- Correlations or other summary statistics
-
-**Best for:**
-- Identifying correlated variables
-- Spotting multicollinearity before regression
-- Getting an overview of relationships in multivariate data
-
-:::tip
-With many variables, the pairs plot can become crowded. Select a subset of 4-6 key variables for the clearest view.
-:::
-
-## Tips for Effective Exploration
-
-1. **Start with missing values**: Understand your data quality before diving into patterns
-2. **Use summaries for numeric data**: Quick summaries help you understand scales and distributions
-3. **Cycle through univariate plots**: This helps you spot unusual distributions or outliers
-4. **Focus bivariate exploration**: When you have many variables, focus on theoretically relevant pairs
-5. **Use pairs plots sparingly**: Most useful with a small number of key variables
-
-## Workflow Example
-
-Here's a typical exploration workflow:
-
-1. **Load your data** into iNZight
-2. **Open Quick Explore** module
-3. **Check Missing Values** to understand data quality
-4. **View Data Summary** to understand variable scales and types
-5. **Browse All 1-Variable Plots** to check distributions
-6. **Explore specific pairs** of interest with 2-variable plots
-7. **Create a pairs plot** for your main variables of interest
-8. **Return to main view** with a better understanding of your data
-
-After this exploration, you'll be well-prepared to conduct more focused analyses.
+Takes a set of user-specified variables and plots every variable against every other variable as a matrix of plots. There is an option to colour using another variable. (Uses R's `gpairs` package).
