@@ -2,6 +2,14 @@
 
 This document lists features in iNZight Desktop and Lite that are not yet documented on the new website.
 
+---
+
+## TODO: Future Tasks
+
+- [ ] **Set up a mailing list** - The old mailing lists (iNZight-General, iNZight-School, iNZight-Online) are deprecated. Consider setting up a new mailing list or newsletter system for announcements.
+
+---
+
 ## Critical Missing Section: Add-on Modules (`/docs/add-ons`)
 
 The menubar documentation references `/docs/add-ons` but this section **does not exist**. This needs to cover:
