@@ -10,11 +10,11 @@ This document lists features in iNZight Desktop and Lite that are not yet docume
 
 ---
 
-## Critical Missing Section: Add-on Modules (`/docs/add-ons`)
+## Critical Missing Section: Advanced Modules Documentation
 
-The menubar documentation references `/docs/add-ons` but this section **does not exist**. This needs to cover:
+The Advanced menu modules need comprehensive documentation. This should cover:
 
-### Desktop Advanced Modules (iNZightModules package)
+### Advanced Modules (iNZightModules package)
 
 1. **Quick Explore**
    - Missing values explorer
@@ -134,7 +134,7 @@ The menubar documentation references `/docs/add-ons` but this section **does not
 ## Priority Order for Documentation
 
 ### P1 - Critical (blocks deployment, referenced but missing)
-- [ ] `/docs/add-ons` section with all modules
+- [ ] Advanced modules documentation section
 - [ ] Time Series module documentation
 - [ ] Model Fitting module documentation
 - [ ] Maps module documentation
