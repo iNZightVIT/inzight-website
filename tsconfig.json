@@ -3,7 +3,7 @@
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "ESNext",
-    "moduleResolution": "bundler"
-  }
+    "module": "Node16"
+  },
+  "exclude": ["api", "build"]
 }

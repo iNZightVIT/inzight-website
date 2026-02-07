@@ -59,13 +59,6 @@ export default function ContactForm() {
       <div className={styles.success}>
         <h3>Thank you for your message!</h3>
         <p>We'll get back to you as soon as possible.</p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className={styles.button}
-        >
-          Send another message
-        </button>
       </div>
     );
   }

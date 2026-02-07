@@ -110,7 +110,7 @@ export default function GraphTypes() {
 
         <div className={styles.availableGraphs}>
           {availableGraphs.map((g) =>
-            g.names.map((n) => <Graph key={g + "-" + n} type={n} />)
+            g.names.map((n) => <Graph key={n} type={n} />)
           )}
         </div>
       </div>
