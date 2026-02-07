@@ -1,0 +1,8 @@
+{{message}}
+
+***
+
+**Technical information**
+
+Sent on: {{date}}
+{{details}}
