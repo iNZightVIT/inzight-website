@@ -86,32 +86,34 @@ export default function GraphTypes() {
         );
 
   return (
-    <div className={styles.container}>
-      <div className={styles.controls}>
-        <div className={styles.controlRow}>
-          <label>Variable 1</label>
-          <TypePicker
-            value={v1}
-            setValue={(x: "none" | "numeric" | "categorical") => setV1(x)}
-          />
-        </div>
-        {v1 !== "none" && (
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.controls}>
           <div className={styles.controlRow}>
-            <label>Variable 2</label>
+            <label>Variable 1</label>
             <TypePicker
-              value={v2}
-              setValue={(x: "none" | "numeric" | "categorical") => setV2(x)}
+              value={v1}
+              setValue={(x: "none" | "numeric" | "categorical") => setV1(x)}
             />
           </div>
-        )}
-      </div>
-      <div style={{ flex: 1 }}>
-        <h5>Available Graphs</h5>
-
-        <div className={styles.availableGraphs}>
-          {availableGraphs.map((g) =>
-            g.names.map((n) => <Graph key={n} type={n} />)
+          {v1 !== "none" && (
+            <div className={styles.controlRow}>
+              <label>Variable 2</label>
+              <TypePicker
+                value={v2}
+                setValue={(x: "none" | "numeric" | "categorical") => setV2(x)}
+              />
+            </div>
           )}
+        </div>
+        <div className={styles.graphsSection}>
+          <h5>Available Graphs</h5>
+
+          <div className={styles.availableGraphs}>
+            {availableGraphs.map((g) =>
+              g.names.map((n) => <Graph key={n} type={n} />)
+            )}
+          </div>
         </div>
       </div>
     </div>
