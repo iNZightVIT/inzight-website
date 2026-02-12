@@ -12,7 +12,7 @@ const darkCodeTheme = themes.dracula;
 const config = {
   title: "iNZight",
   tagline: "A free data exploration and analytics platform.",
-  url: "https://inzight.nz",
+  url: "https://newsite.inzight.nz",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenAnchors: "warn",
@@ -110,7 +110,7 @@ const config = {
         { property: "og:title", content: "iNZight — Free Data Exploration & Analytics" },
         { property: "og:description", content: "Pick your variables and iNZight handles the rest — the right graph, the right summary, the right test. No coding required." },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://inzight.nz" },
+        { property: "og:url", content: "https://newsite.inzight.nz" },
         { property: "og:image", content: "https://inzight.nz/img/og-image.png" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: "@iNZightVIT" },
