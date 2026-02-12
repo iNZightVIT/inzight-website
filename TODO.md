@@ -14,8 +14,7 @@ Remaining tasks and items to review for the iNZight website.
 
 - [ ] **Set up new mailing list/newsletter system** - The old mailing lists (iNZight-General, iNZight-School, iNZight-Online) are deprecated. Consider setting up a new mailing list or newsletter system for announcements.
 - [ ] **Configure analytics** - Set up analytics tracking (if desired)
-- [ ] **Set up 301 redirects from old URLs**:
-  - `/user_guides/addons/?topic=mod_X` → `/docs/reference/modules/mod-X`
+- [x] **Set up 301 redirects from old URLs** - All redirects configured in docusaurus.config.mjs (query parameters handled automatically)
 
 ---
 
@@ -46,7 +45,7 @@ Remaining tasks and items to review for the iNZight website.
 ### Graphics Documentation - Partially Documented
 
 #### Graph Types (Minimal Content)
-- [ ] **Scatter Plot** - Currently only has title/description, needs full documentation
+- [x] **Scatter Plot** - Documentation completed
 - [ ] **Histogram** - Currently only has title/description, needs full documentation
 - [ ] **Dot Plot** - Currently only has title/description, needs full documentation
 - [ ] **Grid Density Plot** - Currently only has title/description, needs full documentation
@@ -158,6 +157,50 @@ Remaining tasks and items to review for the iNZight website.
 - [ ] Reorder and Select Variables
 - [ ] Transition Guide for 4.2
 - [ ] R User Documentation
+
+---
+
+## Screenshots Needed
+
+### Graphics Documentation
+- [ ] **Scatter Plot**: Basic scatter plot example (two numeric variables)
+- [ ] **Scatter Plot**: Scatter plot with trend line
+- [ ] **Scatter Plot**: Scatter plot with colour coding
+- [ ] **Histogram**: Basic histogram
+- [ ] **Histogram**: Histogram with different bin widths
+- [ ] **Dot Plot**: Basic dot plot
+- [ ] **Dot Plot**: Dot plot with subsetting
+- [ ] **Grid Density Plot**: Grid density plot example
+- [ ] **Hexagonal Binning Plot**: Hexagonal binning plot example
+- [ ] **Colour**: Discrete colour coding example
+- [ ] **Colour**: Continuous colour coding example
+- [ ] **Shape**: Different point shapes example
+- [ ] **Size**: Points sized by variable example
+- [ ] **Trend Lines and Curves**: Linear regression line
+- [ ] **Trend Lines and Curves**: Smoothing curve (loess)
+- [ ] **Trend Lines and Curves**: Join points by line
+- [ ] **Trend Lines and Curves**: x=y line
+- [ ] **Axes and Labels**: Log transformation applied
+- [ ] **Axes and Labels**: Custom axis limits
+- [ ] **Axes and Labels**: Custom title and labels
+- [ ] **Identify Points**: Labeled points example
+- [ ] **Identify Points**: Points selected by brushing
+- [ ] **Plot Appearance**: Jitter applied
+- [ ] **Plot Appearance**: Rugs on axes
+- [ ] **Plot Appearance**: Transparency adjustment
+- [ ] **Inference**: Inference on scatter plot
+- [ ] **Inference**: Inference on bar chart
+
+### Dataset Menu Features
+- [ ] **Data Dictionary**: Load data dictionary dialog
+- [ ] **Data Dictionary**: View data dictionary
+- [ ] **Data Dictionary**: Apply labels from dictionary
+- [ ] **Generate Data Report**: Report generation dialog
+- [ ] **Generate Data Report**: Example report output
+- [ ] **Reorder and Select Variables**: Variable reordering interface
+
+### Variables Menu Features
+- [ ] **Convert to Categorical (multiple)**: Batch conversion dialog
 
 ---
 
