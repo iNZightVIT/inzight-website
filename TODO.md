@@ -46,10 +46,10 @@ Remaining tasks and items to review for the iNZight website.
 
 #### Graph Types (Minimal Content)
 - [x] **Scatter Plot** - Documentation completed
-- [ ] **Histogram** - Currently only has title/description, needs full documentation
-- [ ] **Dot Plot** - Currently only has title/description, needs full documentation
-- [ ] **Grid Density Plot** - Currently only has title/description, needs full documentation
-- [ ] **Hexagonal Binning Plot** - Currently only has title/description, needs full documentation
+- [x] **Histogram** - Documentation completed
+- [x] **Dot Plot** - Documentation completed
+- [x] **Grid Density Plot** - Documentation completed
+- [x] **Hexagonal Binning Plot** - Documentation completed
 
 #### Plot Features (Incomplete)
 - [ ] **Colour** - Documentation incomplete (only has discrete/continuous headers, no content)
@@ -140,9 +140,10 @@ Remaining tasks and items to review for the iNZight website.
 ## Priority Order
 
 ### P2 - Important (frequently used features)
-- [ ] **Graphics documentation gaps** - Many graph types and Add to Plot features are minimally documented or missing
-  - Graph types (scatter, histogram, dot, grid, hex) - need full content
+- [ ] **Graphics documentation gaps** - Add to Plot features are minimally documented or missing
+  - ~~Graph types (scatter, histogram, dot, grid, hex) - all completed~~
   - Add to Plot sections (Trend Lines, Axes/Labels, Identify Points) - need documentation
+  - Plot features (Colour, Shape, Size) - need full content
   - Plot appearance features (jitter, rugs, transparency, etc.) - need documentation
 - [ ] Data Dictionary feature
 - [ ] Menubar reference documentation (Plot, Dataset, Variables, etc.)
@@ -168,10 +169,14 @@ Remaining tasks and items to review for the iNZight website.
 - [ ] **Scatter Plot**: Scatter plot with colour coding
 - [ ] **Histogram**: Basic histogram
 - [ ] **Histogram**: Histogram with different bin widths
-- [ ] **Dot Plot**: Basic dot plot
-- [ ] **Dot Plot**: Dot plot with subsetting
-- [ ] **Grid Density Plot**: Grid density plot example
-- [ ] **Hexagonal Binning Plot**: Hexagonal binning plot example
+- [ ] **Dot Plot**: Basic dot plot (single numeric variable, showing stacked dots with box plot)
+- [ ] **Dot Plot**: Dot plot with categorical Variable 2 (grouped comparison)
+- [ ] **Dot Plot**: Dot plot with mean indicator (inference for mean)
+- [ ] **Grid Density Plot**: Basic grid density plot (two numeric variables, showing shaded squares)
+- [ ] **Grid Density Plot**: Grid density plot with different grid resolution
+- [ ] **Hexagonal Binning Plot**: Hex plot with "size" style (default)
+- [ ] **Hexagonal Binning Plot**: Hex plot with "alpha" style
+- [ ] **Hexagonal Binning Plot**: Hex plot with colour-by variable (hextri segments)
 - [ ] **Colour**: Discrete colour coding example
 - [ ] **Colour**: Continuous colour coding example
 - [ ] **Shape**: Different point shapes example
