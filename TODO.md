@@ -44,7 +44,8 @@ Remaining tasks and items to review for the iNZight website.
 
 ### Graphics Documentation - Partially Documented
 
-#### Graph Types (Minimal Content)
+#### Graph Types
+- [x] **Bar Chart** - Documentation completed
 - [x] **Scatter Plot** - Documentation completed
 - [x] **Histogram** - Documentation completed
 - [x] **Dot Plot** - Documentation completed
@@ -164,6 +165,11 @@ Remaining tasks and items to review for the iNZight website.
 ## Screenshots Needed
 
 ### Graphics Documentation
+- [ ] **Bar Chart**: One-way bar chart (single categorical variable)
+- [ ] **Bar Chart**: Two-way bar chart (two categorical variables)
+- [ ] **Bar Chart**: Segmented bar chart (one-way with colour-by)
+- [ ] **Bar Chart**: Bar chart showing counts
+- [ ] **Bar Chart**: Bar chart with inference (confidence intervals for proportions)
 - [ ] **Scatter Plot**: Basic scatter plot example (two numeric variables)
 - [ ] **Scatter Plot**: Scatter plot with trend line
 - [ ] **Scatter Plot**: Scatter plot with colour coding

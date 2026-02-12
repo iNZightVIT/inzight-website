@@ -1,44 +1,113 @@
 ---
 title: Bar Chart
-description: One and two-way bar charts
+description: A plot showing the distribution of one or two categorical variables, using bars to represent counts or proportions.
 ---
 
-Bar charts represent counts and/or proportions and are produced when you choose one or two _categorical variables_.
+Bar charts display the distribution of categorical variables using bars whose height represents either the count or the proportion of observations in each category. They are the default plot type whenever you work with categorical data in iNZight.
 
-## One-way bar chart
+import barOneway from "../../screenshots/bar-oneway.png";
 
-Each bar represents a category of the variable. The height of the bar represents the number of observations in that category.
+<Figure src={barOneway} caption="A one-way bar chart showing how students travel to school" width="500" />
+
+## When are bar charts used?
+
+Bar charts are automatically produced when you select a **categorical variable** in the [control panel](/docs/interface/control-panel):
+- **Variable 1**: Categorical variable (categories along the x-axis)
+
+You can optionally set **Variable 2** to another categorical variable to create a [two-way bar chart](#two-way-bar-charts).
+
+## Understanding bar charts
+
+Bar charts help you identify:
+- **Frequency**: How many observations fall into each category
+- **Relative proportions**: What fraction of the data each category represents
+- **Comparisons**: How the distribution of one variable changes across levels of another
+- **Rare categories**: Categories with very few observations
+
+Each bar represents one category. By default, the y-axis shows the **proportion** (percentage) of the total observations in each category.
 
 :::tip Counts or proportions
 
-You can switch between counts and proportions from the [**Add to Plot**](/) panel.
+You can switch between displaying counts and proportions in the **Add to Plot** panel. When showing counts, the y-axis displays the raw number of observations in each category.
 
 :::
 
-import bar from "./bar.png";
+## Two-way bar charts
 
-<Figure src={bar} caption="A bar chart" width={400} />
+When you set both Variable 1 and Variable 2 to categorical variables, iNZight produces a two-way bar chart displaying _the distribution of Variable 1 for each level of Variable 2_.
 
-The above bar chart shows the number of students in the sample using each form of travel to get to school.
+- **Variable 1** categories are shown along the x-axis
+- **Variable 2** categories are represented by coloured bars within each group, labeled in the legend
+- The total height of bars within each level of Variable 2 (same colour) sums to 100%
 
-### Segmentation
+Further, iNZight adjusts the **width** of each group of bars according to the size of that group. This means the area of each bar is proportional to the total number of observations in that cell, giving a visual indication of both the proportion and the sample size.
 
-It is possible to segment the bars _of a one-way bar chart_ using a second categorical variable.
+import barTwoway from "../../screenshots/bar-twoway.png";
 
-## Two-way bar chart
-
-When you choose a categorical variable for both Variables 1 and 2, you will get a two-way bar chart displaying _the distribution of variable 1 for each level of variable 2_.
-
-The first _primary variable_ is represented by groups along the x-axis. The second variable is represented by bars within each group, with colours distinguishing the categories and labeled in the legend. The total height of the bars in each level of variable 2 (same colour) is 100%.
-
-Further, iNZight adjusts the **width** of each bar according to the size of that group (variable 2). Therefore, the area of each bar is proportional to the total number of observations in that cell.
-
-import bar2 from "./bar2.png";
-
-<Figure src={bar2} caption="A two-way bar chart" width={400} />
+<Figure src={barTwoway} caption="A two-way bar chart showing travel mode by gender" width="500" />
 
 :::tip Switch it up
 
-You can easily convert the order of the variables by clicking the **Switch** button next to Variable 1 in the control panel.
+You can easily swap the roles of the two variables by clicking the **Switch** button next to Variable 1 in the control panel.
 
 :::
+
+## Segmented bar charts
+
+For one-way bar charts, you can add a second categorical variable using the **Colour** option in the [**Add to Plot**](/docs/graphics/plot-features/colour) panel. This creates a segmented (stacked) bar chart, where each bar is divided into coloured segments showing the breakdown of the colour-by variable within each category.
+
+import barSegmented from "../../screenshots/bar-segmented.png";
+
+<Figure src={barSegmented} caption="A segmented bar chart showing gender breakdown within each travel mode" width="500" />
+
+:::info Inference not available
+
+Inference information is not available for segmented bar charts.
+
+:::
+
+## Inference
+
+When displaying proportions (not counts), you can add [inference information](/docs/graphics/inference) to bar charts:
+
+- **Confidence intervals**: Show the uncertainty around each proportion estimate
+- **Comparison intervals**: Help assess whether proportions differ significantly between categories
+
+import barInference from "../../screenshots/bar-inference.png";
+
+<Figure src={barInference} caption="A bar chart with confidence intervals for proportions" width="500" />
+
+Confidence intervals for proportions use a normal approximation by default, or bootstrap simulation if enabled. Categories with fewer than 5 observations are excluded from inference calculations.
+
+For two-way bar charts, inference intervals are displayed for each combination of Variable 1 and Variable 2.
+
+:::info Survey data
+
+Bar charts fully support **survey weights** when working with survey data, producing estimated population counts and proportions with appropriate standard errors.
+
+:::
+
+## Numeric summary
+
+The numeric summary for a bar chart shows a **table of counts and percentages**:
+- **Counts**: The number of observations in each category
+- **Percentages**: The proportion of observations in each category (as a percentage)
+- **Total**: The total number of observations
+
+For two-way bar charts, the summary includes a cross-tabulation with row and column totals.
+
+## Modifying bar charts
+
+Bar charts can be enhanced with features available in the **Add to Plot** panel:
+
+- **[Colour](/docs/graphics/plot-features/colour)**: Segment one-way bar charts by a categorical variable
+- **[Axes and Labels](/docs/graphics/plot-features/axes-labels)**: Customize axis labels and title
+- **[Inference Information](/docs/graphics/inference)**: Add confidence or comparison intervals for proportions
+- **[Plot Appearance](/docs/graphics/plot-features/plot-appearance)**: Adjust bar colours, outlines, and other visual properties
+
+## Example use cases
+
+- **Mode of travel**: Comparing how students get to school (bike, bus, car, walk, etc.)
+- **Survey responses**: Showing the distribution of responses to a categorical question
+- **Gender by subject**: Examining how subject preferences differ between genders (two-way)
+- **Customer segments**: Breaking down customer types by region or product category
