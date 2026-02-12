@@ -13,9 +13,15 @@ Grid density plots are available when you have two **numeric variables** selecte
 
 Grid density plots are not used automatically by default—iNZight uses [hexagonal binning](/docs/graphics/graph-types/hex) as its default large-sample plot for two numeric variables. You can switch to a grid density plot manually using the **Add to Plot** panel.
 
+:::tip Teaching tool
+
+Grid density plots are primarily useful as a **teaching tool**. They help illustrate the connection between one-variable plots (like [dot plots](/docs/graphics/graph-types/dot) and [histograms](/docs/graphics/graph-types/hist)) and two-variable plots (like [scatter plots](/docs/graphics/graph-types/scatter))—essentially extending the idea of binning into two dimensions. For practical analysis of large datasets, the [Hexagonal Binning Plot](/docs/graphics/graph-types/hex) is generally recommended.
+
+:::
+
 :::note Limitations
 
-Grid density plots do not account for survey or frequency weighting. If you are working with survey data, use a [Hexagonal Binning Plot](/docs/graphics/graph-types/hex) instead, which properly handles weights.
+Grid density plots do not account for survey or frequency weighting. If you are working with weighted data, use a [Hexagonal Binning Plot](/docs/graphics/graph-types/hex) instead, which properly handles weights.
 
 :::
 
