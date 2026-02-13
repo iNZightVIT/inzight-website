@@ -23,5 +23,9 @@
 /download/                                    /install                                    301
 /getstarted/                                  /docs                                       301
 
+# Transition guides
+/docs/transition-to-4.2                    /support/transition-guides/4.2             301
+/docs/transition-to-4.2/                   /support/transition-guides/4.2             301
+
 # iNZight Lite redirect
 /lite/                                        https://lite.inzight.nz                     301

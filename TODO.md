@@ -41,9 +41,7 @@ Remaining tasks and items to review for the iNZight website.
 
 ### Infrastructure/Reference
 
-- [ ] **Transition Guide for 4.2**
-  - `/docs/transition-to-4.2/` is referenced but may be incomplete
-  - Old site had this at `/docs/transition-to-4.2`
+- [x] **Transition Guide for 4.2** — migrated to `/support/transition-guides/4.2`
 
 - [ ] **R User Documentation**
   - How to use iNZight packages programmatically

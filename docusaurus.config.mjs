@@ -87,6 +87,11 @@ const config = {
           // Old pages
           { from: "/download", to: "/install" },
           { from: "/getstarted", to: "/docs" },
+          // Transition guides
+          {
+            from: "/docs/transition-to-4.2",
+            to: "/support/transition-guides/4.2",
+          },
         ],
       },
     ],
