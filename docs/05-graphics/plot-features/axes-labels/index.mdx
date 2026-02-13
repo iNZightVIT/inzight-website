@@ -1,0 +1,57 @@
+---
+title: Axes and Labels
+description: Customize axes, labels, and titles for your plots.
+---
+
+The **Axes and Labels** options in **Add to Plot** allow you to customize the appearance and scaling of your plot axes, labels, and titles. These controls help you present data clearly and focus on the range of values that matter.
+
+## Log transformations
+
+For data that span several orders of magnitude or are heavily right-skewed, a **log transformation** can make patterns easier to see. iNZight supports:
+
+- **Log (natural)**: Transforms the axis using the natural logarithm. Axis labels show `e^` notation.
+- **Log10**: Transforms the axis using the base-10 logarithm. Axis labels show the original scale values.
+
+Log transformations can be applied to the **x-axis**, **y-axis**, or both independently. The data are transformed internally, but the axis labels are displayed on the original scale for readability.
+
+:::tip When to use log scales
+
+Log scales are particularly useful for:
+- Variables like income, population, or concentration that vary over several orders of magnitude
+- Data where the relationship between variables is multiplicative rather than additive
+- Making exponential growth appear linear
+
+:::
+
+## Axis limits
+
+You can set custom **x-axis** and **y-axis** limits to zoom in on a specific region of the plot. This is useful for:
+
+- Focusing on a particular range of values
+- Removing visual outliers without filtering the data
+- Ensuring consistent axis ranges across multiple plots for comparison
+
+When custom limits are set, points outside the visible range are still included in calculations (e.g., trend lines and inference) but are not drawn.
+
+## Labels and titles
+
+iNZight automatically generates axis labels and plot titles from the variable names in your data. You can override these with custom text:
+
+- **X-axis label**: The label shown below the x-axis
+- **Y-axis label**: The label shown beside the y-axis
+- **Plot title**: The main title displayed above the plot
+
+## Text sizing
+
+You can adjust the relative size of different text elements:
+
+- **Axis labels** (`cex.lab`): Controls the size of the axis labels
+- **Axis tick labels** (`cex.axis`): Controls the size of the numbers/categories along the axes
+- **Title** (`cex.main`): Controls the size of the main plot title
+- **General text** (`cex.text`): Controls the size of other text elements on the plot
+
+All sizes are specified as multipliers — a value of 1 is the default size, 1.5 is 50% larger, and 0.8 is 20% smaller.
+
+## Applicable plot types
+
+Axes and labels can be customised for all plot types. Log transformations are available for numeric axes only.

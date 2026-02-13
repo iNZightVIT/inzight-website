@@ -1,6 +1,31 @@
 ---
 title: Shape
-description: Control the shape of points.
+description: Control the shape of points to encode categorical information.
 ---
 
-You can use shape to encode categorical variables with only a few different categories, and can be useful in combination with colour to ensure charts are easy to read even for people with colour blindness and other vision impairments.
+Shape mapping allows you to use different point symbols to represent levels of a categorical variable. This is particularly useful for making plots accessible to people with colour vision deficiencies, either on its own or in combination with [colour](/docs/graphics/plot-features/colour).
+
+import shape from "../../screenshots/shape.png";
+
+<Figure src={shape} caption="Scatter plot with points shaped by a categorical variable" width="500" />
+
+## How to add shape
+
+To map a variable to point shape, select a **categorical variable** from the **Symbol by** dropdown in the **Add to Plot** panel.
+
+## How it works
+
+- Each level of the selected variable is assigned a different plotting symbol (circle, triangle, square, diamond, inverted triangle)
+- A legend is displayed showing which symbol maps to which category
+- Up to **5 distinct shapes** are available, so this feature works best with variables that have a small number of levels
+- Missing values are shown with a cross symbol
+
+:::tip Accessibility
+
+Shape is one of the best tools for making scatter plots accessible. Even when printed in black-and-white or viewed by someone with colour blindness, the groups remain distinguishable. For maximum clarity, use shape together with [colour](/docs/graphics/plot-features/colour).
+
+:::
+
+## Applicable plot types
+
+Shape mapping is available for **scatter plots** only, as other plot types do not use individual point symbols.

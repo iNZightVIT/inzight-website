@@ -3,10 +3,59 @@ title: Colour
 description: Using colour to add information to a graph.
 ---
 
-Colour is one of the most common ways of adding a third variable to a plot, and can be very effective in seeing differences between groups.
+Colour is one of the most common ways of adding a third variable to a plot, and can be very effective in revealing differences between groups or patterns in the data.
 
-## Discreet colour-coding
+import colourDiscrete from "../../screenshots/colour-discrete.png";
+import colourContinuous from "../../screenshots/colour-continuous.png";
 
-This is where parts of the graph are coloured based on the data. For example, levels of a factor variable can be mapped to colours.
+## How to add colour
+
+To colour points by a variable, select the variable from the **Colour by** dropdown in the [control panel](/docs/interface/control-panel). The type of colour scale used depends on the type of variable selected.
+
+## Categorical colour-coding
+
+When a **categorical** (factor) variable is selected, each level of the variable is assigned a distinct colour. This is useful for identifying group membership and comparing patterns across groups.
+
+<Figure src={colourDiscrete} caption="Scatter plot with points coloured by a categorical variable (gender)" width="500" />
+
+- Each category gets a unique colour from the default palette
+- A legend is displayed showing which colour maps to which category
+- Works with all plot types: scatter plots, dot plots, histograms, and bar charts
+- For bar charts, colour-by produces [segmented bar charts](/docs/graphics/graph-types/bar)
 
 ## Continuous colour-coding
+
+When a **numeric** variable is selected, a continuous colour gradient is used. This helps reveal how the values of a third numeric variable relate to the two variables already being plotted.
+
+<Figure src={colourContinuous} caption="Scatter plot with points coloured by a continuous numeric variable" width="500" />
+
+- Points are coloured along a gradient from low to high values
+- The default gradient uses the **viridis** palette, which is designed to be perceptually uniform and colourblind-friendly
+- A colour bar legend shows the mapping from values to colours
+- You can switch between **linear** and **rank** colour methods — rank colouring assigns colours based on the order of values rather than their magnitude, which can be useful when data are skewed
+
+## Colour palettes
+
+iNZight uses a default palette that is designed to be accessible. For categorical variables with up to 10 levels, distinct colours are used. For more levels, the **viridis** palette is used to ensure readability.
+
+You can change the colour palette if a custom function or named palette is preferred.
+
+:::tip Colourblind-friendly
+
+Combining colour with [shape](/docs/graphics/plot-features/shape) is a good strategy for ensuring plots are accessible to people with colour vision deficiencies.
+
+:::
+
+## Colour emphasis
+
+When exploring a particular group, you can **emphasise** one level of the colour-by variable. This highlights the selected group while fading the others, making it easier to trace patterns for a single group within the full dataset.
+
+## Applicable plot types
+
+| Plot type | Categorical colour | Continuous colour |
+|---|---|---|
+| [Scatter plot](/docs/graphics/graph-types/scatter) | ✓ | ✓ |
+| [Dot plot](/docs/graphics/graph-types/dot) | ✓ (subset groups) | — |
+| [Histogram](/docs/graphics/graph-types/hist) | ✓ (subset groups) | — |
+| [Bar chart](/docs/graphics/graph-types/bar) | ✓ (segmented bars) | — |
+| [Hexagonal binning](/docs/graphics/graph-types/hex) | ✓ (requires `hextri` package) | — |

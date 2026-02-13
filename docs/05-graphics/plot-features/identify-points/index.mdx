@@ -1,0 +1,47 @@
+---
+title: Identify Points
+description: Label and identify specific points in your plots.
+---
+
+The **Identify Points** options in **Add to Plot** allow you to label, colour, and highlight specific points of interest in scatter plots. This is useful for investigating outliers, highlighting specific observations, or adding context to your visualisations.
+
+## Labelling points
+
+You can label points on a scatter plot by selecting a variable to use as labels from the **Identify** dropdown. The label variable determines what text appears next to each identified point — typically a name, ID, or category.
+
+When no label variable is selected but points are identified, row numbers are shown instead.
+
+## Selection methods
+
+iNZight provides several ways to choose which points to identify:
+
+### By extreme values
+
+Select the most **extreme points** based on their Mahalanobis distance from the centre of the data. This automatically identifies the points that are most unusual in terms of both their x and y values considered together. You can control how many extreme points to identify (e.g., the top 5 or 10 most extreme).
+
+### By row ID
+
+Specify particular observations to label by providing their row numbers. This is useful when you already know which observations you want to highlight (e.g., from a previous analysis or data inspection).
+
+### By expression
+
+Identify points that satisfy a logical condition (e.g., `x > 100` or `height > 180`). This lets you highlight all points meeting a specific criterion.
+
+### Same level identification
+
+When identifying points, you can also highlight all observations that share the same level of a grouping variable as the identified points. For example, if you identify an extreme point and it belongs to group "A", all points in group "A" can be highlighted together.
+
+## Colouring identified points
+
+Identified points can be drawn in a distinct colour (default: **red**) to make them stand out from the rest of the data. When combined with labels, this creates a clear visual emphasis on the points of interest.
+
+## How it works
+
+- Identified points are labelled with text from the selected variable
+- Labels are positioned near their corresponding points
+- Non-identified points remain in their default colour
+- The identified points are drawn as solid filled points for emphasis
+
+## Applicable plot types
+
+Point identification is available for **scatter plots** only, as other plot types do not display individual data points in the same way.
