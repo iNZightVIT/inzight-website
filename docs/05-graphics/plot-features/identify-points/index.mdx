@@ -3,11 +3,13 @@ title: Identify Points
 description: Label and identify specific points in your plots.
 ---
 
-The **Identify Points** options in **Add to Plot** allow you to label, colour, and highlight specific points of interest in scatter plots. This is useful for investigating outliers, highlighting specific observations, or adding context to your visualisations.
+import { Desktop } from "@site/src/components/VersionToggle/inzVersion";
+
+The **Identify Points** options in **Add to Plot** allow you to label, colour, and highlight specific points of interest in your plots. This is useful for investigating outliers, highlighting specific observations, or adding context to your visualisations.
 
 ## Labelling points
 
-You can label points on a scatter plot by selecting a variable to use as labels from the **Identify** dropdown. The label variable determines what text appears next to each identified point — typically a name, ID, or category.
+You can label points by selecting a variable to use as labels from the **Identify** dropdown. The label variable determines what text appears next to each identified point — typically a name, ID, or category.
 
 When no label variable is selected but points are identified, row numbers are shown instead.
 
@@ -15,21 +17,33 @@ When no label variable is selected but points are identified, row numbers are sh
 
 iNZight provides several ways to choose which points to identify:
 
+<Desktop>
+
+### Click to locate
+
+You can click directly on the plot to identify the nearest point. The **Click to Locate** button puts the plot into an interactive mode — click on any point, and iNZight finds the closest observation and labels it. You can click multiple times to build up a set of identified points, and use the **Click to Remove** button to deselect individual points by clicking on them.
+
+:::note Limitations
+
+Click-to-locate is not available when:
+- Multiple plots are displayed (e.g., when using subsetting variables with `_MULTI`)
+- For dot plots, when Variable 2 is a categorical variable
+
+:::
+
+</Desktop>
+
+### By value of a variable
+
+Select a variable and a specific value to highlight all observations matching that value. For variables with a small number of unique values, a slider is provided to quickly cycle through them. This is useful for exploring how specific groups are distributed across the plot.
+
 ### By extreme values
 
-Select the most **extreme points** based on their Mahalanobis distance from the centre of the data. This automatically identifies the points that are most unusual in terms of both their x and y values considered together. You can control how many extreme points to identify (e.g., the top 5 or 10 most extreme).
-
-### By row ID
-
-Specify particular observations to label by providing their row numbers. This is useful when you already know which observations you want to highlight (e.g., from a previous analysis or data inspection).
-
-### By expression
-
-Identify points that satisfy a logical condition (e.g., `x > 100` or `height > 180`). This lets you highlight all points meeting a specific criterion.
+Select the most **extreme points** automatically. For scatter plots, this uses Mahalanobis distance from the centre of the data, identifying points that are most unusual in terms of both their x and y values considered together. For dot plots, you can separately control how many points to identify from the lower and upper ends of the distribution. You can control how many extreme points to identify (e.g., the top 5 or 10 most extreme).
 
 ### Same level identification
 
-When identifying points, you can also highlight all observations that share the same level of a grouping variable as the identified points. For example, if you identify an extreme point and it belongs to group "A", all points in group "A" can be highlighted together.
+When identifying extreme points, you can also highlight all observations that share the same level of a grouping variable as the identified points. For example, if you identify an extreme point and it belongs to group "A", all points in group "A" can be highlighted together.
 
 ## Colouring identified points
 
@@ -44,4 +58,4 @@ Identified points can be drawn in a distinct colour (default: **red**) to make t
 
 ## Applicable plot types
 
-Point identification is available for **scatter plots** only, as other plot types do not display individual data points in the same way.
+Point identification is available for **scatter plots** and **dot plots**, as these plot types display individual data points that can be labelled and highlighted.
