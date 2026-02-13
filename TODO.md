@@ -41,49 +41,6 @@ Remaining tasks and items to review for the iNZight website.
   - Batch conversion of numeric → categorical
   - Currently only single variable documented
 
-### Graphics Documentation - Partially Documented
-
-#### Plot Features (Incomplete)
-- [ ] **Colour** - Documentation incomplete (only has discrete/continuous headers, no content)
-- [ ] **Shape** - Very minimal (one sentence)
-- [ ] **Size** - Very minimal (one sentence)
-
-#### Add to Plot Panel - Undocumented Sections
-- [ ] **Trend Lines and Curves** - Mentioned but not documented
-  - Linear regression lines
-  - Smoothing curves (loess, quantile regression)
-  - Join points by line
-  - Add x=y line
-  - Available for scatter/hexbin/grid-density plots
-
-- [ ] **Axes and Labels** - Mentioned but not documented
-  - Log transformations
-  - Axis limits and scaling
-  - Label customization
-  - Title and subtitle options
-
-- [ ] **Identify Points** - Not documented at all
-  - Label points by variable or row ID
-  - Color points
-  - Selection methods (by value, by clicking, by brushing)
-  - Merge labeled points
-
-- [ ] **Customise Plot Appearance - Additional Features** - Partially documented
-  - Plot type override (switch between scatter/grid/hex)
-  - Jitter (for x and/or y axis)
-  - Rugs (distribution along axes)
-  - Transparency/alpha adjustment
-  - Point fill options
-  - Background color options
-  - General appearance settings
-
-#### Inference Information (Incomplete)
-- [ ] **Inference** - Only has brief intro and dot plot/histogram section
-  - Inference for other plot types (bar charts, scatter plots, etc.)
-  - Confidence intervals
-  - Hypothesis tests
-  - Complete documentation of inference options
-
 ### Plot Features - Undocumented
 
 - [ ] **Interactive Plots**
@@ -132,10 +89,6 @@ Remaining tasks and items to review for the iNZight website.
 ## Priority Order
 
 ### P2 - Important (frequently used features)
-- [ ] **Graphics documentation gaps** - Add to Plot features are minimally documented or missing
-  - Add to Plot sections (Trend Lines, Axes/Labels, Identify Points) - need documentation
-  - Plot features (Colour, Shape, Size) - need full content
-  - Plot appearance features (jitter, rugs, transparency, etc.) - need documentation
 - [ ] Data Dictionary feature
 - [ ] Menubar reference documentation (Plot, Dataset, Variables, etc.)
 
@@ -155,15 +108,10 @@ Remaining tasks and items to review for the iNZight website.
 ## Screenshots Needed
 
 ### Graphics Documentation
-- [ ] **Histogram**: Histogram with different bin widths
-- [ ] **Grid Density Plot**: Grid density plot with different grid resolution
-- [ ] **Trend Lines and Curves**: Join points by line
-- [ ] **Trend Lines and Curves**: x=y line
 - [ ] **Axes and Labels**: Log transformation applied
 - [ ] **Axes and Labels**: Custom axis limits
 - [ ] **Axes and Labels**: Custom title and labels
 - [ ] **Identify Points**: Labeled points example
-- [ ] **Identify Points**: Points selected by brushing
 
 ### Dataset Menu Features
 - [ ] **Data Dictionary**: Load data dictionary dialog
