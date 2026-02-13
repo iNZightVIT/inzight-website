@@ -45,17 +45,17 @@ All 13 review questions have been addressed:
 
 ### Variables Menu - Partially Documented
 
-- [ ] **Convert to Categorical (multiple)**
+- [x] **Convert to Categorical (multiple)**
   - Batch conversion of numeric → categorical
   - Currently only single variable documented
 
 ### Plot Features - Undocumented
 
-- [ ] **Interactive Plots**
+- [x] **Interactive Plots**
   - Export to interactive HTML (plotly)
   - Interactive features in Add to Plot
 
-- [ ] **FT (Financial Times) Graphics**
+- [x] **FT (Financial Times) Graphics**
   - FT-style chart formatting
   - Export options
 
@@ -103,10 +103,10 @@ All 13 review questions have been addressed:
 ### P3 - Nice to have
 - [ ] Code panel (Lite) - Low priority
 - [ ] Generate Data Report
-- [ ] Interactive plot export
-- [ ] FT Graphics
+- [x] Interactive plot export
+- [x] FT Graphics
 - [ ] Other Lite-specific features (Paste Dataset, Add/Remove Columns, Alphabetise Variables)
-- [ ] Convert to Categorical (multiple)
+- [x] Convert to Categorical (multiple)
 - [ ] Reorder and Select Variables
 - [ ] Transition Guide for 4.2
 - [ ] R User Documentation
