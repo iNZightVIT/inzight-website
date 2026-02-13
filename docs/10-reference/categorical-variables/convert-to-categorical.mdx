@@ -3,4 +3,44 @@ title: Convert to Categorical
 description: Convert one or more numeric variables to categorical variables.
 ---
 
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
 Creates a categorical version of a numeric variable. Each unique value in the numeric variable is converted to a category, so it is advised only to do this for numeric variables with a limited set of values, such as year or age.
+
+<Desktop>
+
+Access via **Variables** > **Categorical Variables** > **Convert to categorical ...**.
+
+</Desktop>
+
+<Lite>
+
+Access via **Variables** > **Convert to categorical**.
+
+</Lite>
+
+## How it works
+
+1. Select a **numeric variable** from the dropdown (or drag one onto the dropdown)
+2. Choose a **name** for the new variable — by default iNZight suggests `<variable>.cat` (e.g., `Year` → `Year.cat`)
+3. Click **Convert**
+
+The new categorical variable is added to your dataset alongside the original numeric variable. The original is not modified.
+
+:::tip When to use this
+Only convert numeric variables that have a small set of distinct values — for example coded survey responses, year, or age groups stored as integers. Converting a continuous variable like height would create an unmanageable number of categories.
+:::
+
+<Desktop>
+
+## Batch conversion (multiple variables)
+
+If you need to convert several numeric variables at once, use **Variables** > **Numeric Variables** > **Convert to categorical (multiple) ...**.
+
+1. A list of all numeric variables in the dataset is displayed
+2. **Hold Ctrl** (or Cmd on Mac) to select multiple variables
+3. Click **Convert**
+
+Each selected variable gets a new categorical version named with the `.cat` suffix (e.g., `age` → `age.cat`, `year` → `year.cat`). Unlike the single-variable version, you cannot customise the names — they are generated automatically.
+
+</Desktop>

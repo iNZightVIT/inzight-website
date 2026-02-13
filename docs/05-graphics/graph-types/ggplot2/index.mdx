@@ -1,0 +1,173 @@
+---
+title: More Plot Types (ggplot2)
+description: Alternative plot types built with ggplot2, offering additional visualisation options and themes.
+sidebar_label: More Plot Types (ggplot2)
+sidebar_position: 99
+---
+
+import { Desktop } from "@site/src/components/VersionToggle/inzVersion";
+
+In addition to the default plot types (dot plot, histogram, scatter plot, bar chart, hexagonal binning, and grid density), iNZight offers a range of **alternative plot types** built with `ggplot2`. These are available via the **Plot Type** dropdown in the [Add to Plot](/docs/graphics/plot-features/plot-appearance) panel and are labelled with a `(gg)` prefix.
+
+## Accessing gg plot types
+
+1. Create a plot by selecting variables in the [control panel](/docs/interface/control-panel)
+2. Open **Add to Plot** from the [plot toolbar](/docs/interface/plot-toolbar)
+3. Under **Plot Type**, use the dropdown to select an alternative `(gg)` plot type
+
+The available options depend on the types of variables you have selected.
+
+:::note Required packages
+ggplot2 plot types require several packages to be installed: `ggplot2`, `ggtext`, `dplyr`, `tidyr`, `forcats`, `ggmosaic`, `waffle`, `ggthemes`, `ggbeeswarm`, and `ggridges`. If any are missing, iNZight will display the installation command needed.
+:::
+
+:::caution Survey data
+ggplot2 plot types are **not available** when a survey design is active. Only the default iNZight plot types are supported for survey data.
+:::
+
+## Available plot types
+
+### Numeric variables (one numeric, or numeric vs categorical)
+
+These are alternatives to the default **dot plot** and **histogram**:
+
+| Plot type | Description |
+|---|---|
+| **(gg) dot strip** | Individual points arranged along a strip |
+| **(gg) barcode** | Thin vertical lines marking each observation |
+| **(gg) boxplot** | Traditional box-and-whisker plot |
+| **(gg) beeswarm** | Points spread to avoid overlap, revealing distribution shape |
+| **(gg) violin** | Mirrored density curve showing distribution shape |
+| **(gg) density** | Smooth density curve |
+| **(gg) cumulative curve** | Cumulative frequency/proportion curve |
+| **(gg) column/row bar** | Values plotted as individual bars (one numeric variable only) |
+| **(gg) lollipop** | Dot-on-a-stick chart for individual values (one numeric variable only) |
+
+When a **second categorical variable** is selected:
+
+| Plot type | Description |
+|---|---|
+| **(gg) density (ridgeline)** | Overlapping density curves stacked by group |
+| **(gg) pyramid** | Back-to-back bars for comparing two groups (binary second variable only) |
+
+### Categorical variables (one or two categorical)
+
+These are alternatives to the default **bar chart**:
+
+| Plot type | Description |
+|---|---|
+| **(gg) column/row bar** | Column or row chart of counts |
+| **(gg) stacked column/row** | Stacked bars showing composition |
+| **(gg) lollipop** | Dot-on-a-stick chart of counts |
+
+With **one categorical variable** only:
+
+| Plot type | Description |
+|---|---|
+| **(gg) gridplot** | A waffle-style grid showing counts per square |
+| **(gg) pie** | Pie chart |
+| **(gg) donut** | Donut chart (ring-shaped pie) |
+
+With **two categorical variables**:
+
+| Plot type | Description |
+|---|---|
+| **(gg) frequency polygons** | Line chart of category counts across groups |
+| **(gg) heatmap** | Colour-coded grid showing counts at each combination |
+| **(gg) spine/pyramid** | Spine plot for binary second variable |
+| **(gg) diverging stacked bar (Likert)** | Diverging bars centred around a midpoint (3+ levels in first variable) |
+
+### Multiple variables
+
+When multiple categorical variables are dragged into Variable 1 simultaneously:
+
+| Plot type | Description |
+|---|---|
+| **(gg) multiple bar** | Side-by-side bars for each variable |
+| **(gg) multiple stacked column** | Stacked column chart across variables |
+| **(gg) multiple binary column** | Binary comparison chart (two-level variables only) |
+
+## Themes
+
+All gg plot types support a **Theme** selector in the Add to Plot panel. Themes control the overall visual style of the plot — background, grid lines, fonts, and colours.
+
+The following themes are always available:
+
+| Theme | Description |
+|---|---|
+| **Default** | Standard ggplot2 grey theme |
+| **Black & White** | White background with black elements |
+| **Light** | Light grey background |
+| **Dark** | Dark background with light text |
+| **Minimal** | Clean, minimal styling |
+| **Classic** | Traditional white background with axis lines |
+| **Void** | No background, axes, or grid — just the data |
+
+If the `ggthemes` package is installed, additional themes become available:
+
+| Theme | Style |
+|---|---|
+| **Stata** | Stata statistical software |
+| **Wall Street Journal** | WSJ chart styling |
+| **Tufte** | Edward Tufte's minimalist aesthetic |
+| **Google Docs** | Google Docs chart colours |
+| **FiveThirtyEight** | FiveThirtyEight journalism style |
+| **Excel** | Microsoft Excel default chart |
+| **Economist** | _The Economist_ magazine charts |
+
+If `ggthemes` is not installed, an "Install additional themes..." option appears in the dropdown.
+
+## Colour palettes
+
+Many gg plot types provide a **Colour palette** selector for choosing a colour scheme. The available palettes vary by plot type and include both sequential and qualitative colour scales.
+
+## Rotation
+
+Most gg plot types support **rotation** options:
+
+- **Rotate plot**: Swap the x and y axes (e.g., turn vertical bars into horizontal bars)
+- **Rotate x-axis labels**: Angle the x-axis labels for readability
+- **Rotate y-axis labels**: Angle the y-axis labels for readability
+
+Rotation is not available for pie and donut charts.
+
+:::tip
+Some plot types — such as boxplot, violin, beeswarm, and lollipop — are rotated (horizontal) by default. Ticking the "Rotate" checkbox will switch them to vertical orientation.
+:::
+
+## Plot-specific options
+
+Certain gg plot types have additional controls:
+
+| Plot type | Options |
+|---|---|
+| **Violin / Density** | Smoothing adjustment slider |
+| **Barcode** | Size slider |
+| **Barcode (grouped)** | Width and height sliders |
+| **Beeswarm / Quasirandom** | Point size, swarm width, and method |
+| **Dot strip** | Point size and transparency |
+| **Lollipop** | Line width, point size, and labels |
+| **Population pyramid** | Number of bins |
+| **Diverging stacked bar** | Cutpoint selection |
+| **Gridplot** | Observations per square |
+
+## Code access
+
+<Desktop>
+
+For gg plot types, the Add to Plot panel includes two additional buttons:
+
+- **Store code**: Saves the ggplot2 code that generated the current plot to the code history
+- **View code**: Opens the stored code history window where you can review and copy ggplot2 code
+
+This lets you reproduce the plot outside of iNZight or customise it further using R.
+
+</Desktop>
+
+## Interactive plots
+
+Most gg plot types include an **"Interactive Plot (via plotly)"** button in the Add to Plot panel. Clicking it converts the current ggplot2 plot into an interactive plotly widget that opens in your web browser, allowing hovering, zooming, and panning.
+
+This is not available for: pie, donut, gridplot, barcode, or ridgeline plots.
+
+See [Interactive Plots](/docs/reference/advanced-features#interactive-plots) for more details.

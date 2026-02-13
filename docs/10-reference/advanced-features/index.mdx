@@ -5,7 +5,11 @@ sidebar_label: Extra Features
 sidebar_position: 2
 ---
 
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
 Once you're familiar with the basics of iNZight, you can try out some of the more advanced features.
+
+<Desktop>
 
 ## iNZight Display Mode
 
@@ -20,6 +24,8 @@ import dualWindow from "./8_inzight_dual_window.png";
 </div>
 
 To switch between the two, go to **File** > **Preferences**, and check the box **"Use dual-window display mode"**.
+
+</Desktop>
 
 ## Colour Specification
 
@@ -38,13 +44,29 @@ You can also specify opacity when using HEX codes. This is done simply by adding
 
 ---
 
-## Export Interactive HTML Graphs
+## Interactive Plots
+
+iNZight can produce interactive versions of plots that you can explore in a web browser — hovering, clicking, and selecting data points.
+
+<Desktop>
+
+### Exporting interactive plots (Desktop)
 
 :::info Developmental Feature
 This feature is still a work-in-progress. Please play around with it and let us know what you like, what doesn't work so well, and any other feedback you have!
 :::
 
-A feature of iNZight is the ability to export plots as SVG and Interactive HTML pages.
+There are two ways to get an interactive plot from iNZight Desktop:
+
+#### Toolbar button
+
+Most single-panel plots have an interactive version. Look for the interactive icon in the [plot toolbar](/docs/interface/plot-toolbar) — a blue icon means one is available, a grey icon means it is not.
+
+Clicking the icon opens the interactive plot directly in your default web browser.
+
+#### Save dialog
+
+You can also export via **Save Plot** (the save icon on the toolbar, or **Plot** menu):
 
 import fig1 from "./FIG1.png";
 import fig2 from "./FIG2.png";
@@ -67,16 +89,43 @@ Now click the "Save" icon in the [plot toolbar](/docs/interface/plot-toolbar), o
 
 <Figure src={fig4} caption="Save dialog" width="400" />
 
-- **File type**: choose "Interactive HTML"
+- **File type**: choose "Interactive HTML" (or "SVG" for a static vector image)
 - **Save location**: You can leave this as default, which is the iNZightVIT/Saved Plots folder in your Documents.
 - **File name**: choose something appropriate
 - **Additional variable**: We've selected "Country" as an additional variable to export, so we can use it to label points.
 
 Once you click save, you might be prompted to install additional packages. Click "Yes" and wait while that happens, then you can save again.
 
-The HTML file will open in your browser.
+### ggplot2 plot types
+
+When you are using one of the [ggplot2-based plot types](/docs/graphics/graph-types/ggplot2), the **Add to Plot** panel includes an **"Interactive Plot (via plotly)"** button that opens the current plot as a plotly widget in your browser. This is available for most gg plot types except pie, donut, gridplot, barcode, and ridgeline.
+
+</Desktop>
+
+<Lite>
+
+### Interactive plots (Lite)
+
+In iNZight Lite, the output panel includes two interactive tabs alongside the standard Plot, Summary, and Inference tabs:
+
+- **Interactive Plot** — displays an interactive version of the current plot using iNZight's custom HTML export. You can also download the plot as an HTML file using the **Download Plot** button.
+- **Interactive Plot (via plotly)** — displays the plot as a plotly widget with full hover, zoom, and pan support. For large datasets, you may need to click **Produce Plot** to generate the interactive version.
+
+</Lite>
+
+### Interacting with plots
+
+Once you have an interactive plot open:
 
 - **Hover your mouse over points** to see details about that observation
 - **Click points** to add to selection, and "View Table" to see the rows of the data set for those observations
 - **Click-and-drag** to select a region of points
 - **Click a legend label** to highlight points in that group
+
+### Supported plot types
+
+Interactive export works with most single-panel iNZight plots, including scatter plots, dot plots, bar charts, and hexagonal binning plots. **Panel (faceted) plots are not currently supported**, and coloured hexagonal binning plots are not available as interactive versions.
+
+:::note Required packages
+Interactive HTML export requires the `gridSVG`, `jsonlite`, and `knitr` packages. SVG export requires `gridSVG`. If they are not installed, iNZight will prompt you to install them when you first try to export.
+:::
