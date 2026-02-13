@@ -175,6 +175,11 @@ save_plot("trend-loe.png", quote(
     inzplot(height ~ armspan, data = cas, LOE = TRUE)
 ))
 
+save_plot("trend-join.png", quote({
+    nz <- gapminder[gapminder$Country == "New Zealand", ]
+    inzplot(Infantmortality ~ Year, data = nz, join = TRUE, lines.by = FALSE)
+}))
+
 # -- Axes and Labels --
 # (Log transformations require iNZightTools transform; skip for now)
 
