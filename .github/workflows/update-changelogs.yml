@@ -1,0 +1,36 @@
+name: Update changelogs
+
+on:
+  # Run weekly (Monday 6am UTC)
+  schedule:
+    - cron: "0 6 * * 1"
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+  # Allow trigger from package repos via repository_dispatch
+  repository_dispatch:
+    types: [update-changelogs]
+
+jobs:
+  update-changelogs:
+    name: Fetch and commit changelogs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch changelogs from GitHub
+        run: node scripts/fetch-changelogs.mjs
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add support/changelog/
+          git diff --staged --quiet || git commit -m "chore: update changelogs [skip ci]"
+          git push origin || echo "No changes to push"
