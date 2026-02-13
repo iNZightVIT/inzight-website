@@ -3,7 +3,7 @@ title: Identify Points
 description: Label and identify specific points in your plots.
 ---
 
-import { Desktop } from "@site/src/components/VersionToggle/inzVersion";
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
 
 The **Identify Points** options in **Add to Plot** allow you to label, colour, and highlight specific points of interest in your plots. This is useful for investigating outliers, highlighting specific observations, or adding context to your visualisations.
 
@@ -40,6 +40,14 @@ Select a variable and a specific value to highlight all observations matching th
 ### By extreme values
 
 Select the most **extreme points** automatically. For scatter plots, this uses [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance) from the centre of the data, identifying points that are most unusual in terms of both their x and y values considered together. For dot plots, you can separately control how many points to identify from the lower and upper ends of the distribution using the **N Lower** and **N Upper** sliders.
+
+<Lite>
+
+### By range of values
+
+Select a variable and use a slider to define a **range of values** to highlight. All observations with values within the chosen range are identified. This is useful for investigating a region of the data, such as all observations with heights between 160 and 180 cm.
+
+</Lite>
 
 Once identified, you can save the selection using the **Save these points** button if you want to retain the same observations across multiple plots.
 

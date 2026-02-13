@@ -5,10 +5,12 @@ description: Create explicit categories for missing values.
 
 Often it is useful to be able to identify missing values in a dataset. iNZight includes capabilities to make these explicit. The behaviour of this tool depends on the type of variable.
 
+Go to **Variables** > **Missing to categorical**. Select one or more variables, then click **Submit** to create the new columns.
+
 ## Categorical variables
 
-Any missing observations for the variable we be given a new level, `missing`. All others remain the same.
+Any missing observations for the variable will be given a new level, `missing`. All other values remain the same.
 
 ## Numeric variables
 
-The variable will be converted into a categorical variable with two levels: `missing` and `observed`.
+A new categorical variable is created with two levels: `missing` and `observed`. This is useful for investigating patterns of missingness — for example, you can use the new variable as a subsetting or colouring variable to see whether missing values are associated with other variables in the dataset.

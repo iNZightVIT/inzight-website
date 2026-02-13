@@ -3,8 +3,12 @@ title: Rank
 description: Rank the values of a numeric variable.
 ---
 
+import { Desktop } from "@site/src/components/VersionToggle/inzVersion";
+
 Creates a new numeric variable containing the _rank_, or _order_ of the selected variable.
 This is often used when the order of the values (but not the values themselves) is of interest.
+
+Go to **Variables** > **Numeric Variables** > **Rank numeric variables**. Select one or more numeric variables to rank (hold **Ctrl** to select multiple).
 
 For example,
 
@@ -14,3 +18,11 @@ For example,
 | 12  | 1        |
 | 19  | 4        |
 | 16  | 3        |
+
+<Desktop>
+
+### Percentile ranking
+
+Enable the **Use proportional (percentile) ranking method** checkbox to produce ranks as percentiles (0–1) instead of integer ranks. This is useful for comparing positions across variables with different scales.
+
+</Desktop>

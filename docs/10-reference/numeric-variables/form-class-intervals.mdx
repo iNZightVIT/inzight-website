@@ -5,3 +5,18 @@ description: Convert a numeric variable into a set of ordered categories.
 
 Create a categorical variable whose levels are class intervals of a numeric variable.
 For example, take `age` and create `age.f` with levels `{"{0,20]", "(20,60]", "(60,110]"}`.
+
+Go to **Variables** > **Numeric Variables** > **Form class intervals**.
+
+## Options
+
+- **Variable**: Select the numeric variable to convert.
+- **Number of intervals**: Choose how many intervals to divide the variable into.
+- **Method**: Select how the intervals are determined:
+  - **Equal width**: All intervals have the same range (e.g., 0–20, 20–40, 40–60).
+  - **Equal count**: Each interval contains approximately the same number of observations.
+  - **Specified**: Manually define the breakpoints between intervals.
+- **Format**: Choose whether intervals are displayed as `(open, closed]` or `[closed, open)`.
+- **Custom labels**: Optionally provide descriptive names for each interval (e.g., "young", "middle-aged", "senior") instead of the numeric ranges.
+
+The new categorical variable is added to the dataset alongside the original numeric variable.

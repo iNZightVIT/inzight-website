@@ -3,4 +3,13 @@ title: Combine Categorical Variables
 description: Combine two categorical variables into one.
 ---
 
-Take two categorical variables and create a new categorical variable whose levels are all combinations of those two (e.g., the combinations of ethnicity and gender).
+Take two or more categorical variables and create a new categorical variable whose levels are all combinations of those variables (e.g., the combinations of ethnicity and gender).
+
+Go to **Variables** > **Categorical Variables** > **Combine categorical variables**.
+
+1. Select **two or more** categorical variables from the dropdown.
+2. Click **Combine** to create a new variable containing every observed combination.
+
+For example, combining `gender = {male, female}` and `ethnicity = {NZ European, Māori, Pacific}` creates a new variable with levels like `male.NZ European`, `male.Māori`, `female.Pacific`, etc.
+
+If only one variable is selected, a copy of that variable is added to the dataset.

@@ -3,10 +3,43 @@ title: Transform
 description: Apply a transformation to a numeric variable.
 ---
 
-Creates a new variable that is a transformed version of the parent variable. Transformations available are `log` (base `e` or base 10), exponential, square, square root and reciprocal.
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
+Creates a new variable that is a transformed version of the parent variable. Select a numeric variable and click one of the transformation buttons to create the new variable. The new variable is added to the dataset with a descriptive name (e.g., `log.10.height`, `height.squared`).
+
+Go to **Variables** > **Numeric Variables** > **Transform**.
 
 ## Available Transformations
 
-- `log` (base `e` or base 10)
-- `exp`
-- `square`
+<Desktop>
+
+| Transformation | New variable name | Description |
+|:---|:---|:---|
+| **Log (base 10)** | `log.10.X` | Common logarithm |
+| **Exponential (e^x)** | `exp.X` | Exponential function |
+| **Square (X²)** | `X.squared` | Square of each value |
+| **Square root** | `root.X` | Square root of each value |
+| **Reciprocal (1/X)** | `recip.X` | Reciprocal (inverse) of each value |
+
+:::tip Drag and drop
+You can drag a variable name from the data viewer directly onto a transformation button to apply it instantly.
+:::
+
+</Desktop>
+
+<Lite>
+
+| Transformation | Description |
+|:---|:---|
+| **LOG (e)** | Natural logarithm (base _e_) |
+| **LOG (10)** | Common logarithm (base 10) |
+| **EXPONENTIAL** | Exponential function (e^x) |
+| **SQUARE (X²)** | Square of each value |
+| **SQUARE ROOT** | Square root of each value |
+| **RECIPROCAL (1/X)** | Reciprocal (inverse) of each value |
+
+</Lite>
+
+:::note
+Only numeric variables can be transformed. The original variable is kept and a new transformed variable is added to the dataset.
+:::

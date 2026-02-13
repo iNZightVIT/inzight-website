@@ -3,17 +3,39 @@ title: Create
 description: Create new variables from existing ones.
 ---
 
-A very flexible facility for creating new variables from existing variables, essentially by doing arithmetic on them.
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
+Create new variables from existing variables by doing arithmetic on them.
+
+<Desktop>
 
 import createNew from "./create_new_var.png";
 
 <Figure src={createNew} caption="Create new variable menu" width="400" />
 
-_Left-hand box_: desired name for new variable
-_Right-hand box_: any valid **R** expression
+Type the desired **variable name** in the left-hand box and any valid **R expression** in the right-hand box. The expression can use existing variable names, arithmetic operators, and R functions.
 
-Examples
+**Examples:**
 
 - `income = hours * payrate`
 - `weight.diff = end.weight - begin.weight`
-- `average.weight = ( begin.weight + endweight) / 2`
+- `average.weight = (begin.weight + end.weight) / 2`
+- `bmi = weight / height^2`
+
+The new variable name is automatically converted to a valid name if needed (e.g., spaces replaced with dots).
+
+</Desktop>
+
+<Lite>
+
+Build expressions using the interactive calculator interface:
+
+1. **Select a column** from the dropdown to add a variable to the expression
+2. **Select an operation** (`+`, `-`, `*`, `/`, `^`, `(`, `)`, `:`) to combine variables
+3. Use the **number pad** to enter numeric constants
+4. Give the new variable a **name** in the text field
+5. Click **Create Variable** to add the result to the dataset
+
+The expression is shown in the preview area as you build it. Use the **del** button to remove the last item from the expression.
+
+</Lite>
