@@ -8,6 +8,7 @@ The **Trend Lines and Curves** options in **Add to Plot** allow you to overlay v
 import trendLinear from "../../screenshots/trend-linear.png";
 import trendSmooth from "../../screenshots/trend-smooth.png";
 import trendLoe from "../../screenshots/trend-loe.png";
+import trendJoin from "../../screenshots/trend-join.png";
 
 ## Trend lines
 
@@ -44,8 +45,9 @@ Smoothers are drawn in **magenta** by default and include a shaded confidence ba
 
 Quantile smoothers show how different parts of the distribution change across the x-axis. Instead of fitting to the mean, they fit curves to specific quantiles (e.g., the 25th, 50th, and 75th percentiles). The specific quantiles displayed depend on the sample size:
 
-- For smaller datasets, the median (50th percentile) is shown
-- For larger datasets, additional quantiles (e.g., 25th/75th or 10th/90th) are added automatically
+- **All datasets**: The median (50th percentile) is always shown
+- **More than 200 observations**: The 25th and 75th percentiles are added
+- **More than 1000 observations**: The 10th and 90th percentiles are added as well
 
 ## Line of equality
 
@@ -58,7 +60,9 @@ The **line of equality** (x = y) is a dashed diagonal line that shows where poin
 
 ## Join points
 
-The **join** option connects data points with straight lines in order. This is most useful for time-ordered data where you want to see the trajectory of observations.
+<Figure src={trendJoin} caption="Infant mortality in New Zealand over time, with points joined by lines" width="500" />
+
+The **join** option connects data points with straight lines in the order they appear in the dataset. This is most useful for time-ordered data where you want to see the trajectory of observations over time. When a [colour-by](/docs/graphics/plot-features/colour) variable is set, points are joined separately within each group, producing one line per colour.
 
 ## Inference with trend lines
 

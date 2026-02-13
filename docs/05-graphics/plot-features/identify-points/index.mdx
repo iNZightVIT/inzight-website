@@ -7,15 +7,15 @@ import { Desktop } from "@site/src/components/VersionToggle/inzVersion";
 
 The **Identify Points** options in **Add to Plot** allow you to label, colour, and highlight specific points of interest in your plots. This is useful for investigating outliers, highlighting specific observations, or adding context to your visualisations.
 
-## Labelling points
+The identify panel has two parts: choosing **how to label** identified points, and choosing **how to select** them.
 
-You can label points by selecting a variable to use as labels from the **Identify** dropdown. The label variable determines what text appears next to each identified point — typically a name, ID, or category.
+## How to label points
 
-When no label variable is selected but points are identified, row numbers are shown instead.
+- **Text labels**: Select a variable from the dataset to label identified points. The label text appears next to each point — typically a name, ID, or category. When no label variable is selected, row numbers are shown instead.
+- **Colour points**: Fill identified points with a chosen colour to make them stand out from the rest of the data (default: **red**). Identified points are drawn as solid filled symbols for emphasis.
+- **With the same level of**: Highlight all observations that share the same level of a grouping variable as the identified points. For example, in the Gapminder dataset you can identify a country in one year and track all observations of that country across time. The originally identified point is highlighted for reference.
 
-## Selection methods
-
-iNZight provides several ways to choose which points to identify:
+## How to select points
 
 <Desktop>
 
@@ -35,26 +35,13 @@ Click-to-locate is not available when:
 
 ### By value of a variable
 
-Select a variable and a specific value to highlight all observations matching that value. For variables with a small number of unique values, a slider is provided to quickly cycle through them. This is useful for exploring how specific groups are distributed across the plot.
+Select a variable and a specific value to highlight all observations matching that value. For variables with a small number of unique values (or a factor), a slider is provided to quickly cycle through levels. For numeric variables or when you want to select multiple levels, you can click the **Select levels** button. This is useful for exploring how specific groups are distributed across the plot.
 
 ### By extreme values
 
-Select the most **extreme points** automatically. For scatter plots, this uses Mahalanobis distance from the centre of the data, identifying points that are most unusual in terms of both their x and y values considered together. For dot plots, you can separately control how many points to identify from the lower and upper ends of the distribution. You can control how many extreme points to identify (e.g., the top 5 or 10 most extreme).
+Select the most **extreme points** automatically. For scatter plots, this uses [Mahalanobis distance](https://en.wikipedia.org/wiki/Mahalanobis_distance) from the centre of the data, identifying points that are most unusual in terms of both their x and y values considered together. For dot plots, you can separately control how many points to identify from the lower and upper ends of the distribution using the **N Lower** and **N Upper** sliders.
 
-### Same level identification
-
-When identifying extreme points, you can also highlight all observations that share the same level of a grouping variable as the identified points. For example, if you identify an extreme point and it belongs to group "A", all points in group "A" can be highlighted together.
-
-## Colouring identified points
-
-Identified points can be drawn in a distinct colour (default: **red**) to make them stand out from the rest of the data. When combined with labels, this creates a clear visual emphasis on the points of interest.
-
-## How it works
-
-- Identified points are labelled with text from the selected variable
-- Labels are positioned near their corresponding points
-- Non-identified points remain in their default colour
-- The identified points are drawn as solid filled points for emphasis
+Once identified, you can save the selection using the **Save these points** button if you want to retain the same observations across multiple plots.
 
 ## Applicable plot types
 

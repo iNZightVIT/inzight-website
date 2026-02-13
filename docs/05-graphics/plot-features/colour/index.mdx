@@ -36,7 +36,7 @@ When a **numeric** variable is selected, a continuous colour gradient is used. T
 
 ## Colour palettes
 
-iNZight uses a default palette that is designed to be accessible. For categorical variables with up to 10 levels, distinct colours are used. For more levels, the **viridis** palette is used to ensure readability.
+iNZight uses a default palette that is designed to be accessible. For categorical variables, distinct colours are used for each level. When there are many levels, the **viridis** palette is used to ensure readability.
 
 You can change the colour palette if a custom function or named palette is preferred.
 
@@ -48,7 +48,7 @@ Combining colour with [shape](/docs/graphics/plot-features/shape) is a good stra
 
 ## Colour emphasis
 
-When exploring a particular group, you can **emphasise** one level of the colour-by variable. This highlights the selected group while fading the others, making it easier to trace patterns for a single group within the full dataset.
+When exploring a particular group, you can **emphasise** one level of the colour-by variable by cycling through levels. For categorical variables, this highlights one category at a time while fading the others. For continuous colour variables, it emphasises a range of quantiles. This makes it easy to trace patterns for a single group or value range within the full dataset.
 
 ## Applicable plot types
 
