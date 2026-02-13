@@ -5,12 +5,20 @@ description: A plot showing the distribution of a numeric variable, where each o
 
 Dot plots display the distribution of a single numeric variable by representing each observation as an individual dot. The dots are stacked vertically above their corresponding value on the x-axis, creating a visual picture of the distribution.
 
+import dotBasic from "../../screenshots/dot-basic.png";
+
+<Figure src={dotBasic} caption="A dot plot showing the distribution of student heights" width="500" />
+
 ## When are dot plots used?
 
 Dot plots are automatically produced when you select a **numeric variable** in the [control panel](/docs/interface/control-panel):
 - **Variable 1**: Numeric variable (plotted on the x-axis)
 
 You can optionally set **Variable 2** to a categorical variable to compare the distribution of the numeric variable across groups.
+
+import dotGrouped from "../../screenshots/dot-grouped.png";
+
+<Figure src={dotGrouped} caption="A dot plot comparing height distributions by gender" width="500" />
 
 :::tip Large datasets
 
@@ -43,6 +51,10 @@ By default, dot plots include a **box plot** (box-and-whisker plot) displayed be
 - **Whiskers**: extend from the box to the minimum and maximum values
 
 When [inference information](/docs/graphics/inference) is added for the **mean**, the box plot is replaced by a **mean indicator** (a triangle marker). When inference is set to the **median**, the box plot is shown instead.
+
+import dotInference from "../../screenshots/dot-mean-inference.png";
+
+<Figure src={dotInference} caption="A dot plot with mean inference (confidence and comparison intervals)" width="500" />
 
 ## Numeric summary
 

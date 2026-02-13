@@ -5,6 +5,10 @@ description: A plot for visualizing the relationship between two numeric variabl
 
 Hexagonal binning plots display the relationship between two numeric variables by grouping observations into hexagonal bins. Each hexagon represents a region of the plot, and its appearance (size or shade) indicates how many observations fall within it. This approach is particularly effective for large datasets where individual points would overlap and become indistinguishable.
 
+import hexSize from "../../screenshots/hex-size.png";
+
+<Figure src={hexSize} caption="A hexagonal binning plot using the size display style" width="500" />
+
 ## When are hexagonal binning plots used?
 
 Hexagonal binning plots are automatically produced when you select two **numeric variables** in the [control panel](/docs/interface/control-panel) and the dataset has more than about 5000 observations:
@@ -36,11 +40,19 @@ Hexagonal binning plots support two display styles:
 - **Size** (default): All hexagons have the same colour, but their size varies according to the count. Larger hexagons represent bins with more observations.
 - **Alpha** (transparency): All hexagons are the same size, but their opacity varies. More opaque hexagons represent bins with more observations.
 
+import hexAlpha from "../../screenshots/hex-alpha.png";
+
+<Figure src={hexAlpha} caption="A hexagonal binning plot using the alpha (transparency) display style" width="500" />
+
 You can switch between these styles in the **Add to Plot** panel.
 
 ### Colour by variable
 
 When colouring hexagons by a categorical variable, each hexagon is divided into segments showing the proportion of each category within that bin.
+
+import hexColour from "../../screenshots/hex-colour.png";
+
+<Figure src={hexColour} caption="A hexagonal binning plot coloured by gender (using hextri segments)" width="500" />
 
 ## Number of bins
 

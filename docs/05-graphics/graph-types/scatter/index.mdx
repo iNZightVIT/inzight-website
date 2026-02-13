@@ -5,6 +5,10 @@ description: A plot showing the relationship between two numeric variables.
 
 Scatter plots are used to visualize the relationship between two numeric variables. Each point on the plot represents one observation, with its position determined by the values of the two variables.
 
+import scatterBasic from "../../screenshots/scatter-basic.png";
+
+<Figure src={scatterBasic} caption="A scatter plot showing height versus armspan" width="500" />
+
 ## When are scatter plots used?
 
 Scatter plots are automatically produced when you select two **numeric variables** in the [control panel](/docs/interface/control-panel):
@@ -43,7 +47,14 @@ The numeric summary for a scatter plot shows **Spearman's Rank Correlation**, wh
 
 ## Modifying scatter plots
 
+import scatterTrend from "../../screenshots/scatter-trend.png";
+import scatterColour from "../../screenshots/scatter-colour.png";
+
 Scatter plots can be enhanced with many features available in the **Add to Plot** panel:
+
+<Figure src={scatterTrend} caption="A scatter plot with a linear trend line" width="500" />
+
+<Figure src={scatterColour} caption="A scatter plot with points coloured by gender" width="500" />
 
 - **[Colour](/docs/graphics/plot-features/colour)**: Add a third variable by coloring points
 - **[Size](/docs/graphics/plot-features/size)**: Encode a third variable by point size
