@@ -129,3 +129,32 @@ Interactive export works with most single-panel iNZight plots, including scatter
 :::note Required packages
 Interactive HTML export requires the `gridSVG`, `jsonlite`, and `knitr` packages. SVG export requires `gridSVG`. If they are not installed, iNZight will prompt you to install them when you first try to export.
 :::
+
+---
+
+## Code History
+
+<Desktop>
+
+iNZight tracks the R code behind your actions. You can view and copy this code from the **Code History** panel. In the [Model Fitting](/docs/reference/modules/model-fitting#code-history) module, use the toolbar buttons to save and view code for individual models and plots.
+
+</Desktop>
+
+<Lite>
+
+### Code Panel (Lite) {#code-panel}
+
+The **Code** tab in iNZight Lite displays a running R script that reproduces your analysis. The script includes:
+
+- **Package loading** — `library()` calls for all required packages (e.g., `iNZightPlots`, `magrittr`)
+- **Data import** — the code used to load your dataset
+- **Transformations** — any data manipulation steps you performed
+- **Plot code** — the `iNZightPlot()` calls used to generate your plots
+
+The script is automatically generated as you work. You can copy it to use in R or RStudio to reproduce your analysis outside of iNZight.
+
+:::note
+Code history is not available for all panels yet — it is gradually being added to more features.
+:::
+
+</Lite>

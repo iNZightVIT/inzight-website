@@ -3,6 +3,8 @@ title: Reorder and Select Variables
 description: Change the order of variables or select a subset to keep.
 ---
 
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
 The **Reorder and Select Variables** tool lets you choose which variables to keep in your dataset and change their column order. This is useful for tidying up datasets with many variables, focusing on relevant columns, or preparing data for export.
 
 Access via **Dataset** > **Reorder and select variables**.
@@ -36,3 +38,17 @@ The original dataset remains available via **Dataset** > **Restore original data
 :::tip
 If you only need to remove a few variables, it may be quicker to use [Delete variables](/docs/reference/data/delete) instead.
 :::
+
+<Lite>
+
+## Alphabetise Variables {#alphabetise}
+
+In iNZight Lite, go to **Manipulate Variables** > **Alphabetise Variables** to sort columns alphabetically by name.
+
+Choose the sort order:
+- **A(a) to Z(z)** — ascending alphabetical order
+- **Z(z) to A(a)** — descending alphabetical order
+
+Click **Alphabetise Variables** to apply. The updated dataset is shown in the preview table.
+
+</Lite>

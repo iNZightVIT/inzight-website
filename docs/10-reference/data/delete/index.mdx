@@ -1,9 +1,23 @@
 ---
-title: Delete
+title: Delete / Remove Variables
 description: Delete variables from a dataset
 ---
 
-Delete variables (columns) from the dataset. Select one or more variable names from the list — hold **Shift** to select a range or **Ctrl** to select multiple individual variables — then click **Delete** to remove them.
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
+Delete variables (columns) from the dataset.
+
+<Desktop>
+
+Go to **Variables** > **Delete variables**. Select one or more variable names from the list — hold **Shift** to select a range or **Ctrl** to select multiple individual variables — then click **Delete** to remove them.
+
+</Desktop>
+
+<Lite>
+
+Go to **Manipulate Variables** > **Remove Columns**. Select one or more variables from the dropdown list, then click **Delete**. The updated dataset is shown in the preview table.
+
+</Lite>
 
 :::warning
 Deleted variables cannot be recovered except by restoring the original dataset. Use **Dataset** > **Restore original dataset** to undo all changes since the data was loaded.

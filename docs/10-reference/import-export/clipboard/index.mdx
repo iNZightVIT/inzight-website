@@ -4,11 +4,39 @@ description: Import and export data using the clipboard.
 sidebar_position: 2
 ---
 
+import { Desktop, Lite } from "@site/src/components/VersionToggle/inzVersion";
+
 ## Paste from Clipboard {#paste-from}
 
 You can import data directly from Excel or Google Sheets by selecting the data and copying it (CTRL + C) and then using the **Paste from...** option in the **File** menu to paste the data directly into iNZight.
 
+<Desktop>
+
 Click **Load** when finished.
+
+</Desktop>
+
+<Lite>
+
+### Paste Dataset (Lite) {#paste-dataset}
+
+In iNZight Lite, the **Paste Dataset** panel lets you paste data copied from a spreadsheet (Excel, Google Sheets, etc.) directly into the application.
+
+1. **Copy** the data from your spreadsheet (including headers)
+2. **Paste** into the text area
+3. Choose the **delimiter** that separates columns:
+   - Tab (default — works with most spreadsheet copy operations)
+   - Comma
+   - Semicolon
+   - Custom delimiter (type your own)
+4. A **preview** of the parsed data is shown on the right
+5. Click **Load** to import the dataset, or **Reset** to clear
+
+:::tip
+If the preview doesn't look right, try changing the delimiter. Data copied from Excel typically uses tabs, while CSV data uses commas.
+:::
+
+</Lite>
 
 ## Copy to Clipboard {#copy-to}
 
