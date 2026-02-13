@@ -19,26 +19,6 @@ Remaining tasks and items to review for the iNZight website.
 
 ## Documentation - Remaining
 
-### Lite-Specific Features
-
-- [ ] **Code Panel (`G1_Code`)**
-  - View generated R code
-  - Copy/export code
-
-- [ ] **Paste Dataset (`B6_PasteDataset`)**
-  - Paste data directly from clipboard
-  - CSV/TSV detection
-
-- [ ] **Add Columns (`E6_AddColumns`)**
-  - Add new empty columns
-  - Different from "Create Variable"
-
-- [ ] **Remove Columns (`E8_RemoveColumns`)**
-  - Bulk column removal
-
-- [ ] **Alphabetise Variables (`D7_AlphabetiseVariables`)**
-  - Sort columns alphabetically
-
 ### Infrastructure/Reference
 
 - [x] **Transition Guide for 4.2** — migrated to `/support/transition-guides/4.2`
