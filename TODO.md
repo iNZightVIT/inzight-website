@@ -14,7 +14,6 @@ Remaining tasks and items to review for the iNZight website.
 
 - [ ] **Set up new mailing list/newsletter system** - The old mailing lists (iNZight-General, iNZight-School, iNZight-Online) are deprecated. Consider setting up a new mailing list or newsletter system for announcements.
 - [ ] **Configure analytics** - Set up analytics tracking (if desired)
-- [x] **Set up 301 redirects from old URLs** - All redirects configured in docusaurus.config.mjs (query parameters handled automatically)
 
 ---
 
@@ -43,14 +42,6 @@ Remaining tasks and items to review for the iNZight website.
   - Currently only single variable documented
 
 ### Graphics Documentation - Partially Documented
-
-#### Graph Types
-- [x] **Bar Chart** - Documentation completed
-- [x] **Scatter Plot** - Documentation completed
-- [x] **Histogram** - Documentation completed
-- [x] **Dot Plot** - Documentation completed
-- [x] **Grid Density Plot** - Documentation completed
-- [x] **Hexagonal Binning Plot** - Documentation completed
 
 #### Plot Features (Incomplete)
 - [ ] **Colour** - Documentation incomplete (only has discrete/continuous headers, no content)
@@ -142,7 +133,6 @@ Remaining tasks and items to review for the iNZight website.
 
 ### P2 - Important (frequently used features)
 - [ ] **Graphics documentation gaps** - Add to Plot features are minimally documented or missing
-  - ~~Graph types (scatter, histogram, dot, grid, hex) - all completed~~
   - Add to Plot sections (Trend Lines, Axes/Labels, Identify Points) - need documentation
   - Plot features (Colour, Shape, Size) - need full content
   - Plot appearance features (jitter, rugs, transparency, etc.) - need documentation
@@ -165,30 +155,8 @@ Remaining tasks and items to review for the iNZight website.
 ## Screenshots Needed
 
 ### Graphics Documentation
-- [ ] **Bar Chart**: One-way bar chart (single categorical variable)
-- [ ] **Bar Chart**: Two-way bar chart (two categorical variables)
-- [ ] **Bar Chart**: Segmented bar chart (one-way with colour-by)
-- [ ] **Bar Chart**: Bar chart showing counts
-- [ ] **Bar Chart**: Bar chart with inference (confidence intervals for proportions)
-- [ ] **Scatter Plot**: Basic scatter plot example (two numeric variables)
-- [ ] **Scatter Plot**: Scatter plot with trend line
-- [ ] **Scatter Plot**: Scatter plot with colour coding
-- [ ] **Histogram**: Basic histogram
 - [ ] **Histogram**: Histogram with different bin widths
-- [ ] **Dot Plot**: Basic dot plot (single numeric variable, showing stacked dots with box plot)
-- [ ] **Dot Plot**: Dot plot with categorical Variable 2 (grouped comparison)
-- [ ] **Dot Plot**: Dot plot with mean indicator (inference for mean)
-- [ ] **Grid Density Plot**: Basic grid density plot (two numeric variables, showing shaded squares)
 - [ ] **Grid Density Plot**: Grid density plot with different grid resolution
-- [ ] **Hexagonal Binning Plot**: Hex plot with "size" style (default)
-- [ ] **Hexagonal Binning Plot**: Hex plot with "alpha" style
-- [ ] **Hexagonal Binning Plot**: Hex plot with colour-by variable (hextri segments)
-- [ ] **Colour**: Discrete colour coding example
-- [ ] **Colour**: Continuous colour coding example
-- [ ] **Shape**: Different point shapes example
-- [ ] **Size**: Points sized by variable example
-- [ ] **Trend Lines and Curves**: Linear regression line
-- [ ] **Trend Lines and Curves**: Smoothing curve (loess)
 - [ ] **Trend Lines and Curves**: Join points by line
 - [ ] **Trend Lines and Curves**: x=y line
 - [ ] **Axes and Labels**: Log transformation applied
@@ -196,11 +164,6 @@ Remaining tasks and items to review for the iNZight website.
 - [ ] **Axes and Labels**: Custom title and labels
 - [ ] **Identify Points**: Labeled points example
 - [ ] **Identify Points**: Points selected by brushing
-- [ ] **Plot Appearance**: Jitter applied
-- [ ] **Plot Appearance**: Rugs on axes
-- [ ] **Plot Appearance**: Transparency adjustment
-- [ ] **Inference**: Inference on scatter plot
-- [ ] **Inference**: Inference on bar chart
 
 ### Dataset Menu Features
 - [ ] **Data Dictionary**: Load data dictionary dialog
