@@ -1,0 +1,71 @@
+---
+title: Data Dictionary
+description: Load, view, and apply a data dictionary to your dataset.
+---
+
+A **data dictionary** is a structured file that describes your dataset's variables — their names, types, descriptions, units, and coded values. In iNZight, you can load a data dictionary to automatically label and recode variables, making your data easier to understand and work with.
+
+Access via **Dataset** > **Data Dictionary**.
+
+## Loading a Data Dictionary
+
+Go to **Dataset** > **Data Dictionary** > **Load** to open the data dictionary loader.
+
+### File Format
+
+The data dictionary should be a **CSV** or **Excel** file with one row per variable. The columns in the dictionary file are mapped to the following fields:
+
+| Field | Description | Required? |
+|---|---|---|
+| **Variable name** | The name of the variable as it appears in the dataset | Yes |
+| **Type** | The variable type (e.g., numeric, categorical) | No |
+| **Title** | A human-readable label for the variable | No |
+| **Description** | A longer description of what the variable measures | No |
+| **Units** | The measurement units (e.g., cm, kg, $) | No |
+| **Codes** | Coded values used in the data (e.g., 1, 2, 3) | No |
+| **Values** | Labels for the coded values (e.g., Male, Female, Other) | No |
+
+iNZight will attempt to auto-detect the column mappings based on common names (`type`, `title`, `description`, `units`, `codes`, `values`). If your columns have different names, use the dropdown menus to map each field manually.
+
+### Separator
+
+If the codes and values columns contain multiple entries per row (e.g., `1;2;3` for codes and `Male;Female;Other` for values), specify the **separator** character used to split them (default: `;`).
+
+### Preview
+
+After selecting a dictionary file and mapping the columns, a preview of the parsed dictionary is displayed at the bottom of the dialog. Check this to ensure the variable names, codes, and values are correctly interpreted.
+
+### Apply Options
+
+- **Apply dictionary to current dataset**: When checked (default), the dictionary is immediately applied to the active dataset — renaming variables, converting types, and recoding values according to the dictionary.
+- **Apply to all loaded datasets**: When checked, the dictionary is applied to every currently loaded dataset, not just the active one.
+
+Click **Load** to import the dictionary.
+
+## Viewing a Data Dictionary
+
+Go to **Dataset** > **Data Dictionary** > **View** to open a read-only view of the data dictionary attached to the current dataset.
+
+The view displays a searchable table with all dictionary information:
+
+- Use the **Search** box to filter variables by name or description
+- Toggle **Case sensitive** for exact matching
+- Click **Clear** to reset the search
+
+This is useful for quickly looking up variable definitions, coded values, and descriptions while exploring the data.
+
+## Example Dictionary
+
+A minimal data dictionary CSV might look like:
+
+```csv
+name,type,title,description,codes,values
+age,numeric,Age,Age in years at time of survey,,
+gender,categorical,Gender,Self-reported gender,1;2;3,Male;Female;Other
+height,numeric,Height (cm),Standing height in centimetres,,
+travel,categorical,Travel Method,How the student travels to school,,
+```
+
+When applied, this would:
+- Add labels and descriptions to the `age`, `gender`, `height`, and `travel` variables
+- Recode `gender` from `1;2;3` to `Male;Female;Other`

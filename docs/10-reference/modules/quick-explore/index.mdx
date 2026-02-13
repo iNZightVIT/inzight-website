@@ -4,26 +4,51 @@ description: Exploratory analysis tools for quick familiarisation with a new dat
 sidebar_label: Quick Explore
 ---
 
-This menu provides several exploratory analysis tools for quick familiarisation to a new data set.
+The Quick Explore sub-menu provides several tools for rapid, automated exploration of a dataset. These are particularly useful when working with a new dataset and wanting to get an overview before diving into specific analyses.
 
 Access via **Advanced** > **Quick Explore**.
 
 ## Missing Values
 
-Plots and summary tables of the extent to which variables and combinations of variables have missing values.
+Opens a summary window showing the extent of missing data across all variables in the dataset. The output includes:
 
-## All 1-variable Plots
+- A **text summary** table listing each variable and the number/percentage of missing values
+- A **combination plot** showing which combinations of variables have missing values together
 
-Steps through and plots every (single) variable in the data set.
+This uses the `iNZightMR` package's `calcmissing()` and `plotcombn()` functions to compute and visualise missing data patterns. Understanding which variables are missing and whether missingness is related across variables is an important first step in any analysis.
 
-## All 1-variable Summaries
+## All 1-Variable Plots
 
-Summaries for every (single) variable in the data set.
+Automatically steps through every variable in the dataset, plotting each one individually. For each variable, iNZight produces the appropriate default plot:
 
-## Explore 2-variable Plots
+- **Numeric variables**: [Dot plot](/docs/graphics/graph-types/dot) (or [histogram](/docs/graphics/graph-types/hist) for large datasets)
+- **Categorical variables**: [Bar chart](/docs/graphics/graph-types/bar)
 
-Takes a user-selected variable and then steps through plotting every other variable in the data set against it.
+Use the **Next** and **Previous** buttons to cycle through variables. This is a quick way to spot unusual distributions, outliers, or unexpected variable types.
+
+## All 1-Variable Summaries
+
+Produces a text summary for every variable in the dataset in a single window. For each variable, the summary includes:
+
+- **Numeric variables**: Mean, standard deviation, min, quartiles, max, and number of missing values
+- **Categorical variables**: Frequency table of levels
+
+This provides a comprehensive numeric overview of the entire dataset at a glance.
+
+## Explore 2-Variable Plots
+
+Select a **reference variable**, and iNZight will step through plotting every other variable in the dataset against it. This is useful for quickly identifying which variables have interesting relationships with a variable of interest.
+
+The plot type is chosen automatically based on the variable types:
+- **Numeric vs. Numeric**: [Scatter plot](/docs/graphics/graph-types/scatter)
+- **Numeric vs. Categorical**: [Dot plot](/docs/graphics/graph-types/dot) grouped by category
+- **Categorical vs. Categorical**: [Bar chart](/docs/graphics/graph-types/bar) (two-way)
 
 ## Pairs
 
-Takes a set of user-specified variables and plots every variable against every other variable as a matrix of plots. There is an option to colour using another variable. (Uses R's `gpairs` package).
+Creates a **scatter plot matrix** (pairs plot) for a user-selected set of variables. Each variable is plotted against every other variable in a grid layout, making it easy to identify correlations and patterns across multiple variables simultaneously.
+
+- Hold **CTRL** (or **CMD** on Mac) to select multiple variables
+- Optionally select a **colour variable** to colour all plots by a grouping variable
+
+This uses R's `gpairs` package to produce the matrix.

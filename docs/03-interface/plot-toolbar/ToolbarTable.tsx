@@ -81,12 +81,15 @@ const items = [
           Add and modify features of the plot, including colour, size, plot
           type, axes and labels, and more.
         </p>
-{/* TODO: Add link when page is created
         <p>
-          See{" "}
-          <Link to="/docs/interface/plot-toolbar/add-to-plot">Add to Plot</Link>.
+          See <Link to="/docs/graphics/plot-features/colour">Colour</Link>,{" "}
+          <Link to="/docs/graphics/plot-features/shape">Shape</Link>,{" "}
+          <Link to="/docs/graphics/plot-features/size">Size</Link>,{" "}
+          <Link to="/docs/graphics/plot-features/trend-lines">Trend Lines</Link>,{" "}
+          <Link to="/docs/graphics/plot-features/axes-labels">Axes &amp; Labels</Link>,{" "}
+          <Link to="/docs/graphics/plot-features/identify-points">Identify Points</Link>,{" "}
+          <Link to="/docs/graphics/plot-features/plot-appearance">Plot Appearance</Link>.
         </p>
-        */}
       </>
     ),
   },
@@ -100,16 +103,10 @@ const items = [
     icon: "inference-information.png",
     Description: (
       <>
-        <p>Add inferential mark-up to plots.</p>
-{/* TODO: Add link when page is created
         <p>
-          See{" "}
-          <Link to="/docs/interface/plot-toolbar/inference-information">
-            Inference Information
-          </Link>
-          .
+          Add inferential mark-up to plots. See{" "}
+          <Link to="/docs/graphics/inference">Inference Information</Link>.
         </p>
-        */}
       </>
     ),
   },

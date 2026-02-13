@@ -4,8 +4,64 @@ description: Plot three numeric variables simultaneously on a 3-dimensional axis
 sidebar_label: 3D Plot
 ---
 
-This module provides users with the ability to plot three **numeric** variables simultaneously on a 3-dimensional axis. A fourth categorical variable can be used to colour the points. The image can be rotated and spun, allowing users to explore relationships between variables.
+The 3D Plot module provides an interactive three-dimensional scatter plot for exploring relationships between three numeric variables. A fourth categorical variable can optionally be used to colour the points by group.
 
 Access via **Advanced** > **3D Plot**.
 
-Provides access to code from [John Fox's R Commander](http://www.rcommander.com/).
+:::note Requirements
+This module requires the `rgl` and `car` R packages to be installed. If they are not available, iNZight will prompt you to install them.
+:::
+
+## Getting Started
+
+The module opens a control window with four variable slots:
+
+- **Response** (Y-axis): A numeric variable
+- **Covariate 1** (X-axis): A numeric variable
+- **Covariate 2** (Z-axis): A numeric variable
+- **Group by** (optional): A categorical variable for colouring points by group
+
+Drag variable names from the dataset into the appropriate slots, or use the dropdowns to select them. Use the **clear** buttons to remove a variable from a slot.
+
+## Interacting with the Plot
+
+The 3D scatter plot opens in a separate interactive window powered by the `rgl` package:
+
+- **Click and drag** to rotate the plot
+- **Scroll** to zoom in and out
+- **Right-click and drag** to pan
+
+The ability to rotate the plot freely helps you identify patterns, clusters, and outliers that may not be visible in any single 2D projection.
+
+## Fitted Surfaces
+
+You can overlay fitted surfaces on the scatter plot to visualise the modelled relationship between the response and the two covariates. Available surface types:
+
+| Surface | Description |
+|---|---|
+| **Linear** | Flat plane fitted by linear regression |
+| **Quadratic** | Curved surface including squared and interaction terms |
+| **Smooth** | Flexible surface fitted using a GAM (requires `mgcv` package) |
+| **Additive** | Additive model with separate smooths for each covariate (requires `mgcv`) |
+
+When a **Group by** variable is set, surfaces can be fitted:
+- **In parallel** — same shape but shifted for each group
+- **Separately** — independently fitted for each group
+
+## Display Options
+
+The control panel provides several options for customising the plot:
+
+- **Show residuals**: Draw vertical lines from each point to the fitted surface
+- **Show surface**: Toggle the fitted surface on/off
+- **Fill / Grid**: Show the surface as a filled surface, wireframe grid, or both
+- **Sphere size**: Adjust the size of points in the 3D space
+- **Axes**: Show or hide axis labels and scales
+- **Spin**: Automatically rotate the plot
+
+## Tips
+
+- Start by looking at the raw scatter with no surface to identify the general pattern
+- Add a linear surface first, then try quadratic or smooth to see if the relationship is non-linear
+- Use the **Group by** variable to see if the relationship differs across categories
+- Rotate the plot to view it from different angles — relationships can look very different from different perspectives

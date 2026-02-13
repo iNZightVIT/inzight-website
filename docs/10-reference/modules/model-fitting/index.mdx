@@ -4,10 +4,82 @@ description: Linear regression, logistic regression, and Poisson regression with
 sidebar_label: Model Fitting
 ---
 
-A modelling module for (multiple) linear regression, logistic regression, and Poisson regression.
-
-It also caters for data from complex survey sampling.
-
-Extensive diagnostic and other plotting facilities with many novel features.
+The Model Fitting module provides a graphical interface for fitting and diagnosing regression models. It supports multiple model families, diagnostic plotting with bootstrap overlays, and model comparison.
 
 Access via **Advanced** > **Model Fitting**.
+
+## Getting Started
+
+When you open the module, you'll see three main sections:
+
+1. **Response variable** — select the outcome variable and model type
+2. **Explanatory variables** — choose predictors from numeric and categorical variable lists
+3. **Model/Residual Plots** — diagnostic plots and model comparisons
+
+## Model Types
+
+### Response Types
+
+Select the response type based on the nature of your outcome variable:
+
+| Response Type | Model | Use When |
+|---|---|---|
+| **Numeric** | Linear regression (`gaussian`) | Continuous outcome (e.g., height, income) |
+| **Binary** | Logistic regression (`binomial`) | Two-level outcome (e.g., yes/no, pass/fail) |
+| **Count** | Poisson regression | Count data (e.g., number of events) |
+| **Count (overdispersed)** | Negative binomial | Count data with more variance than Poisson predicts |
+
+For **binary** (logistic) models, you can also choose between **logit** and **probit** link functions.
+
+### Building a Model
+
+1. Select your **response variable** from the dropdown
+2. Choose the **response type** (numeric, binary, count)
+3. Add **explanatory variables** by selecting from the numeric and categorical variable lists
+4. Optionally add **confounding variables** that you want to control for
+5. Toggle the **intercept** on or off
+
+The model formula is displayed and updated as you make changes. Each time you modify the model, iNZight automatically fits it and updates the summary and diagnostic plots.
+
+### Multiple Models
+
+You can fit and name multiple models, then switch between them using the model list. This makes it easy to compare different model specifications. Use the **Compare** button to generate a comparison table of model fit statistics.
+
+## Diagnostic Plots
+
+The module provides a range of diagnostic plots to assess model fit. Select from the **Residual plots** dropdown:
+
+| Plot | Description |
+|---|---|
+| **Residual** | Residuals vs. fitted values — check for non-linearity and heteroscedasticity |
+| **Scale-Location** | Square root of standardised residuals vs. fitted — check for constant variance |
+| **Leverage** | Residuals vs. leverage — identify influential observations |
+| **Cook's Distance** | Influence of each observation on the model |
+| **Normal Q-Q** | Check if residuals follow a normal distribution |
+| **Histogram** | Histogram of residuals |
+| **Summary Matrix** | All six diagnostic plots displayed together |
+| **Partial Residual** | Partial residual plots for each predictor |
+| **Factor Comparisons** | Visual comparison of factor level effects |
+| **Marginal Model Plots** | Compare observed and fitted marginal relationships |
+| **Forest Plot** | Forest plot of coefficient estimates and confidence intervals |
+
+### Bootstrap Diagnostics
+
+When the **Show bootstraps** checkbox is enabled, diagnostic plots include bootstrap resampling overlays. This helps assess the stability of model diagnostics — if the bootstrapped lines vary widely, the diagnostic pattern may not be reliable.
+
+Bootstrap is enabled by default for datasets with 30–4000 observations.
+
+## Survey Data
+
+The Model Fitting module supports [survey data](/docs/reference/survey-data). When a survey design has been specified, iNZight automatically uses `svyglm()` from the `survey` package to fit the model, correctly accounting for the survey design in parameter estimates and standard errors.
+
+## Model Summary
+
+The model summary output includes:
+
+- **Coefficient estimates** with standard errors, t/z values, and p-values
+- **R-squared** and **adjusted R-squared** (for linear models)
+- **AIC** and other fit statistics
+- **ANOVA table** for overall model significance
+
+The summary is displayed in a text window alongside the diagnostic plots.

@@ -1,0 +1,38 @@
+---
+title: Reorder and Select Variables
+description: Change the order of variables or select a subset to keep.
+---
+
+The **Reorder and Select Variables** tool lets you choose which variables to keep in your dataset and change their column order. This is useful for tidying up datasets with many variables, focusing on relevant columns, or preparing data for export.
+
+Access via **Dataset** > **Reorder and select variables**.
+
+## How It Works
+
+The dialog presents two lists side by side:
+
+- **Remove** (left): Variables currently in the dataset that have not been selected to keep
+- **Keep** (right): Variables that will be retained in the new dataset
+
+### Selecting Variables
+
+1. Select one or more variables from the **Remove** list (hold **CTRL** or **SHIFT** to select multiple)
+2. Click the **→** (forward) arrow to move them to the **Keep** list
+3. To remove a variable from the **Keep** list, select it and click the **←** (backward) arrow
+
+### Reordering Variables
+
+Use the **↑** (up) and **↓** (down) arrows on the right side to change the position of the selected variable within the **Keep** list. The column order in the resulting dataset will match the order shown in this list.
+
+## Applying Changes
+
+Click **Done** to apply. iNZight creates a new version of the dataset with only the kept variables, in the specified order:
+
+- If you selected all variables but changed their order, the new dataset is labelled with the suffix **"reorder"**
+- If you selected a subset of variables, the new dataset is labelled with the suffix **"subset"**
+
+The original dataset remains available via **Dataset** > **Restore original dataset**.
+
+:::tip
+If you only need to remove a few variables, it may be quicker to use [Delete variables](/docs/reference/data/delete) instead.
+:::

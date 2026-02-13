@@ -37,21 +37,11 @@ All 13 review questions have been addressed:
 
 ## Documentation - Missing Features
 
-### Dataset Menu - Undocumented Features
+### Dataset Menu - ~~Undocumented Features~~ Done
 
-- [ ] **Data Dictionary**
-  - Load data dictionary
-  - View data dictionary
-  - Apply labels from dictionary
-
-- [ ] **Generate Data Report**
-  - Automated data quality report
-  - Uses dataMaid package
-  - PDF/HTML output
-
-- [ ] **Reorder and Select Variables**
-  - Change column order
-  - Select subset of variables
+- [x] **Data Dictionary** — `/docs/reference/data/data-dictionary`
+- [x] **Generate Data Report** — `/docs/reference/data/generate-report`
+- [x] **Reorder and Select Variables** — `/docs/reference/data/reorder-select`
 
 ### Variables Menu - Partially Documented
 
@@ -107,8 +97,8 @@ All 13 review questions have been addressed:
 ## Priority Order
 
 ### P2 - Important (frequently used features)
-- [ ] Data Dictionary feature
-- [ ] Menubar reference documentation (Plot, Dataset, Variables, etc.)
+- [x] Data Dictionary feature
+- [x] Menubar reference documentation (Plot, Dataset, Variables, etc.)
 
 ### P3 - Nice to have
 - [ ] Code panel (Lite) - Low priority
@@ -132,12 +122,9 @@ All 13 review questions have been addressed:
 - [ ] **Identify Points**: Labeled points example
 
 ### Dataset Menu Features
-- [ ] **Data Dictionary**: Load data dictionary dialog
-- [ ] **Data Dictionary**: View data dictionary
-- [ ] **Data Dictionary**: Apply labels from dictionary
-- [ ] **Generate Data Report**: Report generation dialog
-- [ ] **Generate Data Report**: Example report output
-- [ ] **Reorder and Select Variables**: Variable reordering interface
+- [x] ~~Data Dictionary~~
+- [x] ~~Generate Data Report~~
+- [x] ~~Reorder and Select Variables~~
 
 ### Variables Menu Features
 - [ ] **Convert to Categorical (multiple)**: Batch conversion dialog
