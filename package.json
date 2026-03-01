@@ -22,6 +22,7 @@
     "@docusaurus/preset-classic": "^3.9.2",
     "@heroicons/react": "^2.0.18",
     "@mdx-js/react": "3",
+    "@vercel/analytics": "^1.6.1",
     "clsx": "^1.2.1",
     "prism-react-renderer": "2",
     "react": "18",
