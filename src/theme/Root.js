@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Analytics } from "@vercel/analytics/react";
+// import { Analytics } from "@vercel/analytics/react";
 
 const VersionContext = React.createContext();
 
@@ -20,11 +20,11 @@ export default function Root({ children }) {
   }, [version]);
 
   return (
-    <Analytics>
-      <VersionContext.Provider value={{ version, setVersion }}>
-        {children}
-      </VersionContext.Provider>
-    </Analytics>
+    // <Analytics>
+    <VersionContext.Provider value={{ version, setVersion }}>
+      {children}
+    </VersionContext.Provider>
+    // </Analytics>
   );
 }
 
