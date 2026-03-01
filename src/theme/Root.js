@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const VersionContext = React.createContext();
 
