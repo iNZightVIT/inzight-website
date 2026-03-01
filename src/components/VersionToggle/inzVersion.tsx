@@ -3,12 +3,20 @@ import { useVersion } from "@site/src/theme/Root";
 
 function Desktop({ children }: { children: React.ReactNode }) {
   const { version } = useVersion();
-  return version === "desktop" ? <>{children}</> : null;
+  return (
+    <div style={version === "desktop" ? undefined : { display: "none" }}>
+      {children}
+    </div>
+  );
 }
 
 function Lite({ children }: { children: React.ReactNode }) {
   const { version } = useVersion();
-  return version === "lite" ? <>{children}</> : null;
+  return (
+    <div style={version === "lite" ? undefined : { display: "none" }}>
+      {children}
+    </div>
+  );
 }
 
 function Version({ desktop, lite }: { desktop: string; lite: string }) {
