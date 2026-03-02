@@ -1,0 +1,18 @@
+[build]
+  # Docusaurus build command
+  command = "npm run build"
+  # Docusaurus output directory
+  publish = "build"
+
+[functions]
+  # Directory where Netlify Functions are located
+  directory = "netlify/functions"
+  # Node.js version for functions
+  node_bundler = "esbuild"
+
+# Redirect all /api/* requests to Netlify Functions
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+  force = true
